@@ -8,6 +8,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Preload Featured Service Image -->
+  <link rel="preload" as="image" href="images/services/surround-sound.webp" type="image/webp" fetchpriority="high">
   <meta name="description" content="Explore AVÉRA Cinema's comprehensive audio and visual installation services: Dolby Atmos surround sound, 4K laser projectors, acoustic calibration, and turnkey cinemas.">
   
   <!-- Open Graph Metadata -->
@@ -149,7 +152,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6 order-lg-1 reveal-on-scroll">
             <div class="intro-img-card">
-              <img src="images/services/surround-sound.jpg" alt="Surround Sound Installation and Dolby Atmos setup" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/services/surround-sound-md.webp 640w, images/services/surround-sound.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/services/surround-sound.jpg" alt="Surround Sound Installation and Dolby Atmos setup" width="1200" height="896" loading="eager" fetchpriority="high" decoding="async">
+              </picture>
               <div class="intro-badge-overlay">
                 <span class="d-block text-gold fw-bold small text-uppercase">Dolby Atmos & DTS:X</span>
                 <span class="text-dark-primary fw-semibold small">Multi-Channel Spatial Immersion</span>
@@ -194,7 +200,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6 order-lg-2 reveal-on-scroll">
             <div class="intro-img-card">
-              <img src="images/services/projector-setup.jpg" alt="Laser Projector and Screen Installation" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/services/projector-setup-md.webp 640w, images/services/projector-setup.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/services/projector-setup.jpg" alt="Laser Projector and Screen Installation" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
               <div class="intro-badge-overlay">
                 <span class="d-block text-gold fw-bold small text-uppercase">4K Laser Optics</span>
                 <span class="text-dark-primary fw-semibold small">HDR10+ / Dolby Vision Playback</span>
@@ -239,7 +248,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6 order-lg-1 reveal-on-scroll">
             <div class="intro-img-card">
-              <img src="images/services/acoustic-treatment.jpg" alt="Architectural acoustic treatment and diffusers" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/services/acoustic-treatment-md.webp 640w, images/services/acoustic-treatment.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/services/acoustic-treatment.jpg" alt="Architectural acoustic treatment and diffusers" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
               <div class="intro-badge-overlay">
                 <span class="d-block text-gold fw-bold small text-uppercase">Acoustic Mastery</span>
                 <span class="text-dark-primary fw-semibold small">Flutter Echo & Resonance Neutralization</span>
@@ -284,7 +296,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6 order-lg-2 reveal-on-scroll">
             <div class="intro-img-card">
-              <img src="images/products/denon.jpg" alt="AV Receiver and multi channel power amplifier setup" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/products/denon-flagship-md.webp 640w, images/products/denon-flagship.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/products/denon-flagship.jpg" alt="AV Receiver and multi channel power amplifier setup" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
               <div class="intro-badge-overlay">
                 <span class="d-block text-gold fw-bold small text-uppercase">Processing Power</span>
                 <span class="text-dark-primary fw-semibold small">High-Current Toroidal Amplification</span>
@@ -329,7 +344,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6 order-lg-1 reveal-on-scroll">
             <div class="intro-img-card">
-              <img src="images/products/jbl.jpg" alt="Architectural in-wall and tower speaker installation" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/products/jbl-speaker-md.webp 640w, images/products/jbl-speaker.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/products/jbl-speaker.jpg" alt="Architectural in-wall and tower speaker installation" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
               <div class="intro-badge-overlay">
                 <span class="d-block text-gold fw-bold small text-uppercase">Architectural Elegance</span>
                 <span class="text-dark-primary fw-semibold small">Zero-Bezel Invisible Audio</span>
@@ -374,7 +392,10 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6 order-lg-2 reveal-on-scroll">
             <div class="intro-img-card">
-              <img src="images/gallery/theatre-06.jpg" alt="Turnkey custom private cinema with starlight ceiling" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/theatre-06-md.webp 640w, images/gallery/theatre-06.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/gallery/theatre-06.jpg" alt="Turnkey custom private cinema with starlight ceiling" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
               <div class="intro-badge-overlay">
                 <span class="d-block text-gold fw-bold small text-uppercase">Turnkey Sanctuary</span>
                 <span class="text-dark-primary fw-semibold small">3D Architecture & Automation</span>

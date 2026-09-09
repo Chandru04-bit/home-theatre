@@ -15,11 +15,11 @@ const AV_PRODUCTS = [
     badge: "Native 4K SXRD Laser",
     dealerBadge: "Official Sony Professional AV Partner",
     priceInfo: "Price on Consultation / Custom Room Calibration Included",
-    image: "images/products/sony-projector.jpg",
+    image: "images/products/sony-projector.webp",
     gallery: [
-      "images/products/sony-projector.jpg",
-      "images/products/sony-backup.jpg",
-      "images/gallery/theatre-02.jpg"
+      "images/products/sony-projector.webp",
+      "images/products/sony-bravia-98.webp",
+      "images/gallery/theatre-02.webp"
     ],
     tagline: "Compact Native 4K SXRD Laser Cinema Projector with 2,000 Lumens & X1™ Ultimate Engine",
     shortDesc: "Compact native 4K SXRD laser home cinema projector with 2,000 lumens brightness, HDR Enhancer, and Triluminos Pro color processing.",
@@ -92,11 +92,11 @@ const AV_PRODUCTS = [
     badge: "Architectural In-Ceiling",
     dealerBadge: "Bose Authorized Commercial & Residential Dealer",
     priceInfo: "Price on Consultation / Turnkey Architectural Integration",
-    image: "images/products/bose-inceiling.jpg",
+    image: "images/products/bose-inceiling.webp",
     gallery: [
-      "images/products/bose-inceiling.jpg",
-      "images/products/bose.jpg",
-      "images/gallery/theatre-01.jpg"
+      "images/products/bose-inceiling.webp",
+      "images/products/bose.webp",
+      "images/gallery/theatre-01.webp"
     ],
     tagline: "Premium Coaxial Two-Way Architectural Ceiling Speakers for Invisible Luxury Sound",
     shortDesc: "Premium architectural ceiling speakers engineered with coaxial two-way drivers for rich lows and clear, intelligible highs without visual clutter.",
@@ -169,11 +169,11 @@ const AV_PRODUCTS = [
     badge: "11.2-Channel Flagship",
     dealerBadge: "Yamaha AVENTAGE Premier Dealer",
     priceInfo: "Price on Consultation / Precision DSP Acoustic Calibration",
-    image: "images/products/yamaha.jpg",
+    image: "images/products/yamaha.webp",
     gallery: [
-      "images/products/yamaha.jpg",
-      "images/products/yamaha-receiver.jpg",
-      "images/gallery/theatre-03.jpg"
+      "images/products/yamaha.webp",
+      "images/products/yamaha-receiver.webp",
+      "images/gallery/theatre-03.webp"
     ],
     tagline: "Flagship 11.2-Channel AV Receiver with Dual ESS SABRE PRO DACs & SURROUND:AI™",
     shortDesc: "Flagship 11.2 channel AV receiver equipped with SURROUND:AI™, dual ESS SABRE PRO DACs, HDMI 2.1 8K passthrough, and Anti-Resonance Technology.",
@@ -246,11 +246,11 @@ const AV_PRODUCTS = [
     badge: "13.2-Channel Monolithic",
     dealerBadge: "Denon Flagship Certified Dealer",
     priceInfo: "Price on Consultation / Reference Installation & Tuning",
-    image: "images/products/denon.jpg",
+    image: "images/products/denon.webp",
     gallery: [
-      "images/products/denon.jpg",
-      "images/products/denon-flagship.jpg",
-      "images/gallery/theatre-04.jpg"
+      "images/products/denon.webp",
+      "images/products/denon-flagship.webp",
+      "images/gallery/theatre-04.webp"
     ],
     tagline: "Flagship 13.2-Channel Monolithic Amplifier Handcrafted in Shirakawa, Japan",
     shortDesc: "Monolithic 13.2 channel AV amplifier powering up to 7.2.6 or 9.2.4 speaker arrays with Dolby Atmos, DTS:X Pro, IMAX Enhanced, and Auro-3D.",
@@ -323,11 +323,11 @@ const AV_PRODUCTS = [
     badge: "Reference Loudspeaker",
     dealerBadge: "JBL Synthesis Certified Luxury Dealer",
     priceInfo: "Price on Consultation / Acoustic Integration Included",
-    image: "images/products/jbl-speaker.jpg",
+    image: "images/products/jbl-speaker.webp",
     gallery: [
-      "images/products/jbl-speaker.jpg",
-      "images/products/jbl-backup.jpg",
-      "images/gallery/theatre-05.jpg"
+      "images/products/jbl-speaker.webp",
+      "images/products/jbl-speaker.webp",
+      "images/gallery/theatre-05.webp"
     ],
     tagline: "High-Definition Imaging Waveguide Loudspeaker with Triple 8-Inch Matrix Woofers",
     shortDesc: "High-Definition Imaging compression horn driver loudspeaker paired with triple 8-inch Advanced Aluminum Matrix cone woofers for visceral cinema dynamics.",
@@ -400,11 +400,11 @@ const AV_PRODUCTS = [
     badge: "Reference 9.4-Channel",
     dealerBadge: "Marantz Authorized Reference Dealer",
     priceInfo: "Price on Consultation / Sound Master Calibrated",
-    image: "images/products/marantz.jpg",
+    image: "images/products/marantz.webp",
     gallery: [
-      "images/products/marantz.jpg",
-      "images/gallery/theatre-03.jpg",
-      "images/gallery/theatre-01.jpg"
+      "images/products/marantz.webp",
+      "images/gallery/theatre-03.webp",
+      "images/gallery/theatre-01.webp"
     ],
     tagline: "Reference 9.4-Channel AV Receiver with Marantz HDAM-SA2 & Dirac Live Calibration",
     shortDesc: "Premium reference 9.4 channel AV receiver featuring Marantz HDAM amplification, Dirac Live calibration, and high-resolution streaming with HEOS®.",
@@ -476,11 +476,11 @@ const AV_PRODUCTS = [
     badge: "Dolby Atmos Spatial",
     dealerBadge: "Bose Authorized Cinema Partner",
     priceInfo: "Price on Consultation / Seamless Media Room Setup",
-    image: "images/products/bose-soundbar.jpg",
+    image: "images/products/bose-soundbar.webp",
     gallery: [
-      "images/products/bose-soundbar.jpg",
-      "images/products/bose-soundbar-backup.jpg",
-      "images/gallery/theatre-02.jpg"
+      "images/products/bose-soundbar.webp",
+      "images/products/bose-inceiling.webp",
+      "images/gallery/theatre-02.webp"
     ],
     tagline: "Flagship Spatial Soundbar with Upward-Firing Dipole Transducers & AI Dialogue Mode",
     shortDesc: "Flagship soundbar with upward-firing dipole transducers, A.I. Dialogue Mode, and TrueSpace technology for multi-dimensional spatial sound in any room.",
@@ -551,11 +551,11 @@ const AV_PRODUCTS = [
     badge: "1,000W RMS Bass Engine",
     dealerBadge: "JBL Synthesis Certified Luxury Dealer",
     priceInfo: "Price on Consultation / In-Room Subwoofer Phase Alignment",
-    image: "images/products/jbl.jpg",
+    image: "images/products/jbl.webp",
     gallery: [
-      "images/products/jbl.jpg",
-      "images/products/jbl-subwoofer.jpg",
-      "images/gallery/theatre-04.jpg"
+      "images/products/jbl.webp",
+      "images/products/jbl-subwoofer.webp",
+      "images/gallery/theatre-04.webp"
     ],
     tagline: "High-Performance 1,000W RMS Powered Subwoofer with 12-Inch Poly-plas™ Woofer",
     shortDesc: "1,000 Watt RMS Class-D powered 12-inch sub with cast-aluminum frame Poly-plas™ cone, delivering thunderous bass down to 28Hz without distortion.",
@@ -627,11 +627,11 @@ const AV_PRODUCTS = [
     badge: "98-Inch Master Display",
     dealerBadge: "Sony Professional Master Display Partner",
     priceInfo: "Price on Consultation / Certified White-Glove Wall Installation",
-    image: "images/products/sony.jpg",
+    image: "images/products/sony.webp",
     gallery: [
-      "images/products/sony.jpg",
-      "images/products/sony-bravia-98.jpg",
-      "images/gallery/theatre-01.jpg"
+      "images/products/sony.webp",
+      "images/products/sony-bravia-98.webp",
+      "images/gallery/theatre-01.webp"
     ],
     tagline: "Mammoth 98-Inch 4K HDR Full Array LED Display with Cognitive Processor XR™",
     shortDesc: "Mammoth 98-inch 4K Full Array LED powered by Cognitive Processor XR™, engineered for light-filled media rooms and private viewing suites.",

@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = card.getAttribute('data-title') || 'Private Cinema Project';
         const location = card.getAttribute('data-location') || 'India';
         const desc = card.getAttribute('data-desc') || 'A bespoke residential cinema installation engineered for reference acoustic performance.';
-        const imgSrc = card.getAttribute('data-img') || 'images/hero/hero-home-theatre.jpg';
+        const imgSrc = card.getAttribute('data-img') || 'images/hero/hero-home-theatre.webp';
         const audio = card.getAttribute('data-audio') || 'Dolby Atmos 7.2.4';
         const display = card.getAttribute('data-display') || '4K HDR Laser Projection (150" Screen)';
         const acoustic = card.getAttribute('data-acoustic') || 'Diffusion & Absorption Panels, Bass Trapping';
@@ -521,6 +521,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const month = String(now.getMonth() + 1).padStart(2, '0');
       const day = String(now.getDate()).padStart(2, '0');
       dateInput.min = `${year}-${month}-${day}`;
+
+      // Open native calendar picker when user clicks anywhere on the input
+      dateInput.addEventListener('click', () => {
+        try {
+          if (typeof dateInput.showPicker === 'function') {
+            dateInput.showPicker();
+          }
+        } catch (e) {
+          // Graceful fallback if programmatic invocation is blocked by browser policy
+        }
+      });
     }
 
     const phoneInput = consultationForm.querySelector('#phoneNumber');

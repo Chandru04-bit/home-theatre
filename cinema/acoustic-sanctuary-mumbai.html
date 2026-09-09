@@ -8,6 +8,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
+
+  <!-- Preload Above-the-Fold Hero Showcase -->
+  <link rel="preload" as="image" href="../images/gallery/theatre-03.webp" type="image/webp" fetchpriority="high">
   <meta name="description" content="Explore the Acoustic Sanctuary Private Theatre project by AVÉRA CINEMA. Reference 9.4.4 Dolby Atmos, Barco 4K Cinema, and decoupled floor isolation in Bandra West, Mumbai.">
   <meta name="keywords" content="Acoustic Sanctuary Mumbai, Home Theatre Mumbai, 9.4.4 Dolby Atmos, Barco Residential, Bandra West Cinema">
 
@@ -102,7 +105,10 @@
       </div>
 
       <div class="cinema-hero-image-wrap">
-        <img src="../images/gallery/theatre-03.jpg" alt="Acoustic Sanctuary Mumbai - Reference Private Cinema Auditorium" loading="eager">
+        <picture>
+            <source type="image/webp" srcset="../images/gallery/theatre-03.webp">
+            <img src="../images/gallery/theatre-03.jpg" alt="Acoustic Sanctuary Mumbai - Reference Private Cinema Auditorium" width="1376" height="768" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
         <div class="cinema-hero-overlay-tag">
           <div class="cinema-overlay-icon"><i class="bi bi-patch-check-fill text-gold fs-4"></i></div>
           <div>

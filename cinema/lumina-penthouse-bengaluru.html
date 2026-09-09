@@ -8,6 +8,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
+
+  <!-- Preload Above-the-Fold Hero Showcase -->
+  <link rel="preload" as="image" href="../images/gallery/theatre-02.webp" type="image/webp" fetchpriority="high">
   <meta name="description" content="Explore The Lumina Penthouse Cinema project by AVÉRA CINEMA. Ultra-short-throw 4K laser projection, 120-inch ALR screen, and 5.1.2 in-wall architectural audio in Indiranagar, Bengaluru.">
   <meta name="keywords" content="The Lumina Penthouse Cinema, Bengaluru Home Theatre, Ultra Short Throw 4K Laser, ALR Screen, In-Wall Audio, Indiranagar">
 
@@ -148,7 +151,10 @@
 
       <!-- Large Cinema Showcase Image -->
       <div class="cinema-hero-image-wrap">
-        <img src="../images/gallery/theatre-02.jpg" alt="The Lumina Penthouse Cinema Bengaluru - Daylight Living Lounge" loading="eager">
+        <picture>
+            <source type="image/webp" srcset="../images/gallery/theatre-02.webp">
+            <img src="../images/gallery/theatre-02.jpg" alt="The Lumina Penthouse Cinema Bengaluru - Daylight Living Lounge" width="1376" height="768" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
         <div class="cinema-hero-overlay-tag">
           <div class="cinema-overlay-icon">
             <i class="bi bi-patch-check-fill text-gold fs-4"></i>

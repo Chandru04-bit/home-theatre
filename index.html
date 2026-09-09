@@ -8,6 +8,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="images/hero/hero-home-theatre.webp" type="image/webp" fetchpriority="high">
   <meta name="description" content="AVÉRA Cinema engineers custom luxury home theatres, Dolby Atmos surround sound, 4K laser projectors, and architectural acoustic treatments.">
   
   <!-- Open Graph Metadata -->
@@ -160,7 +163,10 @@
         <div class="hero-split-image-col hero-image-col">
           <div class="hero-image-card-wrapper hero-image-wrapper">
             <div class="hero-image-card">
-              <img src="images/hero/hero-home-theatre.jpg" alt="Luxury Home Cinema Installation" class="hero-card-img" width="1200" height="800" loading="eager" fetchpriority="high">
+              <picture>
+                <source type="image/webp" srcset="images/hero/hero-home-theatre-md.webp 640w, images/hero/hero-home-theatre.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/hero/hero-home-theatre.jpg" alt="Luxury Home Cinema Installation" class="hero-card-img" width="1200" height="896" loading="eager" fetchpriority="high" decoding="async">
+              </picture>
             </div>
             <!-- Small Floating Information Card Overlapping Bottom Corner -->
             <div class="hero-floating-badge" aria-label="500+ Premium Installations">
@@ -221,7 +227,10 @@
         <!-- Left Column: 50% Image -->
         <div class="intro-split-col intro-image-col reveal-left">
           <div class="intro-img-card">
-            <img src="images/hero/hero-audio-system.jpg" alt="Architectural reference cinema loudspeaker and acoustic isolation environment" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="images/hero/hero-audio-system-md.webp 640w, images/hero/hero-audio-system.webp 896w" sizes="(max-width: 768px) 100vw, 50vw">
+              <img src="images/hero/hero-audio-system.jpg" alt="Architectural reference cinema loudspeaker and acoustic isolation environment" width="896" height="1200" loading="lazy" decoding="async">
+            </picture>
             <div class="intro-badge-overlay">
               <span class="d-block text-gold fw-bold small text-uppercase">Precision Audio</span>
               <span class="text-dark-primary fw-semibold small">Engineered Acoustic Performance</span>
@@ -310,7 +319,10 @@
         <div class="col-md-6 col-lg-4 reveal-on-scroll">
           <div class="service-card">
             <div class="service-card-img-wrapper">
-              <img src="images/services/surround-sound.jpg" alt="Surround sound speaker installation" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/services/surround-sound-md.webp 640w, images/services/surround-sound.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="images/services/surround-sound.jpg" alt="Surround sound speaker installation" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title">Surround Sound Installation</h3>
@@ -328,7 +340,10 @@
         <div class="col-md-6 col-lg-4 reveal-on-scroll">
           <div class="service-card">
             <div class="service-card-img-wrapper">
-              <img src="images/services/projector-setup.jpg" alt="4K HDR Projector and display setup" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/services/projector-setup-md.webp 640w, images/services/projector-setup.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="images/services/projector-setup.jpg" alt="4K HDR Projector and display setup" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title">Projector & Display Setup</h3>
@@ -346,7 +361,10 @@
         <div class="col-md-6 col-lg-4 reveal-on-scroll">
           <div class="service-card">
             <div class="service-card-img-wrapper">
-              <img src="images/services/acoustic-treatment.jpg" alt="Acoustic panels and sound treatment" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/services/acoustic-treatment-md.webp 640w, images/services/acoustic-treatment.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="images/services/acoustic-treatment.jpg" alt="Acoustic panels and sound treatment" width="1200" height="896" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title">Acoustic Treatment</h3>
@@ -558,7 +576,10 @@
         <div class="col-md-6 col-lg-4 reveal-on-scroll">
           <a href="cinema/private-cinema-chennai.html" class="gallery-card d-block text-decoration-none" title="View Private Cinema — Chennai Details">
             <div class="gallery-img-wrap">
-              <img src="images/gallery/theatre-01.jpg" alt="Private Cinema Chennai installation" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/theatre-01-md.webp 640w, images/gallery/theatre-01.webp 1376w" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="images/gallery/theatre-01.jpg" alt="Private Cinema Chennai installation" width="1376" height="768" loading="lazy" decoding="async">
+              </picture>
               <div class="gallery-view-icon">
                 <i class="bi bi-arrow-up-right"></i>
               </div>
@@ -577,7 +598,10 @@
         <div class="col-md-6 col-lg-4 reveal-on-scroll">
           <a href="cinema/lumina-penthouse-bengaluru.html" class="gallery-card d-block text-decoration-none" title="View The Lumina Penthouse Cinema Details">
             <div class="gallery-img-wrap">
-              <img src="images/gallery/theatre-02.jpg" alt="Lumina Lounge Bengaluru installation" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/theatre-02-md.webp 640w, images/gallery/theatre-02.webp 1376w" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="images/gallery/theatre-02.jpg" alt="Lumina Lounge Bengaluru installation" width="1376" height="768" loading="lazy" decoding="async">
+              </picture>
               <div class="gallery-view-icon">
                 <i class="bi bi-arrow-up-right"></i>
               </div>
@@ -596,7 +620,10 @@
         <div class="col-md-6 col-lg-4 reveal-on-scroll">
           <a href="cinema/acoustic-sanctuary-mumbai.html" class="gallery-card d-block text-decoration-none" title="View Acoustic Sanctuary Private Theatre Details">
             <div class="gallery-img-wrap">
-              <img src="images/gallery/theatre-03.jpg" alt="Acoustic Sanctuary Mumbai installation" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/theatre-03-md.webp 640w, images/gallery/theatre-03.webp 1376w" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="images/gallery/theatre-03.jpg" alt="Acoustic Sanctuary Mumbai installation" width="1376" height="768" loading="lazy" decoding="async">
+              </picture>
               <div class="gallery-view-icon">
                 <i class="bi bi-arrow-up-right"></i>
               </div>
@@ -883,7 +910,7 @@
         </div>
         <div class="modal-body modal-body-custom">
           <div class="mb-4 rounded overflow-hidden border border-beige">
-            <img id="galleryModalImage" src="images/gallery/theatre-01.jpg" alt="Installation showcase" class="w-100 object-fit-cover" style="max-height: 400px;">
+            <img id="galleryModalImage" src="images/gallery/theatre-01.webp" alt="Installation showcase" class="w-100 object-fit-cover rounded" width="1376" height="768" loading="lazy" decoding="async">
           </div>
           <p id="galleryModalDesc" class="text-secondary mb-4">Project description and room architecture details.</p>
           

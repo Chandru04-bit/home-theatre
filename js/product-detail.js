@@ -188,13 +188,18 @@
     // Take top 3
     related = related.slice(0, 3);
 
-    container.innerHTML = related.map(rel => `
+    container.innerHTML = related.map(rel => {
+      const thumb = (rel.image || '').replace(/\.webp$/i, '-md.webp');
+      return `
       <div class="col-md-6 col-lg-4">
         <div class="product-card related-product-card" data-product-url="product-details.html?id=${escapeHtml(rel.id)}">
           <a href="product-details.html?id=${escapeHtml(rel.id)}" class="product-card-img-wrap d-block text-decoration-none">
             <span class="product-brand-tag">${escapeHtml(rel.brand)}</span>
             <span class="product-category-tag">${escapeHtml(rel.category)}</span>
-            <img src="${escapeHtml(rel.image)}" alt="${escapeHtml(rel.name)}" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="${escapeHtml(thumb)} 640w, ${escapeHtml(rel.image)} 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+              <img src="${escapeHtml(rel.image)}" alt="${escapeHtml(rel.name)}" width="1200" height="896" loading="lazy" decoding="async">
+            </picture>
           </a>
           <div class="product-card-body">
             <h3 class="product-name">
@@ -216,7 +221,8 @@
           </div>
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     // Attach card click handlers to related product cards
     container.querySelectorAll('.product-card').forEach(card => {
