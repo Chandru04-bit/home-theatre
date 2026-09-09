@@ -48,7 +48,7 @@
     if (!product) return;
 
     // 1. Update Document Title and Meta Tags
-    document.title = `${product.name} | AVÉRA Cinema`;
+    document.title = 'Home Theatre Installation';
 
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
