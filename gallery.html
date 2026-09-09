@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Theatre Installation Gallery | AVÉRA Cinema</title>
+  <meta name="description" content="Explore our portfolio of bespoke luxury private cinemas, Dolby Atmos residential auditoriums, and architectural acoustic sanctuaries across India.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Home Theatre Installation Gallery | AVÉRA Cinema">
+  <meta property="og:description" content="Explore our portfolio of bespoke luxury private cinemas, Dolby Atmos residential auditoriums, and architectural acoustic sanctuaries.">
+  <meta property="og:image" content="images/gallery/theatre-01.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Light Luxury Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header (Brand Title & Close Button) - Mobile Only -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <!-- Divider visible on mobile -->
+          <hr class="nav-mobile-divider d-lg-none my-2">
+
+          <!-- Controls Group (RTL & Theme Toggles) -->
+          <div class="nav-toggles-group">
+            <!-- 1. RTL / LTR Direction Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+
+            <!-- 2. Light / Dark Mode Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+
+          <!-- 3. Sign In Button ([ 👤 SIGN IN ]) -->
+          <a href="signin.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer Dimmed Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       PAGE HERO (LIGHT LUXURY)
+       ======================================================================== -->
+  <header class="page-hero">
+    <div class="container-custom text-center page-hero-content">
+      <span class="section-tag d-inline-flex mb-3">COMPLETED PROJECTS</span>
+      <h1 class="page-hero-title">Installation Showcase</h1>
+      <p class="page-hero-subtitle">
+        Immerse yourself in our curated portfolio of residential screening rooms, audiophile listening suites, and architectural media spaces.
+      </p>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       GALLERY SECTION (#F5F1E8 Warm Cream + White Cards)
+       ======================================================================== -->
+  <main class="py-5 bg-warm-cream">
+    <div class="container-custom">
+      
+      <!-- Category Filter Tabs -->
+      <div class="text-center mb-5">
+        <div class="filter-nav-wrap">
+          <button class="filter-btn gallery-filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="home-theatres">Home Theatres</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="audio-systems">Audio Systems</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="projectors">Projectors</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="acoustic-treatment">Acoustic Treatment</button>
+        </div>
+      </div>
+
+      <!-- Gallery Cards Grid (White Cards with Thin Beige Borders) -->
+      <div class="row g-4" id="galleryGrid">
+        
+        <!-- Project 01 -->
+        <div class="col-md-6 col-lg-4 gallery-grid-item" data-category="home-theatres">
+          <a href="cinema/private-cinema-chennai.html" class="gallery-card d-block text-decoration-none" title="View The Sovereign Screening Suite Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-01.jpg" alt="Luxury private cinema in Chennai" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Home Theatres</div>
+              <h3 class="gallery-card-title">The Sovereign Screening Suite</h3>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-geo-alt"></i> Chennai</span>
+                <span><i class="bi bi-speaker ms-2"></i> 7.2.4 Dolby Atmos</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="col-md-6 col-lg-4 gallery-grid-item" data-category="projectors">
+          <a href="cinema/lumina-penthouse-bengaluru.html" class="gallery-card d-block text-decoration-none" title="View The Lumina Penthouse Cinema Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-02.jpg" alt="Modern home cinema seating in Bengaluru" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Projectors</div>
+              <h3 class="gallery-card-title">The Lumina Penthouse Cinema</h3>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-geo-alt"></i> Bengaluru</span>
+                <span><i class="bi bi-projector ms-2"></i> 4K Laser UST</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 03 -->
+        <div class="col-md-6 col-lg-4 gallery-grid-item" data-category="home-theatres">
+          <a href="cinema/acoustic-sanctuary-mumbai.html" class="gallery-card d-block text-decoration-none" title="View Acoustic Sanctuary Private Theatre Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-03.jpg" alt="Cinema auditorium screen in Mumbai" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Home Theatres</div>
+              <h3 class="gallery-card-title">Acoustic Sanctuary Theatre</h3>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-geo-alt"></i> Mumbai</span>
+                <span><i class="bi bi-speaker ms-2"></i> 9.4.4 Master Setup</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 04 -->
+        <div class="col-md-6 col-lg-4 gallery-grid-item" data-category="audio-systems">
+          <a href="cinema/audiophile-listening-room-hyderabad.html" class="gallery-card d-block text-decoration-none" title="View Audiophile Listening Room Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-04.jpg" alt="Luxury audiophile listening room with reference tower loudspeakers in Jubilee Hills, Hyderabad" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Audio Systems</div>
+              <h3 class="gallery-card-title">Audiophile Listening Room</h3>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-geo-alt"></i> Hyderabad</span>
+                <span><i class="bi bi-disc ms-2"></i> Pure Class-A Hi-Fi</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 05 -->
+        <div class="col-md-6 col-lg-4 gallery-grid-item" data-category="acoustic-treatment">
+          <a href="cinema/timber-acoustics-kochi.html" class="gallery-card d-block text-decoration-none" title="View Timber Acoustics Screening Room Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-05.jpg" alt="Timber Acoustics screening room with architectural teak slatted panels in Panampilly Nagar, Kochi" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Acoustic Treatment</div>
+              <h3 class="gallery-card-title">Timber Acoustics Screening Room</h3>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-geo-alt"></i> Kochi</span>
+                <span><i class="bi bi-soundwave ms-2"></i> Teak Slatted Panels</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 06 -->
+        <div class="col-md-6 col-lg-4 gallery-grid-item" data-category="home-theatres">
+          <a href="cinema/celestial-starlight-delhi.html" class="gallery-card d-block text-decoration-none" title="View Celestial Starlight Cinema Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-06.jpg" alt="Starry lighting home theatre in New Delhi" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Home Theatres</div>
+              <h3 class="gallery-card-title">Celestial Starlight Cinema</h3>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-geo-alt"></i> New Delhi</span>
+                <span><i class="bi bi-stars ms-2"></i> 9.2.4 Atmos + Starlight</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       GALLERY PROJECT DETAILS MODAL (CLEAN WHITE CARD)
+       ======================================================================== -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom">
+          <div>
+            <h3 class="modal-title h5 text-dark-primary mb-1" id="galleryModalTitle">Private Cinema Project</h3>
+            <span class="small text-gold" id="galleryModalLocation"><i class="bi bi-geo-alt me-1"></i> Location</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <div class="mb-4 rounded overflow-hidden border border-beige">
+            <img id="galleryModalImage" src="images/gallery/theatre-01.jpg" alt="Project detail showcase" class="w-100 object-fit-cover" style="max-height: 420px;">
+          </div>
+          <p id="galleryModalDesc" class="text-secondary mb-4">
+            A bespoke private screening room engineered for reference audio-visual performance and complete acoustic isolation.
+          </p>
+          
+          <h4 class="h6 text-uppercase text-gold letter-spacing mb-3">System Specifications</h4>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="modal-spec-box">
+                <div class="label">Audio Configuration</div>
+                <div class="value" id="galleryModalAudio">7.2.4 Dolby Atmos</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="modal-spec-box">
+                <div class="label">Display System</div>
+                <div class="value" id="galleryModalDisplay">4K Laser UST</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="modal-spec-box">
+                <div class="label">Acoustics & Isolation</div>
+                <div class="value" id="galleryModalAcoustic">Decoupled Walls</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-4 pt-3 border-top border-beige d-flex justify-content-end">
+            <a href="contact.html" class="btn btn-gold btn-sm-custom">
+              Enquire About Similar Project <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       LARGE CTA BANNER (#F5F1E8 Warm Cream)
+       ======================================================================== -->
+  <section class="cta-banner-section bg-warm-cream">
+    <div class="container-custom">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 reveal-on-scroll">
+          <span class="section-tag d-inline-flex mb-3">BESPOKE ARCHITECTURE</span>
+          <h2 class="cta-title">Bring This Level of Craft to Your Home</h2>
+          <p class="cta-text">
+            Every home theatre we create is an original masterpiece engineered specifically for your floorplan, acoustics, and aesthetic preferences.
+          </p>
+          <a href="contact.html" class="btn btn-gold">
+            <i class="bi bi-calendar-event"></i> Book an On-Site Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (#E8E2D8 Soft Beige)
+       ======================================================================== -->
+  <footer class="footer-custom bg-soft-beige">
+    <div class="container-custom">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="brand-logo-container" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Pioneering private cinema engineering, Dolby Atmos acoustics, and state-of-the-art audiovisual solutions for luxury residences and connoisseurs.
+          </p>
+          <div class="footer-social-links" aria-label="AVÉRA Cinema Social Profiles">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Follow AVÉRA Cinema on Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="Connect with AVÉRA Cinema on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Like AVÉRA Cinema on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="Subscribe to AVÉRA Cinema on YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#surround-sound">Surround Sound</a></li>
+            <li><a href="services.html#projector-setup">Projector Setup</a></li>
+            <li><a href="services.html#acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="services.html#custom-cinema">Custom Cinema</a></li>
+            <li><a href="services.html#receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div>
+          Engineered for Reference Audio & Visual Excellence.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

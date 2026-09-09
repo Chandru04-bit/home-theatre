@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Home Theatre Consultation | AVÉRA Cinema</title>
+  <meta name="description" content="Book a private consultation with AVÉRA Cinema's acoustic and visual engineers. In-home assessment, acoustic planning, and turnkey home theatre design.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Book a Home Theatre Consultation | AVÉRA Cinema">
+  <meta property="og:description" content="Let's design an entertainment experience around the way you live. Book an on-site consultation today.">
+  <meta property="og:image" content="images/hero/hero-home-theatre.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Light Luxury Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header (Brand Title & Close Button) - Mobile Only -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <!-- Divider visible on mobile -->
+          <hr class="nav-mobile-divider d-lg-none my-2">
+
+          <!-- Controls Group (RTL & Theme Toggles) -->
+          <div class="nav-toggles-group">
+            <!-- 1. RTL / LTR Direction Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+
+            <!-- 2. Light / Dark Mode Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+
+          <!-- 3. Sign In Button ([ 👤 SIGN IN ]) -->
+          <a href="signin.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer Dimmed Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       PAGE HERO (LIGHT LUXURY)
+       ======================================================================== -->
+  <header class="page-hero">
+    <div class="container-custom text-center page-hero-content">
+      <span class="section-tag d-inline-flex mb-3">LET'S CREATE YOUR CINEMA</span>
+      <h1 class="page-hero-title">Book Your Consultation</h1>
+      <p class="page-hero-subtitle">
+        Collaborate directly with our master sound designers and visual architects to craft a private entertainment sanctuary tailored to your residence.
+      </p>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       CONTACT SECTION (#F8F6F1 + Pure White Form Card)
+       ======================================================================== -->
+  <main class="contact-section bg-ivory">
+    <div class="container-custom">
+      <div class="row g-5">
+        
+        <!-- Left Column: Studio Details (White Luxury Card) -->
+        <div class="col-lg-5 reveal-left">
+          <div class="contact-info-card">
+            <span class="section-tag mb-3">DIRECT CONTACT</span>
+            <h2 class="h3 text-dark-primary fw-semibold mb-4">Our Experience Studio</h2>
+            <p class="text-secondary mb-4">
+              Visit our reference listening lounge in Chennai to experience live Dolby Atmos demonstrations, laser projector shoots, and acoustic wall finishes.
+            </p>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Studio Address</div>
+                <p class="contact-info-val">
+                  42 Kothari Road, Nungambakkam,<br>
+                  Chennai, Tamil Nadu 600034, India
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Phone & Concierge</div>
+                <p class="contact-info-val">
+                  <a href="tel:+919840012345" class="text-dark-primary text-decoration-none">+91 98400 12345</a><br>
+                  <a href="tel:+914428234567" class="text-secondary text-decoration-none small">+91 44 2823 4567</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Electronic Mail</div>
+                <p class="contact-info-val">
+                  <a href="mailto:concierge@averacinema.com" class="text-dark-primary text-decoration-none">concierge@averacinema.com</a><br>
+                  <a href="mailto:projects@averacinema.com" class="text-secondary text-decoration-none small">projects@averacinema.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="bi bi-clock"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Operating Hours</div>
+                <p class="contact-info-val">
+                  Monday – Saturday: 10:00 AM – 7:30 PM<br>
+                  <span class="text-secondary small">Sunday: By Exclusive Appointment</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-top border-beige">
+              <span class="small text-gold text-uppercase fw-bold letter-spacing d-block mb-2">Service Radius</span>
+              <p class="text-secondary small mb-0">
+                Direct turnkey installations across Chennai, Bengaluru, Hyderabad, Mumbai, Kochi, Coimbatore, and Pan-India.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Consultation Form (Pure White Luxury Card) -->
+        <div class="col-lg-7 reveal-right">
+          <div class="form-card">
+            <span class="section-tag mb-2">INITIAL ASSESSMENT</span>
+            <h2 class="h3 fw-semibold mb-4">Request Project Consultation</h2>
+            
+            <form id="consultationForm" class="needs-validation" novalidate>
+              
+              <div class="row g-3">
+                <!-- Full Name -->
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label form-label-custom">Full Name *</label>
+                  <input type="text" class="form-control form-control-custom" id="fullName" required placeholder="e.g. Vikramaditya Rao">
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="col-md-6">
+                  <label for="phoneNumber" class="form-label form-label-custom">Phone Number *</label>
+                  <input type="tel" class="form-control form-control-custom" id="phoneNumber" required placeholder="e.g. +91 98400 12345">
+                  <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="col-md-6">
+                  <label for="emailAddress" class="form-label form-label-custom">Email Address *</label>
+                  <input type="email" class="form-control form-control-custom" id="emailAddress" required placeholder="name@domain.com">
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <!-- City / Location -->
+                <div class="col-md-6">
+                  <label for="cityLocation" class="form-label form-label-custom">City / Location *</label>
+                  <input type="text" class="form-control form-control-custom" id="cityLocation" required placeholder="e.g. Chennai, Boat Club Road">
+                  <div class="invalid-feedback">Please provide your city or neighborhood.</div>
+                </div>
+
+                <!-- Service Required -->
+                <div class="col-md-6">
+                  <label for="serviceRequired" class="form-label form-label-custom">Service Required *</label>
+                  <select class="form-select form-select-custom" id="serviceRequired" required>
+                    <option value="" selected disabled>Select primary service...</option>
+                    <option value="Surround Sound Installation">Surround Sound Installation</option>
+                    <option value="Projector Setup">Projector Setup</option>
+                    <option value="Acoustic Treatment">Acoustic Treatment</option>
+                    <option value="Complete Home Theatre">Complete Home Theatre</option>
+                    <option value="AV System Upgrade">AV System Upgrade</option>
+                    <option value="Other">Other Bespoke Requirement</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a service requirement.</div>
+                </div>
+
+                <!-- Budget Range -->
+                <div class="col-md-6">
+                  <label for="budgetRange" class="form-label form-label-custom">Budget Range *</label>
+                  <select class="form-select form-select-custom" id="budgetRange" required>
+                    <option value="" selected disabled>Select approximate budget...</option>
+                    <option value="₹1 Lakh – ₹3 Lakh">₹1 Lakh – ₹3 Lakh</option>
+                    <option value="₹3 Lakh – ₹5 Lakh">₹3 Lakh – ₹5 Lakh</option>
+                    <option value="₹5 Lakh – ₹10 Lakh">₹5 Lakh – ₹10 Lakh</option>
+                    <option value="₹10 Lakh+">₹10 Lakh+</option>
+                    <option value="Not Sure">Not Sure / Undecided</option>
+                  </select>
+                  <div class="invalid-feedback">Please select an estimated budget tier.</div>
+                </div>
+
+                <!-- Preferred Date -->
+                <div class="col-md-6">
+                  <label for="preferredDate" class="form-label form-label-custom">Preferred Consultation Date *</label>
+                  <input type="date" class="form-control form-control-custom" id="preferredDate" required>
+                  <div class="invalid-feedback">Please select a valid future date.</div>
+                </div>
+
+                <!-- Preferred Time -->
+                <div class="col-md-6">
+                  <label for="preferredTime" class="form-label form-label-custom">Preferred Time Slot *</label>
+                  <select class="form-select form-select-custom" id="preferredTime" required>
+                    <option value="" selected disabled>Select time slot...</option>
+                    <option value="Morning (10:00 AM – 1:00 PM)">Morning (10:00 AM – 1:00 PM)</option>
+                    <option value="Afternoon (1:00 PM – 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
+                    <option value="Evening (4:00 PM – 7:30 PM)">Evening (4:00 PM – 7:30 PM)</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a preferred consultation window.</div>
+                </div>
+
+                <!-- Message -->
+                <div class="col-12">
+                  <label for="projectMessage" class="form-label form-label-custom">Room Details & Vision</label>
+                  <textarea class="form-control form-control-custom" id="projectMessage" rows="4" placeholder="Mention room dimensions (length, width, ceiling height), dedicated room vs living space, existing audio equipment, or specific acoustic goals..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-gold w-100 py-3">
+                    <i class="bi bi-calendar2-check"></i> Request Consultation
+                  </button>
+                  <p class="text-secondary text-center small mt-2 mb-0">
+                    <i class="bi bi-shield-lock text-gold me-1"></i> Your personal contact information is protected and never shared.
+                  </p>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Studio Location Map Section -->
+      <div class="mt-5 pt-4">
+        <div class="text-center mb-4">
+          <span class="section-tag">FIND US</span>
+          <h2 class="h4 text-dark-primary">Experience Studio Location</h2>
+        </div>
+        <div class="map-container">
+          <iframe 
+            title="AVÉRA Cinema Experience Studio Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.726207198782!2d80.23761767590897!3d13.053154813083437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665893ad7697%3A0xe5a3cbb5b1f061e!2sNungambakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1709800000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       CONSULTATION SUCCESS CONFIRMATION MODAL (LIGHT THEME)
+       ======================================================================== -->
+  <div class="modal fade" id="consultationSuccessModal" tabindex="-1" aria-labelledby="successModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-custom text-center p-4">
+        <div class="my-2">
+          <div class="d-inline-flex align-items-center justify-content-center bg-white border border-beige rounded-circle p-3 text-gold fs-1 mb-3 shadow-sm">
+            <i class="bi bi-check2-circle"></i>
+          </div>
+          <h3 class="h4 text-dark-primary fw-semibold mb-2" id="successModalTitle">Consultation Request Received</h3>
+          <p class="text-secondary mb-4" id="successModalMessage">
+            Thank you, <strong class="text-dark-primary" id="summaryName">Client</strong>! Our acoustic and visual engineering team has received your request and will contact you shortly to confirm your consultation.
+          </p>
+
+          <div class="bg-ivory border border-beige rounded p-3 text-start mb-4">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-secondary small">Service:</span>
+              <span class="text-dark-primary small fw-bold" id="summaryService">Surround Sound Installation</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-secondary small">Location:</span>
+              <span class="text-dark-primary small fw-bold" id="summaryCity">Chennai</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-secondary small">Requested Date:</span>
+              <span class="text-gold small fw-bold" id="summaryDate">2026-09-15</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-gold w-100" data-bs-dismiss="modal">
+            Close & Return to Website
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (SOFT BEIGE #E8E2D8)
+       ======================================================================== -->
+  <footer class="footer-custom bg-soft-beige">
+    <div class="container-custom">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="brand-logo-container" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Pioneering private cinema engineering, Dolby Atmos acoustics, and state-of-the-art audiovisual solutions for luxury residences and connoisseurs.
+          </p>
+          <div class="footer-social-links" aria-label="AVÉRA Cinema Social Profiles">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Follow AVÉRA Cinema on Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="Connect with AVÉRA Cinema on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Like AVÉRA Cinema on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="Subscribe to AVÉRA Cinema on YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#surround-sound">Surround Sound</a></li>
+            <li><a href="services.html#projector-setup">Projector Setup</a></li>
+            <li><a href="services.html#acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="services.html#custom-cinema">Custom Cinema</a></li>
+            <li><a href="services.html#receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div>
+          Engineered for Reference Audio & Visual Excellence.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Product Data Catalog -->
+  <script src="js/products-data.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

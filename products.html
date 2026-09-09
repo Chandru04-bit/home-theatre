@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium AV Brands & Equipment | AVÉRA Cinema</title>
+  <meta name="description" content="Discover reference-grade home cinema and audio equipment from Sony, Bose, Yamaha, Denon, JBL, and Marantz. Request pricing and custom system quotes.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Premium AV Brands & Equipment | AVÉRA Cinema">
+  <meta property="og:description" content="Technology from brands trusted by audio enthusiasts worldwide. Reference 4K projectors, Atmos receivers, and architectural speakers.">
+  <meta property="og:image" content="images/products/sony.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Light Luxury Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header (Brand Title & Close Button) - Mobile Only -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <!-- Divider visible on mobile -->
+          <hr class="nav-mobile-divider d-lg-none my-2">
+
+          <!-- Controls Group (RTL & Theme Toggles) -->
+          <div class="nav-toggles-group">
+            <!-- 1. RTL / LTR Direction Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+
+            <!-- 2. Light / Dark Mode Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+
+          <!-- 3. Sign In Button ([ 👤 SIGN IN ]) -->
+          <a href="signin.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer Dimmed Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       PAGE HERO (LIGHT LUXURY)
+       ======================================================================== -->
+  <header class="page-hero">
+    <div class="container-custom text-center page-hero-content">
+      <span class="section-tag d-inline-flex mb-3">PREMIUM EQUIPMENT</span>
+      <h1 class="page-hero-title">World-Class Technology</h1>
+      <p class="page-hero-subtitle">
+        Technology from brands trusted by enthusiasts and recording studios worldwide. Curated and calibrated for reference home theatre performance.
+      </p>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       PRODUCTS SECTION (#F8F6F1 + Pure White Cards)
+       ======================================================================== -->
+  <main class="products-section-wrap bg-ivory">
+    <div class="container-custom">
+      
+      <!-- Category Filter Navigation -->
+      <div class="text-center mb-5">
+        <span class="small text-secondary fw-bold text-uppercase letter-spacing d-block mb-2">Filter by Category</span>
+        <div class="filter-nav-wrap">
+          <button class="filter-btn category-filter-btn active" data-filter-category="all">All Categories</button>
+          <button class="filter-btn category-filter-btn" data-filter-category="projectors">Projectors</button>
+          <button class="filter-btn category-filter-btn" data-filter-category="receivers">AV Receivers</button>
+          <button class="filter-btn category-filter-btn" data-filter-category="speakers">Speakers</button>
+          <button class="filter-btn category-filter-btn" data-filter-category="subwoofers">Subwoofers</button>
+          <button class="filter-btn category-filter-btn" data-filter-category="soundbars">Soundbars</button>
+          <button class="filter-btn category-filter-btn" data-filter-category="displays">Displays</button>
+        </div>
+      </div>
+
+      <!-- Products Grid (Pure White Cards with Thin Beige Borders) -->
+      <div class="row g-4" id="productsGrid">
+        
+        <!-- Product 1: Sony Projector -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="sony" data-category="projectors">
+          <div class="product-card" data-product-url="product-details.html?id=sony-vpl-xw5000es">
+            <a href="product-details.html?id=sony-vpl-xw5000es" class="product-card-img-wrap d-block text-decoration-none" title="View Sony VPL-XW5000ES Details">
+              <span class="product-brand-tag">Sony</span>
+              <span class="product-category-tag">Projectors</span>
+              <img src="images/products/sony-projector.jpg" alt="Sony VPL-XW5000ES 4K Laser Projector" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=sony-vpl-xw5000es" class="product-title-link text-decoration-none">
+                  Sony VPL-XW5000ES
+                </a>
+              </h3>
+              <p class="product-desc">
+                Compact native 4K SXRD laser home cinema projector with 2,000 lumens brightness, HDR Enhancer, and Triluminos Pro color processing.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=sony-vpl-xw5000es" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Bose Speakers -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="bose" data-category="speakers">
+          <div class="product-card" data-product-url="product-details.html?id=bose-designmax">
+            <a href="product-details.html?id=bose-designmax" class="product-card-img-wrap d-block text-decoration-none" title="View Bose DesignMax Details">
+              <span class="product-brand-tag">Bose</span>
+              <span class="product-category-tag">Speakers</span>
+              <img src="images/products/bose-inceiling.jpg" alt="Bose DesignMax Architectural In-Ceiling Speakers" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=bose-designmax" class="product-title-link text-decoration-none">
+                  Bose DesignMax In-Ceiling
+                </a>
+              </h3>
+              <p class="product-desc">
+                Premium architectural ceiling speakers engineered with coaxial two-way drivers for rich lows and clear, intelligible highs without visual clutter.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=bose-designmax" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Yamaha Receiver -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="yamaha" data-category="receivers">
+          <div class="product-card" data-product-url="product-details.html?id=yamaha-aventage-rx-a8a">
+            <a href="product-details.html?id=yamaha-aventage-rx-a8a" class="product-card-img-wrap d-block text-decoration-none" title="View Yamaha AVENTAGE RX-A8A Details">
+              <span class="product-brand-tag">Yamaha</span>
+              <span class="product-category-tag">Receivers</span>
+              <img src="images/products/yamaha.jpg" alt="Yamaha AVENTAGE RX-A8A 11.2 Channel AV Receiver" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=yamaha-aventage-rx-a8a" class="product-title-link text-decoration-none">
+                  Yamaha AVENTAGE RX-A8A
+                </a>
+              </h3>
+              <p class="product-desc">
+                Flagship 11.2 channel AV receiver equipped with SURROUND:AI™, dual ESS SABRE PRO DACs, HDMI 2.1 8K passthrough, and Anti-Resonance Technology.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=yamaha-aventage-rx-a8a" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Denon Receiver -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="denon" data-category="receivers">
+          <div class="product-card" data-product-url="product-details.html?id=denon-avc-x8500ha">
+            <a href="product-details.html?id=denon-avc-x8500ha" class="product-card-img-wrap d-block text-decoration-none" title="View Denon AVC-X8500HA Details">
+              <span class="product-brand-tag">Denon</span>
+              <span class="product-category-tag">Receivers</span>
+              <img src="images/products/denon.jpg" alt="Denon AVC-X8500HA Flagship 13.2 Channel Amplifier" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=denon-avc-x8500ha" class="product-title-link text-decoration-none">
+                  Denon AVC-X8500HA
+                </a>
+              </h3>
+              <p class="product-desc">
+                Monolithic 13.2 channel AV amplifier powering up to 7.2.6 or 9.2.4 speaker arrays with Dolby Atmos, DTS:X Pro, IMAX Enhanced, and Auro-3D.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=denon-avc-x8500ha" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: JBL Speakers -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="jbl" data-category="speakers">
+          <div class="product-card" data-product-url="product-details.html?id=jbl-synthesis-hdi-3800">
+            <a href="product-details.html?id=jbl-synthesis-hdi-3800" class="product-card-img-wrap d-block text-decoration-none" title="View JBL Synthesis HDI-3800 Details">
+              <span class="product-brand-tag">JBL</span>
+              <span class="product-category-tag">Speakers</span>
+              <img src="images/products/jbl-speaker.jpg" alt="JBL Synthesis HDI-3800 Floorstanding Loudspeaker" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=jbl-synthesis-hdi-3800" class="product-title-link text-decoration-none">
+                  JBL Synthesis HDI-3800
+                </a>
+              </h3>
+              <p class="product-desc">
+                High-Definition Imaging compression horn driver loudspeaker paired with triple 8-inch Advanced Aluminum Matrix cone woofers for visceral cinema dynamics.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=jbl-synthesis-hdi-3800" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Marantz Cinema -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="marantz" data-category="receivers">
+          <div class="product-card" data-product-url="product-details.html?id=marantz-cinema-40">
+            <a href="product-details.html?id=marantz-cinema-40" class="product-card-img-wrap d-block text-decoration-none" title="View Marantz Cinema 40 Details">
+              <span class="product-brand-tag">Marantz</span>
+              <span class="product-category-tag">Receivers</span>
+              <img src="images/products/marantz.jpg" alt="Marantz Cinema 40 Reference 9.4 Channel Receiver" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=marantz-cinema-40" class="product-title-link text-decoration-none">
+                  Marantz Cinema 40
+                </a>
+              </h3>
+              <p class="product-desc">
+                Premium reference 9.4 channel AV receiver featuring Marantz HDAM amplification, Dirac Live calibration, and high-resolution streaming with HEOS®.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=marantz-cinema-40" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Bose Soundbar -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="bose" data-category="soundbars">
+          <div class="product-card" data-product-url="product-details.html?id=bose-smart-ultra-soundbar">
+            <a href="product-details.html?id=bose-smart-ultra-soundbar" class="product-card-img-wrap d-block text-decoration-none" title="View Bose Smart Ultra Soundbar Details">
+              <span class="product-brand-tag">Bose</span>
+              <span class="product-category-tag">Soundbars</span>
+              <img src="images/products/bose-soundbar.jpg" alt="Bose Smart Ultra Soundbar with Dolby Atmos" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=bose-smart-ultra-soundbar" class="product-title-link text-decoration-none">
+                  Bose Smart Ultra Soundbar
+                </a>
+              </h3>
+              <p class="product-desc">
+                Flagship soundbar with upward-firing dipole transducers, A.I. Dialogue Mode, and TrueSpace technology for multi-dimensional spatial sound in any room.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=bose-smart-ultra-soundbar" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: JBL Subwoofer -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="jbl" data-category="subwoofers">
+          <div class="product-card" data-product-url="product-details.html?id=jbl-hdi-1200p-subwoofer">
+            <a href="product-details.html?id=jbl-hdi-1200p-subwoofer" class="product-card-img-wrap d-block text-decoration-none" title="View JBL HDI-1200P Details">
+              <span class="product-brand-tag">JBL</span>
+              <span class="product-category-tag">Subwoofers</span>
+              <img src="images/products/jbl.jpg" alt="JBL Synthesis HDI-1200P Powered Subwoofer" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=jbl-hdi-1200p-subwoofer" class="product-title-link text-decoration-none">
+                  JBL HDI-1200P Subwoofer
+                </a>
+              </h3>
+              <p class="product-desc">
+                1,000 Watt RMS Class-D powered 12-inch sub with cast-aluminum frame Poly-plas™ cone, delivering thunderous bass down to 28Hz without distortion.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=jbl-hdi-1200p-subwoofer" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9: Sony Cinema Display -->
+        <div class="col-md-6 col-lg-4 product-item" data-brand="sony" data-category="displays">
+          <div class="product-card" data-product-url="product-details.html?id=sony-bravia-xr-98">
+            <a href="product-details.html?id=sony-bravia-xr-98" class="product-card-img-wrap d-block text-decoration-none" title="View Sony BRAVIA XR 98 Cinema Details">
+              <span class="product-brand-tag">Sony</span>
+              <span class="product-category-tag">Displays</span>
+              <img src="images/products/sony.jpg" alt="Sony BRAVIA XR 98-inch 4K HDR Cinema Display" loading="lazy">
+            </a>
+            <div class="product-card-body">
+              <h3 class="product-name">
+                <a href="product-details.html?id=sony-bravia-xr-98" class="product-title-link text-decoration-none">
+                  Sony BRAVIA XR 98" Cinema
+                </a>
+              </h3>
+              <p class="product-desc">
+                Mammoth 98-inch 4K Full Array LED powered by Cognitive Processor XR™, engineered for light-filled media rooms and private viewing suites.
+              </p>
+              <div class="product-card-footer">
+                <span class="small text-secondary"><i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer</span>
+                <a href="product-details.html?id=sony-bravia-xr-98" class="btn btn-gold btn-sm-custom btn-enquire-product">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Information Callout (Clean White Luxury Card with Subtle Gold Details) -->
+      <div class="mt-5 p-4 bg-white border border-beige rounded text-center shadow-sm">
+        <h4 class="h5 text-dark-primary mb-2"><i class="bi bi-info-circle text-gold me-2"></i> Custom Specification & Calibration Guarantee</h4>
+        <p class="text-secondary small mb-0 max-w-700 mx-auto">
+          AVÉRA Cinema does not sell packaged, uncalibrated consumer boxes. Every component is specified according to room volume (m³), acoustic absorption coefficients, and visual throw distances, followed by professional calibration.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       PRODUCT ENQUIRY MODAL (LIGHT THEME)
+       ======================================================================== -->
+  <div class="modal fade" id="productEnquiryModal" tabindex="-1" aria-labelledby="enquiryProductName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom">
+          <div>
+            <span class="section-tag mb-1">EQUIPMENT ENQUIRY</span>
+            <h3 class="modal-title h5 text-dark-primary" id="enquiryProductName">Product Specification</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <form id="productEnquiryForm" novalidate>
+            <input type="hidden" id="enquiryProductInput" name="product_name">
+
+            <div class="mb-3">
+              <label for="enquiryClientName" class="form-label-custom small">Your Name *</label>
+              <input type="text" class="form-control form-control-custom" id="enquiryClientName" required placeholder="Full Name">
+              <div class="invalid-feedback">Please provide your name.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="enquiryClientPhone" class="form-label-custom small">Phone Number *</label>
+              <input type="tel" class="form-control form-control-custom" id="enquiryClientPhone" required placeholder="+91 98765 43210">
+              <div class="invalid-feedback">Please provide a valid phone number.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="enquiryClientEmail" class="form-label-custom small">Email Address *</label>
+              <input type="email" class="form-control form-control-custom" id="enquiryClientEmail" required placeholder="name@domain.com">
+              <div class="invalid-feedback">Please provide a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="enquiryClientCity" class="form-label-custom small">City / Location *</label>
+              <input type="text" class="form-control form-control-custom" id="enquiryClientCity" required placeholder="e.g. Chennai, Bangalore">
+              <div class="invalid-feedback">Please enter your city.</div>
+            </div>
+
+            <div class="mb-4">
+              <label for="enquiryClientNote" class="form-label-custom small">Project or Room Context (Optional)</label>
+              <textarea class="form-control form-control-custom" id="enquiryClientNote" rows="3" placeholder="Tell us about your room dimensions, existing setup, or project timeline..."></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-gold">
+                <i class="bi bi-envelope-paper"></i> Request Official Quote
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SUCCESS CONFIRMATION MODAL (LIGHT THEME)
+       ======================================================================== -->
+  <div class="modal fade" id="consultationSuccessModal" tabindex="-1" aria-labelledby="successModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-custom text-center p-4">
+        <div class="my-3">
+          <div class="d-inline-flex align-items-center justify-content-center bg-white border border-beige rounded-circle p-3 text-gold fs-1 mb-3 shadow-sm">
+            <i class="bi bi-check2-circle"></i>
+          </div>
+          <h3 class="h4 text-dark-primary fw-semibold mb-2" id="successModalTitle">Consultation Request Received</h3>
+          <p class="text-secondary mb-4" id="successModalMessage">
+            Thank you! Our acoustic specialists will review your project details and contact you shortly.
+          </p>
+          <button type="button" class="btn btn-gold" data-bs-dismiss="modal">
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (SOFT BEIGE #E8E2D8)
+       ======================================================================== -->
+  <footer class="footer-custom bg-soft-beige">
+    <div class="container-custom">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="brand-logo-container" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Pioneering private cinema engineering, Dolby Atmos acoustics, and state-of-the-art audiovisual solutions for luxury residences and connoisseurs.
+          </p>
+          <div class="footer-social-links" aria-label="AVÉRA Cinema Social Profiles">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Follow AVÉRA Cinema on Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="Connect with AVÉRA Cinema on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Like AVÉRA Cinema on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="Subscribe to AVÉRA Cinema on YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#surround-sound">Surround Sound</a></li>
+            <li><a href="services.html#projector-setup">Projector Setup</a></li>
+            <li><a href="services.html#acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="services.html#custom-cinema">Custom Cinema</a></li>
+            <li><a href="services.html#receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div>
+          Engineered for Reference Audio & Visual Excellence.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Product Data Catalog -->
+  <script src="js/products-data.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

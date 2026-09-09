@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | AVÉRA Cinema</title>
+  <meta name="description" content="Discover reference-grade home cinema and audio equipment specifications, acoustic engineering features, and authorized dealer pricing from AVÉRA Cinema.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Product Details | AVÉRA Cinema">
+  <meta property="og:description" content="Reference home cinema and audiophile equipment calibrated for ultimate acoustic fidelity.">
+  <meta property="og:image" content="images/products/sony-projector.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Cormorant Garamond, Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Light Luxury Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre &amp; Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation Links -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <hr class="nav-mobile-divider d-lg-none my-2">
+
+          <!-- Controls Group (RTL & Theme Toggles) -->
+          <div class="nav-toggles-group">
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+
+          <!-- Sign In Button -->
+          <a href="signin.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer Dimmed Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       BREADCRUMB & BACK ACTION BAR
+       ======================================================================== -->
+  <section class="product-top-bar bg-ivory">
+    <div class="container-custom">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 py-3">
+        <nav aria-label="breadcrumb" class="cinema-breadcrumb mb-0">
+          <a href="index.html"><i class="bi bi-house me-1"></i> Home</a>
+          <span class="separator">/</span>
+          <a href="products.html">Products</a>
+          <span class="separator">/</span>
+          <a href="products.html" id="breadcrumbCategory">Equipment</a>
+          <span class="separator">/</span>
+          <span class="current" id="breadcrumbCurrent">Product Details</span>
+        </nav>
+        <a href="products.html" class="btn btn-white-luxury btn-sm" id="backToProductsBtn">
+          <i class="bi bi-arrow-left me-2"></i> Back to Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MAIN PRODUCT SHOWCASE SECTION
+       ======================================================================== -->
+  <main class="product-details-main bg-ivory">
+    <div class="container-custom">
+      
+      <!-- Showcase Card -->
+      <div class="product-showcase-container bg-card border border-beige rounded shadow-sm p-4 p-lg-5 mb-5">
+        <div class="row g-5 align-items-start">
+          
+          <!-- LEFT: Large Product Image & Gallery -->
+          <div class="col-lg-6">
+            <div class="product-showcase-img-wrap">
+              <div class="product-img-stage">
+                <img src="images/products/sony-projector.jpg" alt="Product Image" id="productMainImage" class="img-fluid" loading="eager">
+                
+                <!-- Overlay Badges -->
+                <div class="product-stage-badges">
+                  <span class="product-brand-tag" id="productBrandTag">Sony</span>
+                  <span class="product-category-tag" id="productCategoryTag">Projectors</span>
+                </div>
+              </div>
+
+              <!-- Authorized Badge Callout underneath image -->
+              <div class="product-auth-underbar mt-3 border border-beige rounded">
+                <div class="product-auth-left">
+                  <div class="product-auth-icon-wrap" aria-hidden="true">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                  <div class="product-auth-text-wrap">
+                    <span class="product-auth-title" id="productDealerBadge">Official Brand Authorized Partner</span>
+                    <span class="product-auth-subtitle">100% Genuine Certified Hardware &amp; Full Warranty</span>
+                  </div>
+                </div>
+                <div class="product-auth-right">
+                  <span class="badge-status-pill text-gold">Verified Dealer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Product Information, Specs Summary & CTAs -->
+          <div class="col-lg-6">
+            <div class="product-showcase-info">
+              
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <span class="section-tag mb-0">REFERENCE SPECIFICATION</span>
+                <span class="badge bg-gold-subtle text-gold fw-semibold px-2 py-1 rounded" id="productBadgePill">Flagship Class</span>
+              </div>
+
+              <h1 class="product-details-title mb-3" id="productMainTitle">
+                Sony VPL-XW5000ES 4K Laser Projector
+              </h1>
+
+              <p class="product-details-tagline lead text-dark-primary fw-medium mb-4" id="productTagline">
+                Compact native 4K SXRD laser home cinema projector with 2,000 lumens brightness, HDR Enhancer, and Triluminos Pro color processing.
+              </p>
+
+              <!-- Price & Enquiry Information Card -->
+              <div class="product-price-card p-4 rounded mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="small text-uppercase fw-bold letter-spacing text-gold">Pricing &amp; Procurement</span>
+                  <span class="badge bg-card text-dark-primary border border-beige small px-2 py-1">
+                    <i class="bi bi-clock-history text-gold me-1"></i> In Stock &amp; Configurable
+                  </span>
+                </div>
+                <h3 class="h4 text-dark-primary fw-bold mb-2" id="productPriceInfo">
+                  Price on Consultation / Custom Room Calibration Included
+                </h3>
+                <p class="small text-secondary mb-0">
+                  Includes professional acoustic room volume matching, physical laser alignment, and CEDIA-certified installation warranty.
+                </p>
+              </div>
+
+              <!-- Quick Highlights List -->
+              <ul class="product-quick-highlights mb-4">
+                <li><i class="bi bi-check2-circle text-gold me-2"></i> <strong>Turnkey Calibration:</strong> Complete DSP / acoustic phase synchronization by certified audio engineers.</li>
+                <li><i class="bi bi-check2-circle text-gold me-2"></i> <strong>Manufacturer Warranty:</strong> 3-Year official warranty with direct on-site priority support.</li>
+                <li><i class="bi bi-check2-circle text-gold me-2"></i> <strong>Experience Studio Demo:</strong> Available for private listening and viewing in Chennai.</li>
+              </ul>
+
+              <!-- Action CTAs -->
+              <div class="d-flex flex-column flex-sm-row gap-3 pt-2">
+                <!-- Enquire Now Primary Button -->
+                <button type="button" class="btn btn-gold btn-lg flex-grow-1" data-bs-toggle="modal" data-bs-target="#productEnquiryModal" id="enquireNowBtn">
+                  <i class="bi bi-envelope-paper me-2"></i> Enquire Now
+                </button>
+                
+                <!-- Book Consultation Secondary Button -->
+                <a href="contact.html" class="btn btn-white-luxury btn-lg flex-grow-1 text-center" id="bookDemoLink">
+                  <i class="bi bi-calendar2-check me-2"></i> Book Studio Demo
+                </a>
+              </div>
+
+              <div class="mt-3 text-center text-sm-start">
+                <span class="small text-secondary">
+                  <i class="bi bi-telephone text-gold me-1"></i> Have immediate questions? Call our concierge at <a href="tel:+919840012345" class="text-dark-primary fw-semibold text-decoration-none">+91 98400 12345</a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           FULL PRODUCT DESCRIPTION / ARCHITECTURAL OVERVIEW
+           ==================================================================== -->
+      <section class="product-narrative-section bg-card border border-beige rounded shadow-sm p-4 p-lg-5 mb-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-12">
+            <span class="section-tag mb-2">ENGINEERING &amp; ACOUSTICS</span>
+            <h2 class="h3 text-dark-primary fw-semibold mb-4">Architectural &amp; Acoustic Overview</h2>
+            <div class="product-narrative-content" id="productFullDesc">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           KEY SPECIFICATIONS SECTION
+           ==================================================================== -->
+      <section class="product-specs-section bg-card border border-beige rounded shadow-sm p-4 p-lg-5 mb-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <div>
+            <span class="section-tag mb-2">TECHNICAL PARAMETERS</span>
+            <h2 class="h3 text-dark-primary fw-semibold mb-0">Key Specifications</h2>
+          </div>
+          <span class="badge bg-gold-subtle text-gold px-3 py-2 rounded">
+            <i class="bi bi-patch-check-fill me-1"></i> Lab Certified Data
+          </span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-custom-specs align-middle mb-0">
+            <tbody id="productSpecsBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           KEY FEATURES & HIGHLIGHTS GRID
+           ==================================================================== -->
+      <section class="product-features-section mb-5">
+        <div class="text-center mb-5">
+          <span class="section-tag mb-2">INNOVATIVE CAPABILITIES</span>
+          <h2 class="h3 text-dark-primary fw-semibold">Signature Engineering Features</h2>
+          <p class="text-secondary small max-w-700 mx-auto">
+            Architectural components selected for pure fidelity, zero signal degradation, and seamless luxury room integration.
+          </p>
+        </div>
+
+        <div class="row g-4" id="productFeaturesGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           AUTHORIZED CALIBRATION & INTEGRATION GUARANTEE CALLOUT
+           ==================================================================== -->
+      <div class="product-guarantee-banner p-4 p-lg-5 rounded mb-5 border border-beige text-center shadow-sm">
+        <div class="d-inline-flex align-items-center justify-content-center bg-white border border-beige rounded-circle p-3 text-gold fs-2 mb-3 shadow-sm">
+          <i class="bi bi-patch-check"></i>
+        </div>
+        <h3 class="h4 text-dark-primary fw-semibold mb-2">Custom Calibration &amp; Authorized Dealer Guarantee</h3>
+        <p class="text-secondary small max-w-700 mx-auto mb-4">
+          AVÉRA Cinema is an authorized dealer and certified custom integrator. When you acquire equipment through our studio, you receive factory-sealed hardware, authentic manufacturer warranties, custom room acoustic measurement, and precision digital calibration.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-4 text-dark-primary small fw-semibold">
+          <span><i class="bi bi-award text-gold me-2"></i>CEDIA Certified Technicians</span>
+          <span><i class="bi bi-shield-lock text-gold me-2"></i>Official Brand Warranty</span>
+          <span><i class="bi bi-soundwave text-gold me-2"></i>Acoustic Room Matching</span>
+          <span><i class="bi bi-gear-wide-connected text-gold me-2"></i>White-Glove Installation</span>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           RELATED / COMPLEMENTARY PRODUCTS SECTION
+           ==================================================================== -->
+      <section class="related-products-section mb-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <span class="section-tag mb-2">SYSTEM SYNERGY</span>
+            <h2 class="h3 text-dark-primary fw-semibold mb-0">Related &amp; Complementary Products</h2>
+          </div>
+          <a href="products.html" class="btn btn-outline-gold btn-sm">
+            View Complete Catalog <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+
+        <div class="row g-4" id="relatedProductsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       EQUIPMENT ENQUIRY MODAL
+       ======================================================================== -->
+  <div class="modal fade" id="productEnquiryModal" tabindex="-1" aria-labelledby="enquiryProductName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom">
+          <div>
+            <span class="section-tag mb-1">EQUIPMENT PROCUREMENT</span>
+            <h3 class="modal-title h5 text-dark-primary" id="enquiryProductName">Product Specification</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <p class="text-secondary small mb-4">
+            Request official dealership pricing, system compatibility verification, and turnkey installation options from our acoustic specialists.
+          </p>
+          <form id="productEnquiryForm" novalidate>
+            <input type="hidden" id="enquiryProductInput" name="product_name">
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="enquiryClientName" class="form-label-custom small">Your Name *</label>
+                <input type="text" class="form-control form-control-custom" id="enquiryClientName" required placeholder="Full Name">
+                <div class="invalid-feedback">Please provide your name.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="enquiryClientPhone" class="form-label-custom small">Phone Number *</label>
+                <input type="tel" class="form-control form-control-custom" id="enquiryClientPhone" required placeholder="+91 98765 43210">
+                <div class="invalid-feedback">Please provide a valid phone number.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="enquiryClientEmail" class="form-label-custom small">Email Address *</label>
+                <input type="email" class="form-control form-control-custom" id="enquiryClientEmail" required placeholder="name@domain.com">
+                <div class="invalid-feedback">Please provide a valid email address.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="enquiryClientCity" class="form-label-custom small">City / Location *</label>
+                <input type="text" class="form-control form-control-custom" id="enquiryClientCity" required placeholder="e.g. Chennai, Bangalore">
+                <div class="invalid-feedback">Please enter your city.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="enquiryClientNote" class="form-label-custom small">Project or Room Context (Optional)</label>
+                <textarea class="form-control form-control-custom" id="enquiryClientNote" rows="3" placeholder="Tell us about your room dimensions, existing audio setup, screen size requirement, or installation timeline..."></textarea>
+              </div>
+
+              <div class="col-12 mt-4">
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-gold py-3">
+                    <i class="bi bi-envelope-paper me-2"></i> Request Official Quote &amp; Specification
+                  </button>
+                </div>
+                <div class="text-center mt-3">
+                  <span class="smaller text-secondary">
+                    Prefer direct in-person consultation? <a href="contact.html" class="text-gold fw-semibold">Book an appointment at our Chennai Experience Studio</a>.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SUCCESS CONFIRMATION MODAL
+       ======================================================================== -->
+  <div class="modal fade" id="consultationSuccessModal" tabindex="-1" aria-labelledby="successModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-custom text-center p-4">
+        <div class="my-3">
+          <div class="d-inline-flex align-items-center justify-content-center bg-white border border-beige rounded-circle p-3 text-gold fs-1 mb-3 shadow-sm">
+            <i class="bi bi-check2-circle"></i>
+          </div>
+          <h3 class="h4 text-dark-primary fw-semibold mb-2" id="successModalTitle">Enquiry Received</h3>
+          <p class="text-secondary mb-4" id="successModalMessage">
+            Thank you! Our acoustic specialists will review your project details and contact you shortly with comprehensive specs and pricing.
+          </p>
+          <button type="button" class="btn btn-gold" data-bs-dismiss="modal">
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (SOFT BEIGE #E8E2D8)
+       ======================================================================== -->
+  <footer class="footer-custom bg-soft-beige">
+    <div class="container-custom">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="brand-logo-container" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre &amp; Audio</span>
+          </a>
+          <p class="footer-desc">
+            Pioneering private cinema engineering, Dolby Atmos acoustics, and state-of-the-art audiovisual solutions for luxury residences and connoisseurs.
+          </p>
+          <div class="footer-social-links" aria-label="AVÉRA Cinema Social Profiles">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Follow AVÉRA Cinema on Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="Connect with AVÉRA Cinema on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Like AVÉRA Cinema on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="Subscribe to AVÉRA Cinema on YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#surround-sound">Surround Sound</a></li>
+            <li><a href="services.html#projector-setup">Projector Setup</a></li>
+            <li><a href="services.html#acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="services.html#custom-cinema">Custom Cinema</a></li>
+            <li><a href="services.html#receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div>
+          Engineered for Reference Audio &amp; Visual Excellence.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Global Scripts -->
+  <script src="js/script.js"></script>
+  <!-- Product Data Catalog -->
+  <script src="js/products-data.js"></script>
+  <!-- Product Detail Page Controller -->
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

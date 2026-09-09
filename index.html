@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Home Theatre & Audio Installation | AVÉRA Cinema</title>
+  <meta name="description" content="AVÉRA Cinema engineers custom luxury home theatres, Dolby Atmos surround sound, 4K laser projectors, and architectural acoustic treatments.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Premium Home Theatre & Audio Installation | AVÉRA Cinema">
+  <meta property="og:description" content="Immersive home theatre and audio solutions engineered for extraordinary sound, picture, and atmosphere.">
+  <meta property="og:image" content="images/hero/hero-home-theatre.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Light Luxury Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header (Brand Title & Close Button) - Mobile Only -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <!-- Divider visible on mobile -->
+          <hr class="nav-mobile-divider d-lg-none my-2">
+
+          <!-- Controls Group (RTL & Theme Toggles) -->
+          <div class="nav-toggles-group">
+            <!-- 1. RTL / LTR Direction Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+
+            <!-- 2. Light / Dark Mode Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+
+          <!-- 3. Sign In Button ([ 👤 SIGN IN ]) -->
+          <a href="signin.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer Dimmed Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       1. HERO SECTION (Clean Split Architectural Showcase — Light Luxury Theme)
+       ======================================================================== -->
+  <header class="hero-section hero-split-section" id="heroSection">
+    <div class="container-custom hero-split-container">
+      <div class="hero-split-row hero-content-wrapper">
+        
+        <!-- LEFT COLUMN: Brand Eyebrow, Heading, Description & Action Buttons -->
+        <div class="hero-split-text-col hero-content">
+          <div class="hero-split-text-wrap">
+            <div class="hero-eyebrow-wrap">
+              <span class="hero-gold-line"></span>
+              <span class="hero-eyebrow">PREMIUM HOME CINEMA EXPERIENCES</span>
+            </div>
+            <h1 class="hero-title">
+              Bring the Cinema <span class="text-gold">Home.</span>
+            </h1>
+            <p class="hero-desc">
+              Immersive home theatre and audio solutions engineered for extraordinary sound, picture, and atmosphere.
+            </p>
+            <div class="hero-cta-group d-flex flex-wrap align-items-center gap-3">
+              <a href="services.html" class="btn btn-gold hero-btn-primary">
+                Explore Our Services <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="contact.html" class="btn btn-white-luxury hero-btn-secondary">
+                Book a Consultation <i class="bi bi-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Premium Architectural Image Card with Floating Badge -->
+        <div class="hero-split-image-col hero-image-col">
+          <div class="hero-image-card-wrapper hero-image-wrapper">
+            <div class="hero-image-card">
+              <img src="images/hero/hero-home-theatre.jpg" alt="Luxury Home Cinema Installation" class="hero-card-img" width="1200" height="800" loading="eager" fetchpriority="high">
+            </div>
+            <!-- Small Floating Information Card Overlapping Bottom Corner -->
+            <div class="hero-floating-badge" aria-label="500+ Premium Installations">
+              <div class="badge-number">500<span class="badge-plus">+</span></div>
+              <div class="badge-text">Premium Installations</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       TRUST & STATS SECTION (#F8F6F1)
+       ======================================================================== -->
+  <section class="stats-section bg-ivory" id="statsSection">
+    <div class="container-custom">
+      <div class="row text-center g-4">
+        <div class="col-6 col-lg-3 stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-counter" data-target="500">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Installations</div>
+          <div class="stat-divider"></div>
+        </div>
+        <div class="col-6 col-lg-3 stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-counter" data-target="12">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Years Experience</div>
+          <div class="stat-divider"></div>
+        </div>
+        <div class="col-6 col-lg-3 stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-counter" data-target="25">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Premium Brands</div>
+          <div class="stat-divider"></div>
+        </div>
+        <div class="col-6 col-lg-3 stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-counter" data-target="98">0</span><span class="stat-suffix">%</span>
+          </div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2. HOME / INTRO SECTION (#F8F6F1 + White Cards + Dark Charcoal Text)
+       ======================================================================== -->
+  <section class="intro-section bg-ivory">
+    <div class="container-custom">
+      <div class="intro-split-layout">
+        <!-- Left Column: 50% Image -->
+        <div class="intro-split-col intro-image-col reveal-left">
+          <div class="intro-img-card">
+            <img src="images/hero/hero-audio-system.jpg" alt="Architectural reference cinema loudspeaker and acoustic isolation environment" loading="lazy">
+            <div class="intro-badge-overlay">
+              <span class="d-block text-gold fw-bold small text-uppercase">Precision Audio</span>
+              <span class="text-dark-primary fw-semibold small">Engineered Acoustic Performance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 50% Content -->
+        <div class="intro-split-col intro-content-col reveal-right">
+          <div class="intro-content-inner">
+            <span class="section-tag">WHO WE ARE</span>
+            <h2 class="section-title">Entertainment, Engineered.</h2>
+            <p class="lead text-dark-primary fw-medium">
+              At AVÉRA Cinema, we design and install custom home theatre and architectural audio environments that transport you into the heart of the story.
+            </p>
+            <p class="text-secondary">
+              Whether converting a dedicated room into a premier commercial-grade screening auditorium or integrating discreet multi-channel audio into a modern living space, our certified engineers calculate acoustic harmonics, sightlines, and ambient lighting to achieve pure cinematic transcendence.
+            </p>
+
+            <!-- Feature List -->
+            <ul class="intro-features-list">
+              <li class="intro-feature-item">
+                <div class="intro-feature-icon">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <div class="intro-feature-text">
+                  <h4>Custom Room Design</h4>
+                  <p>3D acoustic modeling, sightline optimization, and tailored architectural integration.</p>
+                </div>
+              </li>
+              <li class="intro-feature-item">
+                <div class="intro-feature-icon">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <div class="intro-feature-text">
+                  <h4>Professional Calibration</h4>
+                  <p>Dirac Live & Audyssey room EQ calibration to harmonize frequencies and eliminate standing waves.</p>
+                </div>
+              </li>
+              <li class="intro-feature-item">
+                <div class="intro-feature-icon">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <div class="intro-feature-text">
+                  <h4>Premium Equipment</h4>
+                  <p>Curated partnerships with global audiophile and visual powerhouses.</p>
+                </div>
+              </li>
+              <li class="intro-feature-item">
+                <div class="intro-feature-icon">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <div class="intro-feature-text">
+                  <h4>Expert Installation</h4>
+                  <p>Concealed wiring, precision vibration dampening, and white-glove commissioning.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="intro-cta-wrap">
+              <a href="services.html" class="btn btn-white-luxury">
+                Discover Our Approach <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. SERVICES SECTION (#F1EEE7 + White Cards + Thin Beige Borders)
+       ======================================================================== -->
+  <section class="services-section bg-secondary-theme">
+    <div class="container-custom">
+      <div class="text-center mb-5 reveal-on-scroll">
+        <span class="section-tag">OUR EXPERTISE</span>
+        <h2 class="section-title">Designed Around Your Experience</h2>
+        <p class="section-subtitle">
+          From multi-dimensional audio to ultra-high-definition visual projection, explore our flagship residential services.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service Card 1 -->
+        <div class="col-md-6 col-lg-4 reveal-on-scroll">
+          <div class="service-card">
+            <div class="service-card-img-wrapper">
+              <img src="images/services/surround-sound.jpg" alt="Surround sound speaker installation" loading="lazy">
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Surround Sound Installation</h3>
+              <p class="service-card-desc">
+                Immerse yourself in three-dimensional audio with Dolby Atmos, DTS:X, and Auro-3D speaker configurations calibrated for spatial realism.
+              </p>
+              <a href="services.html#surround-sound" class="service-card-link">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="col-md-6 col-lg-4 reveal-on-scroll">
+          <div class="service-card">
+            <div class="service-card-img-wrapper">
+              <img src="images/services/projector-setup.jpg" alt="4K HDR Projector and display setup" loading="lazy">
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Projector & Display Setup</h3>
+              <p class="service-card-desc">
+                True 4K HDR laser projectors, motorized ambient-light-rejecting (ALR) screens, and ultra-short-throw systems tailored to your room lumens.
+              </p>
+              <a href="services.html#projector-setup" class="service-card-link">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="col-md-6 col-lg-4 reveal-on-scroll">
+          <div class="service-card">
+            <div class="service-card-img-wrapper">
+              <img src="images/services/acoustic-treatment.jpg" alt="Acoustic panels and sound treatment" loading="lazy">
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Acoustic Treatment</h3>
+              <p class="service-card-desc">
+                Architectural wooden slats, custom fabric-wrapped absorption panels, bass traps, and sound isolation for razor-sharp clarity and deep punch.
+              </p>
+              <a href="services.html#acoustic-treatment" class="service-card-link">
+                Learn More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="services.html" class="btn btn-gold">
+          View All Services <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. IMMERSIVE EXPERIENCE SECTION (Bright Cinema Photo + Subtle Translucent Cream Overlay)
+       ======================================================================== -->
+  <section class="experience-section">
+    <div class="container-custom experience-content">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-10 col-xl-9 reveal-on-scroll">
+          <span class="section-tag d-inline-flex mb-3">SENSORY MASTERY</span>
+          <h2 class="experience-title">
+            Sound You Don't Just Hear.<br>
+            <span class="text-gold">You Feel.</span>
+          </h2>
+          <p class="experience-text">
+            From the subtle whisper of falling rain to the floor-shaking roar of an orchestral crescendo, our acoustically engineered private cinemas recreate the director’s original master recording with pitch-perfect fidelity.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Sensory Engineering Feature Cards -->
+      <div class="sensory-cards-grid mb-5 text-start">
+        <!-- Feature Card 1 -->
+        <div class="sensory-card-col reveal-on-scroll">
+          <div class="sensory-card">
+            <div class="sensory-icon-wrap">
+              <i class="bi bi-soundwave"></i>
+            </div>
+            <div class="sensory-tag">INFRASONIC IMPACT</div>
+            <h3 class="sensory-card-title">Tactile Sub-Bass</h3>
+            <p class="sensory-card-desc">
+              Precision haptic seat transducers calibrated down to 10Hz transmit infrasonic frequencies directly through seating, making bass a visceral full-body physical experience without acoustic distortion.
+            </p>
+            <div class="sensory-spec">
+              <span class="spec-label">Frequency Cutoff:</span>
+              <span class="spec-val text-gold">10 Hz – 80 Hz</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="sensory-card-col reveal-on-scroll">
+          <div class="sensory-card">
+            <div class="sensory-icon-wrap">
+              <i class="bi bi-broadcast-pin"></i>
+            </div>
+            <div class="sensory-tag">SPATIAL IMMERSION</div>
+            <h3 class="sensory-card-title">3D Audio Holography</h3>
+            <p class="sensory-card-desc">
+              Custom-engineered 9.4.6 and 11.4.8 Dolby Atmos® and Auro-3D channel layouts position sound objects with pinpoint 360° precision, creating a seamless hemispherical soundfield.
+            </p>
+            <div class="sensory-spec">
+              <span class="spec-label">Channel Layout:</span>
+              <span class="spec-val text-gold">Up to 32 Discrete Ch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="sensory-card-col reveal-on-scroll">
+          <div class="sensory-card">
+            <div class="sensory-icon-wrap">
+              <i class="bi bi-sliders"></i>
+            </div>
+            <div class="sensory-tag">ACOUSTIC PURITY</div>
+            <h3 class="sensory-card-title">Dirac Live® Calibration</h3>
+            <p class="sensory-card-desc">
+              Multi-point impulse response optimization and active room treatment eliminate standing waves, early reflections, and flutter echoes to deliver reference-grade dialogue clarity.
+            </p>
+            <div class="sensory-spec">
+              <span class="spec-label">Decay Target (RT60):</span>
+              <span class="spec-val text-gold">0.22s ±0.02s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Performance Badges / Metrics Bar -->
+      <div class="sensory-metrics-bar mb-5 reveal-on-scroll">
+        <div class="sensory-metric-item">
+          <span class="metric-num text-gold">120<small>dB</small></span>
+          <span class="metric-desc">Reference Cinema Dynamics</span>
+        </div>
+        <div class="sensory-metric-divider" aria-hidden="true"></div>
+        <div class="sensory-metric-item">
+          <span class="metric-num text-gold">&lt;0.05<small>%</small></span>
+          <span class="metric-desc">Total Harmonic Distortion</span>
+        </div>
+        <div class="sensory-metric-divider" aria-hidden="true"></div>
+        <div class="sensory-metric-item">
+          <span class="metric-num text-gold">STC 65<small>+</small></span>
+          <span class="metric-desc">Architectural Noise Isolation</span>
+        </div>
+        <div class="sensory-metric-divider" aria-hidden="true"></div>
+        <div class="sensory-metric-item">
+          <span class="metric-num text-gold">24-bit<small>/192kHz</small></span>
+          <span class="metric-desc">Master Audio Resolution</span>
+        </div>
+      </div>
+
+      <!-- CTA Button matching screenshot -->
+      <div class="text-center reveal-on-scroll">
+        <a href="contact.html" class="btn btn-gold px-4 py-3">
+          BEGIN YOUR PROJECT <i class="bi bi-arrow-up-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. BRANDS SECTION (#E8E2D8 Soft Beige + Dark Charcoal Typography)
+       ======================================================================== -->
+  <section class="brands-section bg-soft-beige">
+    <div class="container-custom">
+      <div class="text-center mb-5 reveal-on-scroll">
+        <span class="section-tag">AUTHORISED PARTNERS</span>
+        <h2 class="section-title">World-Class Technology</h2>
+        <p class="section-subtitle">
+          We integrate benchmark equipment from the most revered names in global sound reproduction and cinematic optics.
+        </p>
+      </div>
+
+      <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-6">
+        <div class="col reveal-on-scroll">
+          <div class="brand-card">
+            <span class="brand-logo-text">SONY</span>
+            <span class="brand-badge">SXRD 4K LASER</span>
+          </div>
+        </div>
+        <div class="col reveal-on-scroll">
+          <div class="brand-card">
+            <span class="brand-logo-text">BOSE</span>
+            <span class="brand-badge">ARCHITECTURAL</span>
+          </div>
+        </div>
+        <div class="col reveal-on-scroll">
+          <div class="brand-card">
+            <span class="brand-logo-text">YAMAHA</span>
+            <span class="brand-badge">AVENTAGE DSP</span>
+          </div>
+        </div>
+        <div class="col reveal-on-scroll">
+          <div class="brand-card">
+            <span class="brand-logo-text">DENON</span>
+            <span class="brand-badge">13.2CH AMPLIFIERS</span>
+          </div>
+        </div>
+        <div class="col reveal-on-scroll">
+          <div class="brand-card">
+            <span class="brand-logo-text">JBL</span>
+            <span class="brand-badge">SYNTHESIS MONITORS</span>
+          </div>
+        </div>
+        <div class="col reveal-on-scroll">
+          <div class="brand-card">
+            <span class="brand-logo-text">MARANTZ</span>
+            <span class="brand-badge">CINEMA SERIES</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="products.html" class="btn btn-white-luxury">
+          View All Products <i class="bi bi-grid-3x3-gap"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. GALLERY / RECENT INSTALLATIONS (#F5F1E8 Warm Cream + White Cards)
+       ======================================================================== -->
+  <section class="gallery-section bg-warm-cream">
+    <div class="container-custom">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 reveal-on-scroll">
+        <div>
+          <span class="section-tag">OUR PORTFOLIO</span>
+          <h2 class="section-title mb-0">Recent Installations</h2>
+        </div>
+        <div class="mt-3 mt-md-0">
+          <a href="gallery.html" class="btn btn-white-luxury">
+            View Full Gallery <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6 col-lg-4 reveal-on-scroll">
+          <a href="cinema/private-cinema-chennai.html" class="gallery-card d-block text-decoration-none" title="View Private Cinema — Chennai Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-01.jpg" alt="Private Cinema Chennai installation" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Dedicated Theatre</div>
+              <h3 class="gallery-card-title">Private Cinema — Chennai</h3>
+              <div class="gallery-card-meta">
+                <i class="bi bi-speaker"></i> 7.2.4 Dolby Atmos Setup
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-6 col-lg-4 reveal-on-scroll">
+          <a href="cinema/lumina-penthouse-bengaluru.html" class="gallery-card d-block text-decoration-none" title="View The Lumina Penthouse Cinema Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-02.jpg" alt="Lumina Lounge Bengaluru installation" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Media Lounge</div>
+              <h3 class="gallery-card-title">The Lumina Lounge — Bengaluru</h3>
+              <div class="gallery-card-meta">
+                <i class="bi bi-projector"></i> 4K Laser UST Cinema
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-6 col-lg-4 reveal-on-scroll">
+          <a href="cinema/acoustic-sanctuary-mumbai.html" class="gallery-card d-block text-decoration-none" title="View Acoustic Sanctuary Private Theatre Details">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/theatre-03.jpg" alt="Acoustic Sanctuary Mumbai installation" loading="lazy">
+              <div class="gallery-view-icon">
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <div class="gallery-card-tag">Reference Cinema</div>
+              <h3 class="gallery-card-title">Acoustic Sanctuary — Mumbai</h3>
+              <div class="gallery-card-meta">
+                <i class="bi bi-soundwave"></i> 9.4.4 Master Theatre
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. PROCESS SECTION (#FFFFFF Clean White + Gold Accent Numbers)
+       ======================================================================== -->
+  <section class="process-section bg-pure-white">
+    <div class="container-custom">
+      <div class="text-center mb-5 reveal-on-scroll">
+        <span class="section-tag">ENGINEERING PROCESS</span>
+        <h2 class="section-title">The Path to Perfection</h2>
+        <p class="section-subtitle">
+          Our systematic 4-phase commissioning process ensures flawless acoustic fidelity, architectural elegance, and effortless operation.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal-on-scroll">
+            <div class="process-step-card">
+              <div class="process-number-node">01</div>
+              <h3 class="process-step-title">Consultation</h3>
+              <p class="process-step-desc">
+                We assess your visual and audio aspirations, seating layout preferences, and performance expectations.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal-on-scroll">
+            <div class="process-step-card">
+              <div class="process-number-node">02</div>
+              <h3 class="process-step-title">Room Assessment</h3>
+              <p class="process-step-desc">
+                Laser measurement, structural resonance analysis, ambient light evaluation, and electrical profiling.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal-on-scroll">
+            <div class="process-step-card">
+              <div class="process-number-node">03</div>
+              <h3 class="process-step-title">System Design</h3>
+              <p class="process-step-desc">
+                3D CAD modeling, speaker placement angles, acoustic baffle selection, and thermal airflow engineering.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal-on-scroll">
+            <div class="process-step-card">
+              <div class="process-number-node">04</div>
+              <h3 class="process-step-title">Professional Installation</h3>
+              <p class="process-step-desc">
+                Concealed wiring, precision mounting, Dirac Live calibration, and one-touch smart remote setup.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. TESTIMONIALS SECTION (#F1EEE7 + White Cards + Subtle Beige Borders)
+       ======================================================================== -->
+  <section class="testimonials-section bg-secondary-theme">
+    <div class="container-custom">
+      <div class="text-center mb-5 reveal-on-scroll">
+        <span class="section-tag">TESTIMONIALS</span>
+        <h2 class="section-title">Endorsed by Audiophiles</h2>
+        <p class="section-subtitle">
+          Discover why discerning homeowners and architects choose AVÉRA Cinema for their residential sanctuaries.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
+              <!-- Testimonial 1 -->
+              <div class="carousel-item active">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <p class="testimonial-text">
+                    "AVÉRA Cinema transformed our basement into a private screening room that outshines commercial multiplexes. The Dolby Atmos calibration makes movies feel viscerally alive."
+                  </p>
+                  <div class="testimonial-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="testimonial-author">Vikramaditya Rao</div>
+                  <div class="testimonial-role">Chennai — 7.2.4 Atmos Installation</div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div class="carousel-item">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <p class="testimonial-text">
+                    "The acoustic treatment and concealed speaker integration in our penthouse is pure artistry. The room looks like a luxury design gallery and sounds like a world-class concert hall."
+                  </p>
+                  <div class="testimonial-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="testimonial-author">Ananya Swaminathan</div>
+                  <div class="testimonial-role">Bengaluru — Architectural Acoustic Cinema</div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div class="carousel-item">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <p class="testimonial-text">
+                    "Their attention to detail during room calibration is unmatched. From bass management to projector color tuning, every penny was well invested. Highly recommended!"
+                  </p>
+                  <div class="testimonial-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="testimonial-author">Rajeshwar Singhania</div>
+                  <div class="testimonial-role">Mumbai — 9.4.4 Dolby Atmos Reference System</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Carousel Indicators -->
+            <div class="carousel-indicators carousel-indicators-custom">
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LARGE CTA BANNER (#F5F1E8 Warm Cream)
+       ======================================================================== -->
+  <section class="cta-banner-section bg-warm-cream">
+    <div class="container-custom">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 reveal-on-scroll">
+          <span class="section-tag d-inline-flex mb-3">START YOUR TRANSFORMATION</span>
+          <h2 class="cta-title">Your Private Cinema Awaits.</h2>
+          <p class="cta-text">
+            Let's design an entertainment experience around the way you live. Book an on-site acoustic assessment and consultation with our lead sound engineers.
+          </p>
+          <a href="contact.html" class="btn btn-gold">
+            <i class="bi bi-calendar-event"></i> Book a Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (#E8E2D8 Soft Beige)
+       ======================================================================== -->
+  <footer class="footer-custom bg-soft-beige">
+    <div class="container-custom">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="brand-logo-container" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Pioneering private cinema engineering, Dolby Atmos acoustics, and state-of-the-art audiovisual solutions for luxury residences and connoisseurs.
+          </p>
+          <div class="footer-social-links" aria-label="AVÉRA Cinema Social Profiles">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" title="Follow AVÉRA Cinema on Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="Connect with AVÉRA Cinema on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook" title="Like AVÉRA Cinema on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="Subscribe to AVÉRA Cinema on YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#surround-sound">Surround Sound</a></li>
+            <li><a href="services.html#projector-setup">Projector Setup</a></li>
+            <li><a href="services.html#acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="services.html#custom-cinema">Custom Cinema</a></li>
+            <li><a href="services.html#receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div>
+          Engineered for Reference Audio & Visual Excellence.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Light Luxury Modal for Gallery Projects -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom">
+          <div>
+            <h3 class="modal-title h5 text-dark-primary mb-1" id="galleryModalTitle">Project Showcase</h3>
+            <span class="small text-gold" id="galleryModalLocation"><i class="bi bi-geo-alt me-1"></i> Location</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <div class="mb-4 rounded overflow-hidden border border-beige">
+            <img id="galleryModalImage" src="images/gallery/theatre-01.jpg" alt="Installation showcase" class="w-100 object-fit-cover" style="max-height: 400px;">
+          </div>
+          <p id="galleryModalDesc" class="text-secondary mb-4">Project description and room architecture details.</p>
+          
+          <h4 class="h6 text-uppercase text-gold letter-spacing mb-3">System Specifications</h4>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="modal-spec-box">
+                <div class="label">Audio Configuration</div>
+                <div class="value" id="galleryModalAudio">7.2.4 Dolby Atmos</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="modal-spec-box">
+                <div class="label">Projection & Display</div>
+                <div class="value" id="galleryModalDisplay">4K Laser UST</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="modal-spec-box">
+                <div class="label">Acoustic Treatment</div>
+                <div class="value" id="galleryModalAcoustic">Decoupled Walls</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-4 pt-3 border-top border-beige d-flex justify-content-end">
+            <a href="contact.html" class="btn btn-gold btn-sm-custom">
+              Enquire About Similar Project <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

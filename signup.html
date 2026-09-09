@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — AVÉRA CINEMA | Luxury Home Theatre & Audio</title>
+  <meta name="description" content="Create your AVÉRA CINEMA VIP client account to track your bespoke cinema design, acoustics schematics, and VIP consultations.">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY WITH USER CONTROLS)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header (Brand Title & Close Button) - Mobile Only -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <!-- Divider visible on mobile -->
+          <hr class="nav-mobile-divider d-lg-none my-2">
+
+          <!-- Controls Group (RTL & Theme Toggles) -->
+          <div class="nav-toggles-group">
+            <!-- 1. RTL / LTR Direction Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+
+            <!-- 2. Light / Dark Mode Toggle (Icon Only) -->
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+
+          <!-- 3. Sign In Button ([ 👤 SIGN IN ]) -->
+          <a href="signin.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer Dimmed Backdrop -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       SIGN UP / CREATE ACCOUNT SECTION (COMPACT LUXURY AUTHENTICATION — NO FOOTER)
+       ======================================================================== -->
+  <main class="signin-section signup-section">
+    <div class="signin-container">
+      <div class="signin-card signup-card text-center">
+        <!-- Luxury Cinema Emblem -->
+        <div class="signin-badge">
+          <i class="bi bi-person-plus"></i>
+        </div>
+
+        <h1 class="signin-title">Create Account</h1>
+        <p class="signin-subtitle">Join the AVÉRA CINEMA client network for private cinema projects.</p>
+
+        <!-- Simulated Response Alert -->
+        <div id="signupAlert" class="d-none" role="alert"></div>
+
+        <form id="signupForm" novalidate>
+          <!-- Full Name -->
+          <div class="form-group-custom text-start">
+            <label for="signupName" class="form-label-custom">Full Name</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-person prefix-icon"></i>
+              <input type="text" class="form-control form-control-custom" id="signupName" placeholder="Jonathan Sterling" required autocomplete="name">
+            </div>
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
+
+          <!-- Email Address -->
+          <div class="form-group-custom text-start mt-2">
+            <label for="signupEmail" class="form-label-custom">Email Address</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-envelope prefix-icon"></i>
+              <input type="email" class="form-control form-control-custom" id="signupEmail" placeholder="client@luxuryestate.com" required autocomplete="email">
+            </div>
+            <div class="invalid-feedback">Please provide a valid client email.</div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group-custom text-start mt-2">
+            <label for="signupPhone" class="form-label-custom">Phone Number</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-telephone prefix-icon"></i>
+              <input type="tel" class="form-control form-control-custom" id="signupPhone" placeholder="+1 (555) 019-2834" required autocomplete="tel">
+            </div>
+            <div class="invalid-feedback">Please enter a valid contact number.</div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group-custom text-start mt-2">
+            <label for="signupPassword" class="form-label-custom mb-1">Password</label>
+            <div class="input-icon-wrap password-input-wrap">
+              <i class="bi bi-lock prefix-icon"></i>
+              <input type="password" class="form-control form-control-custom" id="signupPassword" placeholder="Minimum 8 characters" required minlength="8" autocomplete="new-password">
+              <button type="button" class="input-password-toggle" id="signupPasswordToggleBtn" aria-label="Toggle password visibility">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">Password must be at least 8 characters.</div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group-custom text-start mt-2">
+            <label for="signupConfirmPassword" class="form-label-custom mb-1">Confirm Password</label>
+            <div class="input-icon-wrap password-input-wrap">
+              <i class="bi bi-shield-check prefix-icon"></i>
+              <input type="password" class="form-control form-control-custom" id="signupConfirmPassword" placeholder="Confirm your password" required minlength="8" autocomplete="new-password">
+              <button type="button" class="input-password-toggle" id="signupConfirmToggleBtn" aria-label="Toggle confirm password visibility">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback" id="signupConfirmFeedback">Passwords must match.</div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-check text-start mt-2 mb-3">
+            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+            <label class="form-check-label small" for="agreeTerms">
+              I agree to the <a href="contact.html" class="text-gold">Terms</a> & <a href="contact.html" class="text-gold">Privacy Policy</a>
+            </label>
+            <div class="invalid-feedback">You must agree before continuing.</div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-gold btn-signin-submit w-100">
+            <i class="bi bi-person-plus-fill"></i> CREATE ACCOUNT
+          </button>
+        </form>
+
+        <!-- Form Card Footer -->
+        <div class="signin-card-footer mt-3 pt-3 border-top text-center">
+          <p class="signin-card-footer-text mb-0 small">
+            Already have an account? 
+            <a href="signin.html" class="text-gold fw-semibold">Sign In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Production Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
