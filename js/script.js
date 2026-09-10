@@ -3,7 +3,7 @@
  * Vanilla JavaScript Production Script
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
   'use strict';
 
   // ------------------------------------------------------------------------
@@ -1357,7 +1357,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         btn.setAttribute('title', 'Sign In');
         btn.setAttribute('aria-label', 'Sign In to client portal');
-        btn.setAttribute('href', 'signin.html');
+        const path = (window.location.pathname || '').replace(/\\/g, '/');
+        const prefix = path.includes('/cinema/private-cinema-chennai/') ? '../../' :
+                       (path.includes('/cinema/') ? '../' : '');
+        btn.setAttribute('href', prefix + 'login.html');
         btn.classList.remove('is-logged-in');
         btn.onclick = null;
       }
@@ -1452,7 +1455,107 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 10);
   }
 
+  // ------------------------------------------------------------------------
+  // 17. Live Countdown Timer (Coming Soon Page)
+  // ------------------------------------------------------------------------
+  const daysEl = document.getElementById('countdownDays');
+  const hoursEl = document.getElementById('countdownHours');
+  const minutesEl = document.getElementById('countdownMinutes');
+  const secondsEl = document.getElementById('countdownSeconds');
+
+  if (daysEl && hoursEl && minutesEl && secondsEl) {
+    // Target date 45 days in future from current
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 42);
+    targetDate.setHours(18, 0, 0, 0);
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate.getTime() - now;
+
+      if (difference <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+      }
+
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+      daysEl.textContent = d < 10 ? '0' + d : d;
+      hoursEl.textContent = h < 10 ? '0' + h : h;
+      minutesEl.textContent = m < 10 ? '0' + m : m;
+      secondsEl.textContent = s < 10 ? '0' + s : s;
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  // ------------------------------------------------------------------------
+  // 18. Forgot Password Form Simulation
+  // ------------------------------------------------------------------------
+  const forgotForm = document.getElementById('forgotPasswordForm');
+  const forgotAlert = document.getElementById('forgotAlert');
+
+  if (forgotForm) {
+    forgotForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!forgotForm.checkValidity()) {
+        forgotForm.classList.add('was-validated');
+        return;
+      }
+
+      const emailInput = document.getElementById('forgotEmail');
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+
+      if (forgotAlert) {
+        forgotAlert.className = 'alert alert-success mt-3';
+        forgotAlert.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>Reset link sent to <strong>${escapeHtml(emailVal)}</strong>. Please check your inbox.`;
+        forgotAlert.classList.remove('d-none');
+        forgotForm.reset();
+        forgotForm.classList.remove('was-validated');
+      }
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // 19. Coming Soon VIP Waitlist Form Simulation
+  // ------------------------------------------------------------------------
+  const waitlistForm = document.getElementById('comingSoonWaitlistForm');
+  const waitlistAlert = document.getElementById('waitlistAlert');
+
+  if (waitlistForm) {
+    waitlistForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!waitlistForm.checkValidity()) {
+        waitlistForm.classList.add('was-validated');
+        return;
+      }
+
+      const emailInput = document.getElementById('waitlistEmail');
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+
+      if (waitlistAlert) {
+        waitlistAlert.className = 'alert alert-success mt-3 py-2 small';
+        waitlistAlert.innerHTML = `<i class="bi bi-shield-check me-2"></i>VIP invitation registered for <strong>${escapeHtml(emailVal)}</strong>. You will receive priority launch access!`;
+        waitlistAlert.classList.remove('d-none');
+        waitlistForm.reset();
+        waitlistForm.classList.remove('was-validated');
+      }
+    });
+  }
+
   // Initialize navbar authentication state on page load
   updateNavbarAuthState();
-});
+};
 
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

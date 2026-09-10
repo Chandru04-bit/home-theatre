@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Theatre Installation</title>
+  <!-- Favicon (Browser Tab Icon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <meta name="description" content="Next-generation private cinema architecture is coming soon from AVÉRA Cinema. Register for VIP early access.">
+  
+  <!-- Google Fonts: Cormorant Garamond, Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preconnect to CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li><a class="dropdown-item" href="index.html">Home 1 — General Services</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2 — Private Cinema</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="navbar-actions">
+          <hr class="nav-mobile-divider d-lg-none my-2">
+          <div class="nav-toggles-group">
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+          <a href="login.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       COMING SOON HERO WITH LIVE COUNTDOWN
+       ======================================================================== -->
+  <main class="py-5 d-flex align-items-center bg-ivory" style="min-height: 80vh;">
+    <div class="container-custom py-5">
+      <div class="status-hero-card text-center">
+        <!-- Badge -->
+        <span class="badge bg-gold text-white px-3 py-1 text-uppercase fw-semibold mb-3">
+          <span class="pulse-indicator"></span>Official Launch Countdown
+        </span>
+
+        <h1 class="h2 text-dark-primary fw-bold mb-3">The Next Evolution in Private Cinema Is Dawning</h1>
+        <p class="text-secondary max-w-600 mx-auto mb-5">
+          AVÉRA Engineering Labs is preparing to unveil our revolutionary 3D Virtual Cinema Configurator, Dirac Live 3D Spatial Simulator, and Modular Micro-LED Cinema Wall suites.
+        </p>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-timer-wrap mb-5">
+          <div class="countdown-box">
+            <div class="countdown-number" id="countdownDays">42</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="countdownHours">18</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="countdownMinutes">45</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="countdownSeconds">30</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+
+        <!-- VIP Waitlist Form -->
+        <div class="max-w-500 mx-auto mb-5">
+          <h2 class="h6 text-dark-primary fw-semibold mb-2">Be First in Line for Private Launch Access</h2>
+          <form id="comingSoonWaitlistForm" novalidate>
+            <div class="input-group">
+              <input type="email" id="waitlistEmail" class="form-control form-control-custom" placeholder="client@luxuryestate.com" required>
+              <button type="submit" class="btn btn-gold px-4">Get VIP Invitation</button>
+            </div>
+            <div id="waitlistAlert" class="d-none"></div>
+          </form>
+        </div>
+
+        <!-- Feature Previews -->
+        <div class="row g-3 text-start pt-4 border-top border-beige">
+          <div class="col-md-4">
+            <div class="small fw-semibold text-dark-primary"><i class="bi bi-box me-1 text-gold"></i> 3D Configurator</div>
+            <div class="text-secondary" style="font-size: 0.8rem;">Design room risers and seating online in real time.</div>
+          </div>
+          <div class="col-md-4">
+            <div class="small fw-semibold text-dark-primary"><i class="bi bi-display me-1 text-gold"></i> Micro-LED Walls</div>
+            <div class="text-secondary" style="font-size: 0.8rem;">Direct-view modular HDR screens up to 240 inches.</div>
+          </div>
+          <div class="col-md-4">
+            <div class="small fw-semibold text-dark-primary"><i class="bi bi-cpu me-1 text-gold"></i> 32-Ch Trinnov</div>
+            <div class="text-secondary" style="font-size: 0.8rem;">Commercial-grade 32-channel discrete spatial rendering.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4 g-lg-5 footer-top">
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo-container mb-3 d-inline-block" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Bespoke private cinemas, reference Dolby Atmos soundstages, and architectural acoustic sanctuaries crafted to CEDIA standards.
+          </p>
+          <div class="footer-badges">
+            <span class="footer-badge">CEDIA Certified</span>
+            <span class="footer-badge">ISF Level-III</span>
+            <span class="footer-badge">Dolby Atmos Partner</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Project Gallery</a></li>
+            <li><a href="pricing.html">Cinema Packages</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=home-theatre-installation">Home Theatre Installation</a></li>
+            <li><a href="service-details.html?service=dolby-atmos-setup">Dolby Atmos Setup</a></li>
+            <li><a href="service-details.html?service=acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="service-details.html?service=home-theatre-installation">Complete Cinema Package</a></li>
+            <li><a href="service-details.html?service=av-receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Studio Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="login.html" class="text-secondary text-decoration-none small hover-gold">VIP Portal</a>
+          <a href="coming-soon.html" class="text-secondary text-decoration-none small hover-gold">Coming Soon</a>
+          <a href="maintenance.html" class="text-secondary text-decoration-none small hover-gold">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-  <meta name="description" content="Register for AVÉRA CINEMA VIP client portal access to manage your private home cinema engineering and acoustic consultations.">
+  <meta name="description" content="Sign in to your AVÉRA CINEMA VIP client portal to track your bespoke cinema design, acoustics schematics, and service consultations.">
 
   <!-- Anti-FOUC Theme & Direction Init -->
   <script>
@@ -111,7 +111,7 @@
               <i class="bi bi-moon" id="themeIcon"></i>
             </button>
           </div>
-          <a href="login.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+          <a href="login.html" class="btn btn-nav-signin active" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
             <i class="bi bi-person"></i>
             <span>SIGN IN</span>
           </a>
@@ -123,99 +123,68 @@
   <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
 
   <!-- ========================================================================
-       SIGN UP / REGISTER SECTION
+       SIGN IN / LOGIN SECTION
        ======================================================================== -->
-  <main class="signin-section signup-section">
+  <main class="signin-section">
     <div class="signin-container">
-      <div class="signin-card signup-card text-center">
+      <div class="signin-card text-center">
         <!-- Luxury Cinema Emblem -->
         <div class="signin-badge">
-          <i class="bi bi-person-plus"></i>
+          <i class="bi bi-shield-lock"></i>
         </div>
 
-        <h1 class="signin-title">Create VIP Account</h1>
-        <p class="signin-subtitle">Join the AVÉRA CINEMA client network for private cinema projects.</p>
+        <h1 class="signin-title">Client Access Portal</h1>
+        <p class="signin-subtitle">Sign in to manage your private cinema schematics and consultation records.</p>
 
         <!-- Simulated Response Alert -->
-        <div id="signupAlert" class="d-none" role="alert"></div>
+        <div id="signinAlert" class="d-none" role="alert"></div>
 
-        <form id="signupForm" novalidate>
-          <!-- Full Name -->
-          <div class="form-group-custom text-start">
-            <label for="signupName" class="form-label-custom">Full Name</label>
-            <div class="input-icon-wrap">
-              <i class="bi bi-person prefix-icon"></i>
-              <input type="text" class="form-control form-control-custom" id="signupName" placeholder="Jonathan Sterling" required autocomplete="name">
-            </div>
-            <div class="invalid-feedback">Please enter your full name.</div>
-          </div>
-
+        <form id="signinForm" novalidate>
           <!-- Email Address -->
-          <div class="form-group-custom text-start mt-2">
-            <label for="signupEmail" class="form-label-custom">Email Address</label>
+          <div class="form-group-custom text-start">
+            <label for="signinEmail" class="form-label-custom">Email Address</label>
             <div class="input-icon-wrap">
               <i class="bi bi-envelope prefix-icon"></i>
-              <input type="email" class="form-control form-control-custom" id="signupEmail" placeholder="client@luxuryestate.com" required autocomplete="email">
+              <input type="email" class="form-control form-control-custom" id="signinEmail" placeholder="client@luxuryestate.com" required>
             </div>
             <div class="invalid-feedback">Please provide a valid client email.</div>
           </div>
 
-          <!-- Phone Number -->
-          <div class="form-group-custom text-start mt-2">
-            <label for="signupPhone" class="form-label-custom">Phone Number</label>
-            <div class="input-icon-wrap">
-              <i class="bi bi-telephone prefix-icon"></i>
-              <input type="tel" class="form-control form-control-custom" id="signupPhone" placeholder="+91 98400 12345" required autocomplete="tel">
-            </div>
-            <div class="invalid-feedback">Please enter a valid contact number.</div>
-          </div>
-
           <!-- Password -->
-          <div class="form-group-custom text-start mt-2">
-            <label for="signupPassword" class="form-label-custom mb-1">Password</label>
+          <div class="form-group-custom text-start mt-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label for="signinPassword" class="form-label-custom mb-0">Password</label>
+              <a href="forgot-password.html" class="forgot-link">Forgot password?</a>
+            </div>
             <div class="input-icon-wrap password-input-wrap">
               <i class="bi bi-lock prefix-icon"></i>
-              <input type="password" class="form-control form-control-custom" id="signupPassword" placeholder="Minimum 8 characters" required minlength="8" autocomplete="new-password">
-              <button type="button" class="input-password-toggle" id="signupPasswordToggleBtn" aria-label="Toggle password visibility">
+              <input type="password" class="form-control form-control-custom" id="signinPassword" placeholder="••••••••" required autocomplete="current-password">
+              <button type="button" class="input-password-toggle" id="passwordToggleBtn" aria-label="Toggle password visibility">
                 <i class="bi bi-eye"></i>
               </button>
             </div>
-            <div class="invalid-feedback">Password must be at least 8 characters.</div>
+            <div class="invalid-feedback">Please enter your password.</div>
           </div>
 
-          <!-- Confirm Password -->
-          <div class="form-group-custom text-start mt-2">
-            <label for="signupConfirmPassword" class="form-label-custom mb-1">Confirm Password</label>
-            <div class="input-icon-wrap password-input-wrap">
-              <i class="bi bi-shield-check prefix-icon"></i>
-              <input type="password" class="form-control form-control-custom" id="signupConfirmPassword" placeholder="Confirm your password" required minlength="8" autocomplete="new-password">
-              <button type="button" class="input-password-toggle" id="signupConfirmToggleBtn" aria-label="Toggle confirm password visibility">
-                <i class="bi bi-eye"></i>
-              </button>
-            </div>
-            <div class="invalid-feedback" id="signupConfirmFeedback">Passwords must match.</div>
-          </div>
-
-          <!-- Terms Checkbox -->
-          <div class="form-check text-start mt-2 mb-3">
-            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
-            <label class="form-check-label small" for="agreeTerms">
-              I agree to the <a href="contact.html" class="text-gold">Terms</a> &amp; <a href="contact.html" class="text-gold">Privacy Policy</a>
+          <!-- Remember Me Checkbox -->
+          <div class="form-check text-start mt-3 mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label small" for="rememberMe">
+              Remember my device for 30 days
             </label>
-            <div class="invalid-feedback">You must agree before continuing.</div>
           </div>
 
           <!-- Submit Button -->
           <button type="submit" class="btn btn-gold btn-signin-submit w-100">
-            <i class="bi bi-person-plus-fill me-1"></i> CREATE VIP ACCOUNT
+            <i class="bi bi-box-arrow-in-right me-1"></i> SIGN IN TO STUDIO
           </button>
         </form>
 
         <!-- Form Card Footer -->
         <div class="signin-card-footer mt-3 pt-3 border-top text-center">
           <p class="signin-card-footer-text mb-0 small">
-            Already have an account? 
-            <a href="login.html" class="text-gold fw-semibold">Sign In</a>
+            Don't have an account? 
+            <a href="register.html" class="text-gold fw-semibold" id="createAccountLink">Create VIP Account</a>
           </p>
         </div>
       </div>

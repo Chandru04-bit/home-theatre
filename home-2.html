@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Theatre Installation</title>
+  <!-- Favicon (Browser Tab Icon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="images/hero/hero-audio-system.webp" type="image/webp" fetchpriority="high">
+  <meta name="description" content="AVÉRA Cinema engineers bespoke luxury private cinemas, reference Dolby Atmos 9.4.6 spatial sound, and architectural acoustic sanctuaries for estates and penthouses.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Bespoke Private Home Cinema Architecture | AVÉRA Cinema">
+  <meta property="og:description" content="Design your dream private cinema. Engineered for master-reference sound, laser optics, and uncompromised luxury.">
+  <meta property="og:image" content="images/hero/hero-audio-system.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preconnect to CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">Home</a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li><a class="dropdown-item" href="index.html">Home 1 — General Services</a></li>
+                <li><a class="dropdown-item active" href="home-2.html">Home 2 — Private Cinema</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <hr class="nav-mobile-divider d-lg-none my-2">
+          <div class="nav-toggles-group">
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+          <a href="login.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       CINEMATIC FULL-BLEED HERO SECTION
+       ======================================================================== -->
+  <header class="position-relative overflow-hidden py-5 d-flex align-items-center" style="min-height: 85vh; background: radial-gradient(circle at 50% 30%, rgba(198, 161, 91, 0.12) 0%, rgba(24, 22, 19, 0.02) 70%), var(--bg-primary);">
+    <div class="container-custom py-5">
+      <div class="row align-items-center g-5">
+        <!-- Text Column -->
+        <div class="col-lg-6 reveal-on-scroll">
+          <div class="d-inline-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-gold text-white px-3 py-2 text-uppercase fw-semibold letter-spacing" style="font-size: 0.75rem;">
+              <i class="bi bi-patch-check-fill me-1"></i>Bespoke Cinema Architecture
+            </span>
+            <span class="badge bg-card border border-beige text-dark-primary px-3 py-2 text-uppercase fw-semibold" style="font-size: 0.75rem;">
+              THX &amp; CEDIA Certified
+            </span>
+          </div>
+
+          <h1 class="display-5 fw-bold text-dark-primary mb-4" style="line-height: 1.15; letter-spacing: -0.03em;">
+            Design Your Dream <span class="text-gold">Private Cinema</span>
+          </h1>
+
+          <p class="lead text-secondary mb-4" style="font-size: 1.15rem; line-height: 1.7;">
+            We engineer immersive private screening sanctuaries that transcend commercial theatres. From 3D architectural CAD modeling to surgical Dirac Live multi-seat calibration, experience reference 4K laser optics and 9.4.6 Dolby Atmos realism.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="contact.html" class="btn btn-gold btn-lg px-4 py-3">
+              Book Studio Audition <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="pricing.html" class="btn btn-outline-gold btn-lg px-4 py-3">
+              Explore Cinema Packages
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="pt-4 border-top border-beige d-flex flex-wrap gap-4 text-secondary small">
+            <div><i class="bi bi-check-circle-fill text-gold me-2"></i>ISF Level-III Video</div>
+            <div><i class="bi bi-check-circle-fill text-gold me-2"></i>Dolby Atmos Certified</div>
+            <div><i class="bi bi-check-circle-fill text-gold me-2"></i>STC 65+ Sound Isolation</div>
+          </div>
+        </div>
+
+        <!-- Visual Column -->
+        <div class="col-lg-6 reveal-on-scroll">
+          <div class="position-relative">
+            <div class="intro-img-card shadow-lg rounded overflow-hidden border border-beige" style="max-height: 520px;">
+              <picture>
+                <source type="image/webp" srcset="images/hero/hero-audio-system-md.webp 640w, images/hero/hero-audio-system.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+                <img src="images/hero/hero-audio-system.jpg" alt="Architectural luxury private cinema screening room" class="w-100 h-100 object-fit-cover" width="1200" height="896" loading="eager" fetchpriority="high">
+              </picture>
+            </div>
+
+            <!-- Floating Glassmorphic Stat Pill -->
+            <div class="position-absolute bottom-0 start-0 m-4 p-3 rounded bg-card border border-gold shadow-lg d-none d-sm-flex align-items-center gap-3" style="max-width: 320px;">
+              <div class="fs-2 text-gold"><i class="bi bi-stars"></i></div>
+              <div>
+                <div class="fw-bold text-dark-primary small">Reference Screening Standard</div>
+                <div class="text-secondary" style="font-size: 0.78rem;">0.28s RT60 Controlled Decay &bull; 4K DCI Laser</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       FOUR PILLARS OF REFERENCE PRIVATE CINEMA
+       ======================================================================== -->
+  <section class="py-5 bg-secondary-theme border-top border-bottom border-beige">
+    <div class="container-custom py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag d-inline-block mb-2">ARCHITECTURAL DISCIPLINES</span>
+        <h2 class="section-title">Engineered to Surpass Commercial Standards</h2>
+        <p class="text-secondary">A world-class private screening room is the harmonic synthesis of four critical scientific and design disciplines.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Pillar 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded bg-card border border-beige h-100 shadow-sm transition-hover">
+            <div class="text-gold fs-2 mb-3"><i class="bi bi-bounding-box-circles"></i></div>
+            <h3 class="h5 text-dark-primary fw-semibold mb-2">Acoustic Isolation</h3>
+            <p class="small text-secondary mb-3">
+              Box-in-a-box construction with mechanical decoupling, resilient channels, and damped viscoelastic compounds stopping sound transmission cold.
+            </p>
+            <a href="service-details.html?service=acoustic-treatment" class="text-gold fw-semibold small text-decoration-none hover-gold">
+              Learn more <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded bg-card border border-beige h-100 shadow-sm transition-hover">
+            <div class="text-gold fs-2 mb-3"><i class="bi bi-projector"></i></div>
+            <h3 class="h5 text-dark-primary fw-semibold mb-2">Native 4K Laser Optics</h3>
+            <p class="small text-secondary mb-3">
+              Sony SXRD and Barco laser engines paired with micro-perforated acoustic screens for pinpoint dialogue localization and infinite contrast.
+            </p>
+            <a href="service-details.html?service=projector-installation" class="text-gold fw-semibold small text-decoration-none hover-gold">
+              Learn more <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded bg-card border border-beige h-100 shadow-sm transition-hover">
+            <div class="text-gold fs-2 mb-3"><i class="bi bi-soundwave"></i></div>
+            <h3 class="h5 text-dark-primary fw-semibold mb-2">Dolby Atmos Immersion</h3>
+            <p class="small text-secondary mb-3">
+              Up to 16 discrete audio channels with multi-subwoofer phase synchronization delivering tactile bass and pinpoint vertical motion tracking.
+            </p>
+            <a href="service-details.html?service=dolby-atmos-setup" class="text-gold fw-semibold small text-decoration-none hover-gold">
+              Learn more <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded bg-card border border-beige h-100 shadow-sm transition-hover">
+            <div class="text-gold fs-2 mb-3"><i class="bi bi-sliders2"></i></div>
+            <h3 class="h5 text-dark-primary fw-semibold mb-2">Single-Touch Automation</h3>
+            <p class="small text-secondary mb-3">
+              Control4 and Crestron programming that harmonizes starlight ceilings, motorized recliners, climate, and movie playback into a single remote.
+            </p>
+            <a href="service-details.html?service=smart-home-integration" class="text-gold fw-semibold small text-decoration-none hover-gold">
+              Learn more <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FEATURED CINEMA SHOWCASE PROJECTS
+       ======================================================================== -->
+  <section class="py-5 bg-ivory">
+    <div class="container-custom py-4">
+      <div class="d-flex flex-wrap align-items-center justify-content-between mb-5">
+        <div>
+          <span class="section-tag d-inline-block mb-1">PORTFOLIO OF EXCELLENCE</span>
+          <h2 class="h2 text-dark-primary fw-semibold mb-0">Signature Private Screening Rooms</h2>
+        </div>
+        <a href="gallery.html" class="btn btn-outline-gold mt-3 mt-md-0">
+          View Complete Gallery <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Showcase 1: Chennai -->
+        <div class="col-lg-4 col-md-6">
+          <div class="gallery-card rounded bg-card border border-beige overflow-hidden h-100 shadow-sm transition-hover">
+            <div class="gallery-img-wrap position-relative" style="height: 250px;">
+              <img src="images/gallery/theatre-01.webp" alt="Private Cinema Chennai" class="w-100 h-100 object-fit-cover" loading="lazy">
+              <span class="badge bg-gold text-white position-absolute top-0 start-0 m-3 px-3 py-1">Chennai &bull; 7.2.4 Atmos</span>
+            </div>
+            <div class="p-4">
+              <span class="small text-gold text-uppercase fw-semibold mb-1 d-block">Private Villa &bull; Boat Club</span>
+              <h3 class="h5 fw-semibold text-dark-primary mb-2">The Sovereign Screening Room</h3>
+              <p class="small text-secondary mb-3">150\" curved Cinemascope screen, decoupled acoustic fabric walls, and motorized Italian leather recliners.</p>
+              <a href="cinema/private-cinema-chennai.html" class="btn btn-sm btn-outline-gold w-100">View Project Blueprint <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 2: Bengaluru -->
+        <div class="col-lg-4 col-md-6">
+          <div class="gallery-card rounded bg-card border border-beige overflow-hidden h-100 shadow-sm transition-hover">
+            <div class="gallery-img-wrap position-relative" style="height: 250px;">
+              <img src="images/gallery/theatre-02.webp" alt="Lumina Penthouse Bengaluru" class="w-100 h-100 object-fit-cover" loading="lazy">
+              <span class="badge bg-gold text-white position-absolute top-0 start-0 m-3 px-3 py-1">Bengaluru &bull; 9.4.6 Spatial</span>
+            </div>
+            <div class="p-4">
+              <span class="small text-gold text-uppercase fw-semibold mb-1 d-block">Penthouse &bull; Indiranagar</span>
+              <h3 class="h5 fw-semibold text-dark-primary mb-2">Lumina Architectural Cinema</h3>
+              <p class="small text-secondary mb-3">Native 4K SXRD laser projection, architectural timber slat diffusers, and Crestron one-touch scenes.</p>
+              <a href="cinema/lumina-penthouse-bengaluru.html" class="btn btn-sm btn-outline-gold w-100">View Project Blueprint <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 3: Mumbai -->
+        <div class="col-lg-4 col-md-6">
+          <div class="gallery-card rounded bg-card border border-beige overflow-hidden h-100 shadow-sm transition-hover">
+            <div class="gallery-img-wrap position-relative" style="height: 250px;">
+              <img src="images/gallery/theatre-03.webp" alt="Acoustic Sanctuary Mumbai" class="w-100 h-100 object-fit-cover" loading="lazy">
+              <span class="badge bg-gold text-white position-absolute top-0 start-0 m-3 px-3 py-1">Mumbai &bull; 7.4.4 Starlight</span>
+            </div>
+            <div class="p-4">
+              <span class="small text-gold text-uppercase fw-semibold mb-1 d-block">Sea-Facing Estate &bull; Worli</span>
+              <h3 class="h5 fw-semibold text-dark-primary mb-2">Acoustic Starlight Sanctuary</h3>
+              <p class="small text-secondary mb-3">1,200-point fiber-optic constellation ceiling, whisper HVAC silencers, and high-current toroidal amplification.</p>
+              <a href="cinema/acoustic-sanctuary-mumbai.html" class="btn btn-sm btn-outline-gold w-100">View Project Blueprint <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CINEMA PACKAGES TEASER & COMPARISON
+       ======================================================================== -->
+  <section class="py-5 bg-pure-white border-top border-beige">
+    <div class="container-custom py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag d-inline-block mb-2">CURATED TIERS</span>
+        <h2 class="section-title">Bespoke Cinema Packages</h2>
+        <p class="text-secondary">Tailored engineering packages matched to room dimensions, seating capacity, and acoustic requirements.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch justify-content-center">
+        <!-- Tier 1: Essential -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-card p-4 p-xl-5 h-100 d-flex flex-column">
+            <h3 class="h5 text-dark-primary fw-semibold mb-1">Essential Media Cinema</h3>
+            <p class="small text-secondary mb-3">Refined 5.1 immersion for executive salons and luxury media lounges.</p>
+            <div class="pricing-price-wrap">
+              <span class="pricing-price">₹12,50,000</span>
+              <span class="pricing-period"> / Complete Setup</span>
+            </div>
+            <ul class="list-unstyled mb-4 flex-grow-1">
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>5.1 Multi-Channel Surround</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Native 4K Ultra-Short-Throw Laser</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>110\" Fixed Velvet Frame ALR Screen</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Fabric Acoustic Panels</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>2-Year Comprehensive Warranty</li>
+            </ul>
+            <a href="contact.html?package=Essential%20Media%20Cinema" class="btn btn-outline-gold w-100">Select Essential</a>
+          </div>
+        </div>
+
+        <!-- Tier 2: Reference (Featured) -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-card featured p-4 p-xl-5 h-100 d-flex flex-column">
+            <div class="pricing-card-badge">Most Popular</div>
+            <h3 class="h5 text-dark-primary fw-semibold mb-1">Reference 7.2.4 Atmos</h3>
+            <p class="small text-secondary mb-3">Full spatial overhead immersion for dedicated private cinema rooms.</p>
+            <div class="pricing-price-wrap">
+              <span class="pricing-price">₹28,00,000</span>
+              <span class="pricing-period"> / Complete Setup</span>
+            </div>
+            <ul class="list-unstyled mb-4 flex-grow-1">
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>7.2.4 Dolby Atmos Discrete Array</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Native 4K SXRD Laser Projector</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>135\" Acoustically Transparent Screen</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Decoupled Acoustic Framing</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Dirac Live 3D Room Calibration</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>5-Year White-Glove Guarantee</li>
+            </ul>
+            <a href="contact.html?package=Reference%207.2.4%20Atmos" class="btn btn-gold w-100">Select Reference Tier</a>
+          </div>
+        </div>
+
+        <!-- Tier 3: Luxury Sanctuary -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-card p-4 p-xl-5 h-100 d-flex flex-column">
+            <h3 class="h5 text-dark-primary fw-semibold mb-1">Luxury Private Sanctuary</h3>
+            <p class="small text-secondary mb-3">The pinnacle of private cinema art with starlight ceilings and automation.</p>
+            <div class="pricing-price-wrap">
+              <span class="pricing-price">₹55,00,000+</span>
+              <span class="pricing-period"> / Bespoke Suite</span>
+            </div>
+            <ul class="list-unstyled mb-4 flex-grow-1">
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>9.4.6 Discrete Spatial Immersion</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Flagship High-Lumen DCI Laser</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>160\"-200\" Micro-Perforated Screen</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Fiber-Optic Starlight Ceiling</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Motorized Leather Cinema Recliners</li>
+              <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i>Crestron / Control4 Smart Integration</li>
+            </ul>
+            <a href="contact.html?package=Luxury%20Sanctuary" class="btn btn-outline-gold w-100">Request Bespoke Design</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="pricing.html" class="text-gold fw-semibold text-decoration-none hover-gold">
+          View full line-by-line feature comparison table <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       AUDIOPHILE CLIENT TESTIMONIALS
+       ======================================================================== -->
+  <section class="py-5 bg-secondary-theme border-top border-beige">
+    <div class="container-custom py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag d-inline-block mb-2">CLIENT ENDORSEMENTS</span>
+        <h2 class="section-title">Praised by Audiophiles &amp; Architects</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 p-lg-5 rounded bg-card border border-beige h-100 shadow-sm d-flex flex-column">
+            <div class="text-gold mb-3 fs-5">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fst-italic text-secondary small mb-4 flex-grow-1">
+              "AVÉRA Cinema transformed our basement into a room that genuinely outclasses our local multiplex. The Dirac Live calibration makes dialogue crystal clear even when buildings are exploding on screen."
+            </p>
+            <div class="pt-3 border-top border-beige">
+              <div class="fw-semibold text-dark-primary small">Vikram Chandrasekhar</div>
+              <div class="small text-secondary">Estate Owner, Boat Club Chennai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-4 p-lg-5 rounded bg-card border border-beige h-100 shadow-sm d-flex flex-column">
+            <div class="text-gold mb-3 fs-5">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fst-italic text-secondary small mb-4 flex-grow-1">
+              "As an architect, finding an AV integrator who respects sightlines, zero-bezel aesthetics, and acoustic physics without cluttering walls is exceptionally rare. AVÉRA Cinema is our exclusive partner."
+            </p>
+            <div class="pt-3 border-top border-beige">
+              <div class="fw-semibold text-dark-primary small">Ananya Deshmukh</div>
+              <div class="small text-secondary">Principal Architect, Bengaluru</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-4 p-lg-5 rounded bg-card border border-beige h-100 shadow-sm d-flex flex-column">
+            <div class="text-gold mb-3 fs-5">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fst-italic text-secondary small mb-4 flex-grow-1">
+              "The starlight ceiling and one-touch lighting automation bring pure wonder every time guests visit. My family now watches movies together three nights a week. Worth every rupee."
+            </p>
+            <div class="pt-3 border-top border-beige">
+              <div class="fw-semibold text-dark-primary small">Rajesh Singhania</div>
+              <div class="small text-secondary">Penthouse Resident, Worli Mumbai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LARGE CTA BANNER
+       ======================================================================== -->
+  <section class="cta-banner-section bg-warm-cream">
+    <div class="container-custom">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 reveal-on-scroll text-center">
+          <span class="section-tag d-inline-flex mb-3">PRIVATE CONSULTATION</span>
+          <h2 class="cta-title">Begin Your Cinema Journey Today</h2>
+          <p class="cta-desc mb-4">
+            Schedule a private design consultation at our Nungambakkam listening studio or request an on-site acoustic assessment for your home.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="contact.html" class="btn btn-gold btn-lg px-4">
+              Book Private Consultation <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="tel:+919840012345" class="btn btn-outline-gold btn-lg px-4">
+              <i class="bi bi-telephone me-2"></i>+91 98400 12345
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4 g-lg-5 footer-top">
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo-container mb-3 d-inline-block" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Bespoke private cinemas, reference Dolby Atmos soundstages, and architectural acoustic sanctuaries crafted to CEDIA standards.
+          </p>
+          <div class="footer-badges">
+            <span class="footer-badge">CEDIA Certified</span>
+            <span class="footer-badge">ISF Level-III</span>
+            <span class="footer-badge">Dolby Atmos Partner</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Project Gallery</a></li>
+            <li><a href="pricing.html">Cinema Packages</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=home-theatre-installation">Home Theatre Installation</a></li>
+            <li><a href="service-details.html?service=dolby-atmos-setup">Dolby Atmos Setup</a></li>
+            <li><a href="service-details.html?service=acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="service-details.html?service=home-theatre-installation">Complete Cinema Package</a></li>
+            <li><a href="service-details.html?service=av-receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Studio Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="login.html" class="text-secondary text-decoration-none small hover-gold">VIP Portal</a>
+          <a href="coming-soon.html" class="text-secondary text-decoration-none small hover-gold">Coming Soon</a>
+          <a href="maintenance.html" class="text-secondary text-decoration-none small hover-gold">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

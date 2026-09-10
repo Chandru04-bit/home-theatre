@@ -95,7 +95,7 @@ const AV_PRODUCTS = [
     image: "images/products/bose-inceiling.webp",
     gallery: [
       "images/products/bose-inceiling.webp",
-      "images/products/bose.webp",
+      "images/products/bose-soundbar.webp",
       "images/gallery/theatre-01.webp"
     ],
     tagline: "Premium Coaxial Two-Way Architectural Ceiling Speakers for Invisible Luxury Sound",
@@ -169,10 +169,10 @@ const AV_PRODUCTS = [
     badge: "11.2-Channel Flagship",
     dealerBadge: "Yamaha AVENTAGE Premier Dealer",
     priceInfo: "Price on Consultation / Precision DSP Acoustic Calibration",
-    image: "images/products/yamaha.webp",
+    image: "images/products/yamaha-receiver.webp",
     gallery: [
-      "images/products/yamaha.webp",
       "images/products/yamaha-receiver.webp",
+      "images/products/marantz.webp",
       "images/gallery/theatre-03.webp"
     ],
     tagline: "Flagship 11.2-Channel AV Receiver with Dual ESS SABRE PRO DACs & SURROUND:AI™",
@@ -246,10 +246,10 @@ const AV_PRODUCTS = [
     badge: "13.2-Channel Monolithic",
     dealerBadge: "Denon Flagship Certified Dealer",
     priceInfo: "Price on Consultation / Reference Installation & Tuning",
-    image: "images/products/denon.webp",
+    image: "images/products/denon-flagship.webp",
     gallery: [
-      "images/products/denon.webp",
       "images/products/denon-flagship.webp",
+      "images/products/yamaha-receiver.webp",
       "images/gallery/theatre-04.webp"
     ],
     tagline: "Flagship 13.2-Channel Monolithic Amplifier Handcrafted in Shirakawa, Japan",
@@ -551,10 +551,10 @@ const AV_PRODUCTS = [
     badge: "1,000W RMS Bass Engine",
     dealerBadge: "JBL Synthesis Certified Luxury Dealer",
     priceInfo: "Price on Consultation / In-Room Subwoofer Phase Alignment",
-    image: "images/products/jbl.webp",
+    image: "images/products/jbl-subwoofer.webp",
     gallery: [
-      "images/products/jbl.webp",
       "images/products/jbl-subwoofer.webp",
+      "images/products/jbl-speaker.webp",
       "images/gallery/theatre-04.webp"
     ],
     tagline: "High-Performance 1,000W RMS Powered Subwoofer with 12-Inch Poly-plas™ Woofer",
@@ -627,10 +627,10 @@ const AV_PRODUCTS = [
     badge: "98-Inch Master Display",
     dealerBadge: "Sony Professional Master Display Partner",
     priceInfo: "Price on Consultation / Certified White-Glove Wall Installation",
-    image: "images/products/sony.webp",
+    image: "images/products/sony-bravia-98.webp",
     gallery: [
-      "images/products/sony.webp",
       "images/products/sony-bravia-98.webp",
+      "images/products/sony-projector.webp",
       "images/gallery/theatre-01.webp"
     ],
     tagline: "Mammoth 98-Inch 4K HDR Full Array LED Display with Cognitive Processor XR™",

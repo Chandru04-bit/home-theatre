@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Theatre Installation</title>
+  <!-- Favicon (Browser Tab Icon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <meta name="description" content="Technical guide and acoustic analysis by AVÉRA Cinema's CEDIA and ISF certified engineers.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Cinema Article | AVÉRA Cinema">
+  <meta property="og:description" content="Master-class technical guide on home cinema acoustics, optics, and calibration.">
+  <meta property="og:image" content="images/gallery/theatre-03.webp">
+  <meta property="og:type" content="article">
+
+  <!-- Google Fonts: Cormorant Garamond, Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preconnect to CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC Theme & Direction Init -->
+  <script>
+    (function() {
+      var d = localStorage.getItem('direction') || 'ltr';
+      document.documentElement.dir = d;
+      var t = localStorage.getItem('theme') || 'light';
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (LIGHT LUXURY)
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-custom navbar-container">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand brand-logo-container" href="index.html">
+        <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+        <span class="brand-subtitle">Home Theatre & Audio</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler -->
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Collapsible Container -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Mobile Drawer Header -->
+        <div class="nav-drawer-header d-lg-none">
+          <div class="nav-drawer-brand">
+            <span class="nav-drawer-title">AVÉRA <span>CINEMA</span></span>
+            <span class="nav-drawer-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+          <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Close navigation menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Navigation -->
+        <div class="navbar-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li><a class="dropdown-item" href="index.html">Home 1 — General Services</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2 — Private Cinema</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Controls Container -->
+        <div class="navbar-actions">
+          <hr class="nav-mobile-divider d-lg-none my-2">
+          <div class="nav-toggles-group">
+            <button class="btn btn-nav-control btn-nav-dir" id="dirToggleBtn" type="button" aria-label="Switch text direction" title="Switch text direction (RTL / LTR)">
+              <i class="bi bi-arrow-left-right"></i>
+              <span id="dirLabel" class="visually-hidden">LTR</span>
+            </button>
+            <button class="btn btn-nav-control btn-nav-theme" id="themeToggleBtn" type="button" aria-label="Toggle dark mode" title="Toggle theme (Light / Dark)">
+              <i class="bi bi-moon" id="themeIcon"></i>
+            </button>
+          </div>
+          <a href="login.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+            <i class="bi bi-person"></i>
+            <span>SIGN IN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
+
+  <!-- ========================================================================
+       BREADCRUMB HEADER
+       ======================================================================== -->
+  <section class="py-3 bg-secondary-theme border-bottom border-beige">
+    <div class="container-custom">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-secondary text-decoration-none hover-gold"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="breadcrumb-item"><a href="blog.html" class="text-secondary text-decoration-none hover-gold">Insights &amp; Blog</a></li>
+          <li class="breadcrumb-item"><a href="blog.html" id="breadcrumbCategory" class="text-secondary text-decoration-none hover-gold">Category</a></li>
+          <li class="breadcrumb-item active text-gold fw-semibold" id="breadcrumbCurrent" aria-current="page">Article Title</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ARTICLE MAIN WRAPPER
+       ======================================================================== -->
+  <main class="py-5 bg-ivory">
+    <div class="container-custom py-3">
+      <div class="row g-5">
+        <!-- LEFT: Primary Article Body -->
+        <article class="col-lg-8">
+          <!-- Category & Title -->
+          <div class="mb-3">
+            <span class="badge bg-gold text-white px-3 py-1 text-uppercase fw-semibold" id="articleCategoryBadge">Spatial Audio</span>
+          </div>
+
+          <h1 class="h2 text-dark-primary fw-bold mb-3" id="articleMainTitle" style="line-height: 1.25;">
+            The Definitive Guide to Dolby Atmos Speaker Placement: 5.1.2 vs 7.2.4 vs 9.4.6
+          </h1>
+
+          <!-- Author Meta Strip -->
+          <div class="d-flex flex-wrap align-items-center gap-3 py-3 border-top border-bottom border-beige mb-4 text-secondary small">
+            <div class="d-flex align-items-center gap-2">
+              <img id="articleAuthorAvatar" src="images/products/jbl-speaker.webp" alt="Author" class="rounded-circle object-fit-cover" width="36" height="36">
+              <div>
+                <span class="text-dark-primary fw-semibold d-block" id="articleAuthorName">Karthik Subramanian</span>
+                <span class="text-secondary" style="font-size: 0.75rem;" id="articleAuthorRole">Audio Director</span>
+              </div>
+            </div>
+            <div>&bull;</div>
+            <div><i class="bi bi-calendar3 me-1"></i><span id="articlePublishDate">February 24, 2026</span></div>
+            <div>&bull;</div>
+            <div><i class="bi bi-clock me-1"></i><span id="articleReadTime">8 min read</span></div>
+          </div>
+
+          <!-- Featured Hero Image -->
+          <div class="rounded overflow-hidden border border-beige shadow-sm mb-5" id="articleHeroImageWrap" style="max-height: 480px;">
+            <img src="images/gallery/theatre-03.webp" alt="Featured Article Visual" class="w-100 h-100 object-fit-cover" width="1200" height="700">
+          </div>
+
+          <!-- Dynamic Rich Content -->
+          <div class="article-content-body text-secondary" id="articleContentBody" style="line-height: 1.8; font-size: 1.05rem;">
+            <!-- Dynamically populated HTML from blog-data.js -->
+          </div>
+
+          <!-- Tags List -->
+          <div class="pt-4 mt-5 border-top border-beige d-flex flex-wrap align-items-center gap-2">
+            <span class="small text-dark-primary fw-bold me-2"><i class="bi bi-tags me-1"></i>Tags:</span>
+            <div id="articleTagsList" class="d-flex flex-wrap">
+              <!-- Dynamically populated tags -->
+            </div>
+          </div>
+
+          <!-- Author Bio Box -->
+          <div class="mt-4 p-4 rounded bg-card border border-beige shadow-sm" id="articleAuthorBioBox">
+            <!-- Dynamically populated author bio -->
+          </div>
+
+          <!-- Comment / Discussion Form -->
+          <div class="mt-5 pt-4 border-top border-beige">
+            <h3 class="h5 text-dark-primary fw-semibold mb-3">Leave a Technical Question or Feedback</h3>
+            <div id="commentAlert" class="d-none"></div>
+
+            <form id="articleCommentForm" novalidate class="mt-3">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="commentName" class="form-label-custom">Full Name</label>
+                  <input type="text" class="form-control form-control-custom" id="commentName" placeholder="Vikram Mehta" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="commentEmail" class="form-label-custom">Email Address</label>
+                  <input type="email" class="form-control form-control-custom" id="commentEmail" placeholder="vikram@estate.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="commentText" class="form-label-custom">Comment / Inquiry</label>
+                  <textarea class="form-control form-control-custom" id="commentText" rows="4" placeholder="Your room dimensions or questions regarding this installation..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-gold px-4">Submit Comment</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <!-- RIGHT: Sidebar Widgets -->
+        <aside class="col-lg-4">
+          <div class="sticky-lg-top" style="top: 100px;">
+            <!-- Widget 1: Search -->
+            <div class="p-4 rounded bg-card border border-beige shadow-sm mb-4">
+              <h3 class="h6 text-dark-primary fw-bold text-uppercase letter-spacing mb-3">Search Insights</h3>
+              <form action="blog.html" method="GET">
+                <div class="input-group">
+                  <input type="text" name="search" class="form-control form-control-custom" placeholder="Search topics...">
+                  <button type="submit" class="btn btn-gold"><i class="bi bi-search"></i></button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Widget 2: Recent Posts -->
+            <div class="p-4 rounded bg-card border border-beige shadow-sm mb-4">
+              <h3 class="h6 text-dark-primary fw-bold text-uppercase letter-spacing mb-3">Recent Guides</h3>
+              <div id="sidebarRecentPosts">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Widget 3: Categories -->
+            <div class="p-4 rounded bg-card border border-beige shadow-sm mb-4">
+              <h3 class="h6 text-dark-primary fw-bold text-uppercase letter-spacing mb-3">Topics</h3>
+              <ul class="list-unstyled mb-0 small">
+                <li class="py-2 border-bottom border-beige d-flex justify-content-between"><a href="blog.html?category=audio" class="text-secondary text-decoration-none hover-gold">Spatial Audio &amp; Atmos</a><span class="text-gold fw-semibold">1</span></li>
+                <li class="py-2 border-bottom border-beige d-flex justify-content-between"><a href="blog.html?category=projection" class="text-secondary text-decoration-none hover-gold">Laser Optics &amp; Screens</a><span class="text-gold fw-semibold">2</span></li>
+                <li class="py-2 border-bottom border-beige d-flex justify-content-between"><a href="blog.html?category=acoustics" class="text-secondary text-decoration-none hover-gold">Room Acoustics &amp; Isolation</a><span class="text-gold fw-semibold">1</span></li>
+                <li class="py-2 border-bottom border-beige d-flex justify-content-between"><a href="blog.html?category=calibration" class="text-secondary text-decoration-none hover-gold">Dirac Live &amp; Calibration</a><span class="text-gold fw-semibold">1</span></li>
+                <li class="py-2 d-flex justify-content-between"><a href="blog.html?category=automation" class="text-secondary text-decoration-none hover-gold">Smart Cinema Automation</a><span class="text-gold fw-semibold">1</span></li>
+              </ul>
+            </div>
+
+            <!-- Widget 4: Consultation CTA -->
+            <div class="p-4 rounded bg-secondary-theme border border-gold text-center">
+              <div class="text-gold fs-2 mb-2"><i class="bi bi-building"></i></div>
+              <h3 class="h6 text-dark-primary fw-bold mb-2">Designing a Private Cinema?</h3>
+              <p class="small text-secondary mb-3">Consult directly with our CEDIA ESC-T acoustic engineers.</p>
+              <a href="contact.html" class="btn btn-gold btn-sm w-100">Schedule Audition</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       RELATED ARTICLES SECTION
+       ======================================================================== -->
+  <section class="py-5 bg-secondary-theme border-top border-beige">
+    <div class="container-custom">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 text-dark-primary fw-semibold mb-0">Related Technical Guides</h2>
+        <a href="blog.html" class="btn btn-outline-gold btn-sm">All Articles <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+      <div class="row g-4" id="relatedArticlesGrid">
+        <!-- Dynamically populated by js/blog-detail.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4 g-lg-5 footer-top">
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo-container mb-3 d-inline-block" href="index.html">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre & Audio</span>
+          </a>
+          <p class="footer-desc">
+            Bespoke private cinemas, reference Dolby Atmos soundstages, and architectural acoustic sanctuaries crafted to CEDIA standards.
+          </p>
+          <div class="footer-badges">
+            <span class="footer-badge">CEDIA Certified</span>
+            <span class="footer-badge">ISF Level-III</span>
+            <span class="footer-badge">Dolby Atmos Partner</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Project Gallery</a></li>
+            <li><a href="pricing.html">Cinema Packages</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=home-theatre-installation">Home Theatre Installation</a></li>
+            <li><a href="service-details.html?service=dolby-atmos-setup">Dolby Atmos Setup</a></li>
+            <li><a href="service-details.html?service=acoustic-treatment">Acoustic Treatment</a></li>
+            <li><a href="service-details.html?service=home-theatre-installation">Complete Cinema Package</a></li>
+            <li><a href="service-details.html?service=av-receiver-setup">AV Receiver Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Studio Contact</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>42 Kothari Road, Nungambakkam, Chennai, Tamil Nadu 600034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>+91 98400 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>concierge@averacinema.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Mon – Sat: 10:00 AM – 7:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> AVÉRA Cinema. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="login.html" class="text-secondary text-decoration-none small hover-gold">VIP Portal</a>
+          <a href="coming-soon.html" class="text-secondary text-decoration-none small hover-gold">Coming Soon</a>
+          <a href="maintenance.html" class="text-secondary text-decoration-none small hover-gold">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/blog-data.js" defer></script>
+  <script src="js/blog-detail.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
