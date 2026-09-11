@@ -212,13 +212,208 @@
     }
   }
 
-  // Execute on DOM ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      renderArticle(resolveArticle());
+  function initSearchInsights(currentPost) {
+    const searchForm = document.getElementById('searchInsightsForm');
+    const searchInput = document.getElementById('searchInsightsInput');
+    const searchBtn = document.getElementById('searchInsightsBtn');
+    const resultsContainer = document.getElementById('searchInsightsResults');
+    const relatedGrid = document.getElementById('relatedArticlesGrid');
+    const relatedHeading = document.getElementById('relatedArticlesHeading');
+    const resetRelatedBtn = document.getElementById('resetRelatedArticlesBtn');
+
+    if (!searchInput) return;
+
+    function renderDefaultRelated() {
+      if (!relatedGrid || typeof AV_BLOG_POSTS === 'undefined') return;
+      if (relatedHeading) relatedHeading.textContent = 'Related Technical Guides';
+      if (resetRelatedBtn) resetRelatedBtn.classList.add('d-none');
+
+      const related = AV_BLOG_POSTS
+        .filter(b => !currentPost || b.id !== currentPost.id)
+        .slice(0, 3);
+
+      renderArticleCards(related, relatedGrid);
+    }
+
+    function renderArticleCards(posts, container) {
+      if (!container) return;
+      if (posts.length === 0) {
+        container.innerHTML = `
+          <div class="col-12 text-center py-5">
+            <div class="fs-1 text-gold mb-3"><i class="bi bi-search"></i></div>
+            <h3 class="h5 text-dark-primary fw-semibold mb-2">No insights found for your search.</h3>
+            <p class="small text-secondary mb-0">Try searching for keywords like "Atmos", "Laser", "Dirac", or "Acoustics".</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = posts.map(b => `
+        <div class="col-md-4">
+          <article class="blog-card h-100 rounded bg-card border border-beige overflow-hidden d-flex flex-column shadow-sm">
+            <div class="blog-card-img-wrap position-relative" style="height: 180px;">
+              <img src="${b.image}" alt="${escapeHtml(b.title)}" class="w-100 h-100 object-fit-cover" loading="lazy">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="small text-secondary mb-1">${escapeHtml(b.date)} &bull; ${escapeHtml(b.readTime)}</span>
+              <h3 class="h6 fw-semibold text-dark-primary mb-2 line-clamp-2">
+                <a href="blog-details.html?id=${b.id}" class="text-dark-primary text-decoration-none hover-gold">${escapeHtml(b.title)}</a>
+              </h3>
+              <p class="small text-secondary mb-4 flex-grow-1 line-clamp-2">${escapeHtml(b.summary)}</p>
+              <a href="blog-details.html?id=${b.id}" class="btn btn-outline-gold btn-sm w-100 mt-auto">
+                Read Guide <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      `).join('');
+    }
+
+    function executeSearch() {
+      const query = searchInput.value.trim();
+
+      if (!query) {
+        if (resultsContainer) {
+          resultsContainer.innerHTML = '';
+          resultsContainer.classList.add('d-none');
+        }
+        renderDefaultRelated();
+        return;
+      }
+
+      if (typeof AV_BLOG_POSTS === 'undefined') return;
+
+      const q = query.toLowerCase();
+      const matches = AV_BLOG_POSTS.filter(post => {
+        const titleMatch = (post.title || '').toLowerCase().includes(q);
+        const summaryMatch = (post.summary || '').toLowerCase().includes(q);
+        const categoryMatch = (post.category || '').toLowerCase().includes(q);
+        const tagsMatch = Array.isArray(post.tags) && post.tags.some(t => (t || '').toLowerCase().includes(q));
+        const authorMatch = (post.author && post.author.name || '').toLowerCase().includes(q);
+        const contentMatch = (post.content || '').toLowerCase().includes(q);
+        return titleMatch || summaryMatch || categoryMatch || tagsMatch || authorMatch || contentMatch;
+      });
+
+      // 1. Live Sidebar Results Box
+      if (resultsContainer) {
+        resultsContainer.classList.remove('d-none');
+        if (matches.length === 0) {
+          resultsContainer.innerHTML = `
+            <div class="search-results-box p-3 text-center">
+              <div class="text-gold mb-1"><i class="bi bi-search fs-5"></i></div>
+              <div class="small fw-semibold text-dark-primary mb-1">No insights found for your search.</div>
+              <div class="smaller text-secondary">Try searching for "Atmos", "Laser", "Dirac", or "Acoustics".</div>
+            </div>
+          `;
+        } else {
+          resultsContainer.innerHTML = `
+            <div class="search-results-box p-3">
+              <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-beige">
+                <span class="smaller fw-bold text-gold text-uppercase letter-spacing">${matches.length} ${matches.length === 1 ? 'Insight Found' : 'Insights Found'}</span>
+                <button type="button" class="btn btn-sm btn-link text-secondary text-decoration-none p-0 smaller hover-gold" id="clearSearchInsightsBtn">
+                  <i class="bi bi-x-circle me-1"></i>Clear
+                </button>
+              </div>
+              <div class="search-results-list d-flex flex-column gap-2" style="max-height: 280px; overflow-y: auto;">
+                ${matches.map(b => `
+                  <a href="blog-details.html?id=${b.id}" class="d-flex align-items-center gap-3 p-2 rounded text-decoration-none search-result-item hover-bg-card">
+                    <img src="${b.image}" alt="${escapeHtml(b.title)}" class="rounded object-fit-cover flex-shrink-0" width="46" height="46" loading="lazy">
+                    <div class="overflow-hidden">
+                      <div class="small fw-semibold text-dark-primary text-truncate">${escapeHtml(b.title)}</div>
+                      <div class="smaller text-secondary d-flex align-items-center gap-2">
+                        <span class="text-gold fw-medium">${escapeHtml(b.category)}</span>
+                        <span>&bull;</span>
+                        <span>${escapeHtml(b.readTime)}</span>
+                      </div>
+                    </div>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          `;
+
+          const clearBtn = resultsContainer.querySelector('#clearSearchInsightsBtn');
+          if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+              searchInput.value = '';
+              executeSearch();
+              searchInput.focus();
+            });
+          }
+        }
+      }
+
+      // 2. Bottom Related Articles Grid
+      if (relatedGrid) {
+        if (relatedHeading) {
+          relatedHeading.textContent = `Matching Insights for "${query}" (${matches.length})`;
+        }
+        if (resetRelatedBtn) {
+          resetRelatedBtn.classList.remove('d-none');
+        }
+        renderArticleCards(matches, relatedGrid);
+      }
+    }
+
+    if (searchForm) {
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        executeSearch();
+      });
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        executeSearch();
+      });
+    }
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        executeSearch();
+      }
     });
+
+    if (resetRelatedBtn) {
+      resetRelatedBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        executeSearch();
+      });
+    }
+
+    // Debounced real-time search on typing
+    let debounceTimer = null;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        executeSearch();
+      }, 250);
+    });
+
+    // Check if initial search query exists in URL
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlSearch = urlParams.get('search') || urlParams.get('q');
+      if (urlSearch) {
+        searchInput.value = urlSearch;
+        executeSearch();
+      }
+    } catch (e) {}
+  }
+
+  // Execute on DOM ready
+  function init() {
+    const post = resolveArticle();
+    renderArticle(post);
+    initSearchInsights(post);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    renderArticle(resolveArticle());
+    init();
   }
 
 })();

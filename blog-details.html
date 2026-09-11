@@ -119,10 +119,12 @@
               <i class="bi bi-moon" id="themeIcon"></i>
             </button>
           </div>
-          <a href="login.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
+          <div class="nav-user-wrapper">
+            <a href="login.html" class="btn btn-nav-signin" id="navSignInBtn" aria-label="Sign In to client portal" title="Sign In">
             <i class="bi bi-person"></i>
             <span>SIGN IN</span>
           </a>
+          </div>
         </div>
       </div>
     </div>
@@ -232,14 +234,16 @@
         <aside class="col-lg-4">
           <div class="sticky-lg-top" style="top: 100px;">
             <!-- Widget 1: Search -->
-            <div class="p-4 rounded bg-card border border-beige shadow-sm mb-4">
+            <div class="p-4 rounded bg-card border border-beige shadow-sm mb-4" id="searchInsightsWidget">
               <h3 class="h6 text-dark-primary fw-bold text-uppercase letter-spacing mb-3">Search Insights</h3>
-              <form action="blog.html" method="GET">
+              <form action="blog.html" method="GET" id="searchInsightsForm" role="search">
                 <div class="input-group">
-                  <input type="text" name="search" class="form-control form-control-custom" placeholder="Search topics...">
-                  <button type="submit" class="btn btn-gold"><i class="bi bi-search"></i></button>
+                  <input type="text" name="search" id="searchInsightsInput" class="form-control form-control-custom" placeholder="Search topics..." autocomplete="off">
+                  <button type="submit" id="searchInsightsBtn" class="btn btn-gold" aria-label="Search Insights"><i class="bi bi-search"></i></button>
                 </div>
               </form>
+              <!-- Live Search Results Container -->
+              <div id="searchInsightsResults" class="mt-3 d-none"></div>
             </div>
 
             <!-- Widget 2: Recent Posts -->
@@ -263,7 +267,7 @@
             </div>
 
             <!-- Widget 4: Consultation CTA -->
-            <div class="p-4 rounded bg-secondary-theme border border-gold text-center">
+            <div class="p-4 rounded bg-secondary-theme border border-gold text-center sidebar-cta-card">
               <div class="text-gold fs-2 mb-2"><i class="bi bi-building"></i></div>
               <h3 class="h6 text-dark-primary fw-bold mb-2">Designing a Private Cinema?</h3>
               <p class="small text-secondary mb-3">Consult directly with our CEDIA ESC-T acoustic engineers.</p>
@@ -278,11 +282,16 @@
   <!-- ========================================================================
        RELATED ARTICLES SECTION
        ======================================================================== -->
-  <section class="py-5 bg-secondary-theme border-top border-beige">
+  <section class="py-5 bg-secondary-theme border-top border-beige" id="relatedArticlesSection">
     <div class="container-custom">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="h4 text-dark-primary fw-semibold mb-0">Related Technical Guides</h2>
-        <a href="blog.html" class="btn btn-outline-gold btn-sm">All Articles <i class="bi bi-arrow-right ms-1"></i></a>
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h2 class="h4 text-dark-primary fw-semibold mb-0" id="relatedArticlesHeading">Related Technical Guides</h2>
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="btn btn-outline-secondary btn-sm d-none" id="resetRelatedArticlesBtn">
+            <i class="bi bi-arrow-counterclockwise me-1"></i> Reset Guides
+          </button>
+          <a href="blog.html" class="btn btn-outline-gold btn-sm">All Articles <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
       </div>
 
       <div class="row g-4" id="relatedArticlesGrid">
@@ -318,8 +327,7 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">All Services</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="gallery.html">Project Gallery</a></li>
-            <li><a href="pricing.html">Cinema Packages</a></li>
+            <li><a href="https://avera-cinema.vercel.app/gallery.html">Gallery</a></li>
             <li><a href="blog.html">Insights &amp; Blog</a></li>
           </ul>
         </div>

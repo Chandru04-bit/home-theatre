@@ -1333,6 +1333,15 @@ const initApp = () => {
     const navSignInBtns = document.querySelectorAll('.btn-nav-signin, #navSignInBtn');
 
     navSignInBtns.forEach(btn => {
+      // Ensure btn is inside .nav-user-wrapper for precise positioning
+      let wrapper = btn.closest('.nav-user-wrapper');
+      if (!wrapper && btn.parentElement) {
+        wrapper = document.createElement('div');
+        wrapper.className = 'nav-user-wrapper';
+        btn.parentNode.insertBefore(wrapper, btn);
+        wrapper.appendChild(btn);
+      }
+
       const span = btn.querySelector('span');
 
       if (user) {
@@ -1403,7 +1412,11 @@ const initApp = () => {
   function toggleUserMenu(btn, user, userName) {
     const existingMenu = document.querySelector('.nav-user-dropdown-menu');
     if (existingMenu) {
-      existingMenu.remove();
+      if (typeof existingMenu._cleanup === 'function') {
+        existingMenu._cleanup();
+      } else {
+        existingMenu.remove();
+      }
       return;
     }
 
@@ -1427,8 +1440,15 @@ const initApp = () => {
       </button>
     `;
 
-    const parent = btn.parentElement || document.body;
+    const parent = btn.closest('.nav-user-wrapper') || btn.parentElement || document.body;
     parent.appendChild(menu);
+
+    const cleanup = () => {
+      menu.remove();
+      document.removeEventListener('click', handleOutsideClick);
+      document.removeEventListener('keydown', handleKeydown);
+    };
+    menu._cleanup = cleanup;
 
     const logoutBtn = menu.querySelector('#userMenuLogoutBtn');
     if (logoutBtn) {
@@ -1436,7 +1456,7 @@ const initApp = () => {
         e.stopPropagation();
         localStorage.removeItem('avera_logged_in_user');
         localStorage.removeItem('currentUser');
-        menu.remove();
+        cleanup();
         updateNavbarAuthState();
         if (window.location.pathname.includes('signin.html') || window.location.pathname.includes('signup.html')) {
           window.location.reload();
@@ -1446,12 +1466,17 @@ const initApp = () => {
 
     const handleOutsideClick = (e) => {
       if (!menu.contains(e.target) && !btn.contains(e.target)) {
-        menu.remove();
-        document.removeEventListener('click', handleOutsideClick);
+        cleanup();
+      }
+    };
+    const handleKeydown = (e) => {
+      if (e.key === 'Escape') {
+        cleanup();
       }
     };
     setTimeout(() => {
       document.addEventListener('click', handleOutsideClick);
+      document.addEventListener('keydown', handleKeydown);
     }, 10);
   }
 

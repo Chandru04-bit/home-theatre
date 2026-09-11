@@ -134,13 +134,41 @@
 
     // Search Input
     const searchInput = document.getElementById('blogSearchInput');
+    const searchIcon = document.querySelector('.blog-search-icon');
     if (searchInput) {
       if (currentSearchQuery) searchInput.value = currentSearchQuery;
 
-      searchInput.addEventListener('input', (e) => {
-        currentSearchQuery = e.target.value.trim();
+      const performSearch = () => {
+        currentSearchQuery = searchInput.value.trim();
         renderPosts();
+      };
+
+      searchInput.addEventListener('input', performSearch);
+
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          performSearch();
+        }
       });
+
+      if (searchIcon) {
+        searchIcon.style.cursor = 'pointer';
+        searchIcon.setAttribute('role', 'button');
+        searchIcon.setAttribute('aria-label', 'Search insights');
+        searchIcon.setAttribute('tabindex', '0');
+        searchIcon.addEventListener('click', () => {
+          performSearch();
+          searchInput.focus();
+        });
+        searchIcon.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            performSearch();
+            searchInput.focus();
+          }
+        });
+      }
     }
 
     // Newsletter Form Simulation

@@ -974,25 +974,39 @@ button[type="submit"]:active:focus,
   vertical-align: middle;
 }
 
+/* Profile button wrapper for precise absolute dropdown positioning */
+.nav-user-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  box-sizing: border-box;
+}
+
 /* User Account Dropdown Menu (Appears on Clicking Logged-In User Name) */
 .nav-user-dropdown-menu {
   position: absolute;
-  top: calc(100% - 16px);
+  top: calc(100% + 6px);
   right: 0;
-  min-width: 220px;
+  left: auto;
+  width: 180px;
+  min-width: 160px;
+  max-width: 200px;
+  margin: 0;
   background-color: #FFFFFF;
   border: 1px solid var(--border-beige);
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  padding: 14px 16px;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 10px 12px;
+  box-sizing: border-box;
   z-index: 1050;
-  animation: navUserFadeIn 0.2s ease-out;
+  animation: navUserFadeIn 0.15s ease-out;
 }
 
 @keyframes navUserFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-4px);
   }
   to {
     opacity: 1;
@@ -1003,32 +1017,37 @@ button[type="submit"]:active:focus,
 .user-menu-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .user-menu-avatar {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
   border-radius: 50%;
   background: rgba(177, 138, 69, 0.12);
   color: var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .user-menu-details {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-width: 0;
   overflow: hidden;
 }
 
 .user-menu-name {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.86rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  line-height: 1.2;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
@@ -1038,35 +1057,43 @@ button[type="submit"]:active:focus,
 }
 
 .user-menu-badge {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--color-gold);
   text-transform: uppercase;
+  line-height: 1.2;
   margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-menu-divider {
   height: 1px;
   background-color: var(--border-beige);
-  margin: 12px 0 10px 0;
+  margin: 8px 0;
+  border: none;
 }
 
 .user-menu-item {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: transparent;
   border: none;
-  padding: 8px 10px;
-  border-radius: 3px;
-  font-size: 0.82rem;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
   font-weight: 500;
+  line-height: 1;
   color: #D9534F;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: left;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .user-menu-item:hover {
@@ -1076,6 +1103,16 @@ button[type="submit"]:active:focus,
 
 .user-menu-item i {
   font-size: 0.95rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-menu-item span {
+  line-height: 1;
+  display: inline-block;
 }
 
 .btn-nav-signin:hover {
@@ -1220,6 +1257,9 @@ button[type="submit"]:active:focus,
     width: 36px;
     height: 36px;
     min-width: 36px;
+  }
+  .nav-user-wrapper {
+    height: 36px;
   }
   .btn-nav-signin {
     height: 36px;
@@ -1625,12 +1665,20 @@ button[type="submit"]:active:focus,
     white-space: nowrap;
   }
 
+  .nav-user-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
   .nav-user-dropdown-menu {
-    position: static;
-    width: 100%;
-    margin-top: 8px;
-    box-shadow: none;
-    border: 1px solid var(--border-beige);
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 8px !important;
+    box-shadow: none !important;
+    border: 1px solid var(--border-beige) !important;
   }
 
   /* RTL Support for Off-Canvas Drawer */
@@ -6440,6 +6488,33 @@ body.dark-mode .blog-filter-btn.active {
   box-shadow: 0 4px 14px rgba(198, 161, 91, 0.35);
 }
 
+/* Dark Mode Consultation CTA Card ("Designing a Private Cinema?") */
+[data-theme="dark"] .sidebar-cta-card,
+[data-theme="dark"] aside .border-gold,
+body.dark-mode .sidebar-cta-card,
+body.dark-mode aside .border-gold {
+  border-color: var(--color-gold-subtle) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .sidebar-cta-card:hover,
+[data-theme="dark"] .sidebar-cta-card:focus,
+[data-theme="dark"] .sidebar-cta-card:focus-within,
+[data-theme="dark"] aside .border-gold:hover,
+[data-theme="dark"] aside .border-gold:focus,
+[data-theme="dark"] aside .border-gold:focus-within,
+body.dark-mode .sidebar-cta-card:hover,
+body.dark-mode .sidebar-cta-card:focus,
+body.dark-mode .sidebar-cta-card:focus-within,
+body.dark-mode aside .border-gold:hover,
+body.dark-mode aside .border-gold:focus,
+body.dark-mode aside .border-gold:focus-within {
+  border-color: rgba(198, 161, 91, 0.25) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* --------------------------------------------------------------------------
    25. RTL (Right-to-Left) Direction System
    -------------------------------------------------------------------------- */
@@ -8280,6 +8355,88 @@ body.dark-mode .navbar-custom .dropdown-item.active {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* --- Search Insights Widget (Sidebar) & Live Results --- */
+.search-results-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-beige);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  animation: searchFadeIn 0.2s ease-out;
+}
+
+@keyframes searchFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-result-item {
+  transition: background-color var(--transition-fast);
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+  background-color: rgba(198, 161, 91, 0.08);
+}
+
+[data-theme="dark"] .search-results-box,
+body.dark-mode .search-results-box {
+  background-color: #211E1A;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .search-result-item:hover,
+[data-theme="dark"] .search-result-item:focus,
+body.dark-mode .search-result-item:hover,
+body.dark-mode .search-result-item:focus {
+  background-color: rgba(198, 161, 91, 0.16);
+}
+
+/* Precise Input Group Button & Control Alignment */
+.input-group > .form-control-custom {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.input-group > .btn.btn-gold {
+  flex-shrink: 0;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-search-icon[role="button"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+[dir="rtl"] .input-group > .form-control-custom {
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+[dir="rtl"] .input-group > .btn.btn-gold {
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 /* --- Countdown Timer (Coming Soon) --- */
