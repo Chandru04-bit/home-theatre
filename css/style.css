@@ -243,6 +243,12 @@ img {
   line-height: 1.35 !important;
 }
 
+/* Max-Width Layout Constraints */
+.max-w-600 { max-width: 600px; }
+.max-w-700 { max-width: 700px; }
+.max-w-800 { max-width: 800px; }
+.max-w-900 { max-width: 900px; }
+
 /* Picture & Responsive Image Optimization Rules */
 picture {
   display: block;
@@ -4374,7 +4380,8 @@ main {
 .form-card,
 .contact-info-card,
 .signin-card,
-.signup-card {
+.signup-card,
+.transition-hover {
   transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.35s ease !important;
@@ -4384,9 +4391,11 @@ main {
 .service-card:hover,
 .gallery-card:hover,
 .sensory-card:hover,
-.cinema-spec-card:hover {
+.cinema-spec-card:hover,
+.transition-hover:hover {
   transform: translateY(-5px) scale(1.008) !important;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 4px 14px rgba(184, 134, 11, 0.07) !important;
+  border-color: var(--color-gold) !important;
 }
 
 [data-theme="dark"] .product-card:hover,
@@ -4394,12 +4403,15 @@ main {
 [data-theme="dark"] .gallery-card:hover,
 [data-theme="dark"] .sensory-card:hover,
 [data-theme="dark"] .cinema-spec-card:hover,
+[data-theme="dark"] .transition-hover:hover,
 body.dark-mode .product-card:hover,
 body.dark-mode .service-card:hover,
 body.dark-mode .gallery-card:hover,
 body.dark-mode .sensory-card:hover,
-body.dark-mode .cinema-spec-card:hover {
+body.dark-mode .cinema-spec-card:hover,
+body.dark-mode .transition-hover:hover {
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(212, 175, 55, 0.12) !important;
+  border-color: var(--color-gold) !important;
 }
 
 /* Brand cards: refined tactile lift */
@@ -5301,9 +5313,32 @@ body.dark-mode .cinema-spec-card:hover {
 
   /* Buttons */
   .btn-gold,
-  .btn-white-luxury {
+  .btn-white-luxury,
+  .btn-outline-gold {
     padding: 0.65rem 1rem;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
+  }
+  .btn-lg {
+    padding: 0.75rem 1.15rem !important;
+    font-size: 0.88rem !important;
+  }
+  .display-5 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+  .pricing-card {
+    padding: 1.25rem 1rem !important;
+  }
+  .pricing-price {
+    font-size: 1.75rem !important;
+  }
+  .accordion-button {
+    font-size: 0.92rem !important;
+    padding: 0.85rem 1rem !important;
+  }
+  .accordion-body {
+    font-size: 0.85rem !important;
+    padding: 0.85rem 1rem !important;
   }
 
   /* Modals */

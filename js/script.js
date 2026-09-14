@@ -146,15 +146,39 @@ const initApp = () => {
   // 3. Dynamic Active Navigation Highlighting
   // ------------------------------------------------------------------------
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const menuLinks = document.querySelectorAll('.navbar-custom .nav-link');
+  const menuLinks = document.querySelectorAll('.navbar-custom .nav-link:not(.dropdown-toggle)');
   menuLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    if (href === currentPath) {
       link.classList.add('active');
-    } else if (href !== currentPath) {
+    } else {
       link.classList.remove('active');
     }
   });
+
+  // Handle Home dropdown toggle and dropdown items
+  const homeDropdown = document.getElementById('homeDropdown');
+  const dropdownItems = document.querySelectorAll('.navbar-custom .dropdown-item');
+  let hasActiveDropdownItem = false;
+  dropdownItems.forEach(item => {
+    const href = item.getAttribute('href');
+    const isHome2 = (href === 'home-2.html' || href === 'index-2.html') && (currentPath === 'home-2.html' || currentPath === 'index-2.html');
+    const isHome1 = href === 'index.html' && (currentPath === 'index.html' || currentPath === '');
+    if (isHome2 || isHome1 || href === currentPath) {
+      item.classList.add('active');
+      hasActiveDropdownItem = true;
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  if (homeDropdown) {
+    if (hasActiveDropdownItem || currentPath === 'index.html' || currentPath === 'home-2.html' || currentPath === 'index-2.html' || currentPath === '') {
+      homeDropdown.classList.add('active');
+    } else {
+      homeDropdown.classList.remove('active');
+    }
+  }
 
   // ------------------------------------------------------------------------
   // 4. Animated Number Counters (Stats Section)
