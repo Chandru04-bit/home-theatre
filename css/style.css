@@ -221,8 +221,25 @@ img {
   background-color: var(--bg-white) !important;
 }
 
+.bg-gold {
+  background-color: var(--color-gold) !important;
+  color: #FFFFFF !important;
+}
+
+.bg-gold-subtle {
+  background-color: var(--color-gold-subtle) !important;
+}
+
 .border-beige {
   border-color: var(--border-beige) !important;
+}
+
+.border-gold {
+  border-color: var(--color-gold) !important;
+}
+
+.border-gold-subtle {
+  border-color: var(--color-gold-subtle) !important;
 }
 
 /* Typography Helpers */
@@ -236,6 +253,26 @@ img {
 
 .text-gold {
   color: var(--color-gold) !important;
+}
+
+.letter-spacing {
+  letter-spacing: 0.08em;
+}
+
+/* Badge System Utilities */
+.badge.bg-gold {
+  background-color: var(--color-gold) !important;
+  color: #FFFFFF !important;
+}
+
+.badge.bg-gold-subtle {
+  background-color: var(--color-gold-subtle) !important;
+  color: var(--color-gold) !important;
+}
+
+.badge.bg-card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
 }
 
 .smaller {
