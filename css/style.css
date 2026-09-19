@@ -65,6 +65,8 @@
 }
 
 html {
+  direction: ltr;
+  text-align: left;
   scroll-behavior: smooth;
   scroll-padding-top: 85px;
   color-scheme: light;
@@ -79,6 +81,8 @@ html {
 }
 
 body {
+  direction: ltr;
+  text-align: left;
   margin: 0;
   padding: 0;
   background-color: var(--bg-primary);
@@ -455,19 +459,35 @@ body.dark-mode .product-img-stage {
   padding-right: 80px;
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1440px) {
   .container,
   .container-custom {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container,
+  .container-custom {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container,
+  .container-custom {
+    padding-left: 28px;
+    padding-right: 28px;
   }
 }
 
 @media (max-width: 768px) {
   .container,
   .container-custom {
-    padding-left: 28px;
-    padding-right: 28px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -1278,23 +1298,26 @@ button[type="submit"]:active:focus,
   box-shadow: 0 0 0 2px var(--color-gold-glow);
 }
 
-/* Laptop & Medium Desktop Screen Optimization (992px - 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* Laptop Screen Optimization (1200px - 1440px) */
+@media (min-width: 1200px) and (max-width: 1440px) {
   .navbar-container {
-    gap: 12px;
+    gap: clamp(8px, 1.2vw, 16px);
   }
   .brand-title {
     font-size: 22px;
+    letter-spacing: 0.1em;
   }
   .brand-subtitle {
     font-size: 9.5px;
+    letter-spacing: 0.24em;
   }
   .navbar-nav {
-    gap: 12px;
+    gap: clamp(8px, 1.2vw, 16px);
   }
   .navbar-custom .nav-link {
     font-size: 0.74rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
+    padding: 0 3px !important;
   }
   .btn-nav-control {
     width: 36px;
@@ -1307,10 +1330,56 @@ button[type="submit"]:active:focus,
   .btn-nav-signin {
     height: 36px;
     width: auto;
-    min-width: 90px;
+    min-width: auto;
     padding: 0 12px;
     font-size: 0.74rem;
     gap: 6px;
+  }
+}
+
+/* Compact Laptop Screen Optimization (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-container {
+    gap: 6px;
+  }
+  .brand-title {
+    font-size: 19.5px;
+    letter-spacing: 0.07em;
+  }
+  .brand-subtitle {
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+  }
+  .navbar-nav {
+    gap: clamp(5px, 0.9vw, 10px);
+  }
+  .navbar-custom .nav-link {
+    font-size: 0.71rem;
+    letter-spacing: 0.03em;
+    padding: 0 2px !important;
+  }
+  .btn-nav-control {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 0.8rem;
+  }
+  .nav-user-wrapper {
+    height: 32px;
+  }
+  .btn-nav-signin {
+    height: 32px;
+    width: auto;
+    min-width: auto;
+    padding: 0 9px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+  .nav-toggles-group {
+    gap: 5px;
+  }
+  .navbar-actions {
+    gap: 5px;
   }
 }
 
@@ -2056,6 +2125,67 @@ body.nav-drawer-open {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Laptop Hero Optimization (1200px - 1440px) */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .hero-section,
+  .hero-split-section,
+  .hero-showcase,
+  .hero-cinema {
+    padding-top: 125px;
+    padding-bottom: 60px;
+    min-height: auto;
+  }
+  .hero-split-row,
+  .hero-content-wrapper {
+    gap: clamp(30px, 3.2vw, 48px);
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 3.8vw, 3.6rem);
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+  }
+}
+
+/* Compact Laptop Hero Optimization (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hero-section,
+  .hero-split-section,
+  .hero-showcase,
+  .hero-cinema {
+    padding-top: 115px;
+    padding-bottom: 50px;
+    min-height: auto;
+  }
+  .hero-split-row,
+  .hero-content-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(22px, 2.5vw, 34px);
+    min-height: auto;
+  }
+  .hero-title {
+    font-size: clamp(2.1rem, 3.4vw, 3rem);
+    line-height: 1.15;
+  }
+  .hero-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
+  }
+  .hero-cta-group .btn {
+    padding: 0.72rem 1.35rem;
+    font-size: 0.82rem;
+  }
+  .hero-floating-badge {
+    bottom: 16px;
+    left: 16px;
+    padding: 10px 16px;
+  }
+  .badge-number {
+    font-size: 1.5rem;
   }
 }
 
@@ -3026,7 +3156,7 @@ body.dark-mode .sensory-metric-item .metric-desc {
   background-color: var(--bg-card);
   border: 1px solid var(--border-beige);
   border-radius: 8px;
-  padding: 2.2rem 1.5rem;
+  padding: 1.8rem 0.85rem;
   text-align: center;
   transition: all var(--transition-base);
   height: 100%;
@@ -3037,6 +3167,7 @@ body.dark-mode .sensory-metric-item .metric-desc {
   align-items: center;
   box-shadow: var(--shadow-subtle);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .brand-card:hover {
@@ -3047,15 +3178,16 @@ body.dark-mode .sensory-metric-item .metric-desc {
 
 .brand-logo-text {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: clamp(1.1rem, 1.25vw, 1.35rem);
   font-weight: 800;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.10em;
   color: var(--text-primary);
   transition: color var(--transition-fast);
   margin-bottom: 0.35rem;
   max-width: 100%;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.2;
 }
 
 .brand-card:hover .brand-logo-text {
@@ -3063,26 +3195,47 @@ body.dark-mode .sensory-metric-item .metric-desc {
 }
 
 .brand-badge {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-size: clamp(0.58rem, 0.65vw, 0.68rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-secondary);
   max-width: 100%;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.25;
 }
 
-/* Responsive Brand Grid & Card Sizing (Optimized for 320px - 430px, Tablet & Desktop) */
+/* Responsive Brand Grid & Card Sizing (Optimized for 320px - 430px, Tablet, Laptop & Desktop) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .brand-card {
+    padding: 1.4rem 0.5rem;
+    min-height: 96px;
+  }
+  .brand-logo-text {
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+  }
+  .brand-badge {
+    font-size: 0.58rem;
+    letter-spacing: 0.03em;
+  }
+}
+
 @media (max-width: 991px) {
   .brands-section {
     padding: 5rem 0;
   }
   .brand-card {
-    padding: 1.8rem 1rem;
+    padding: 1.6rem 0.85rem;
   }
   .brand-logo-text {
-    font-size: 1.4rem;
-    letter-spacing: 0.16em;
+    font-size: 1.25rem;
+    letter-spacing: 0.10em;
+  }
+  .brand-badge {
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -3097,18 +3250,18 @@ body.dark-mode .sensory-metric-item .metric-desc {
     column-gap: 12px;
   }
   .brand-card {
-    padding: 1.35rem 0.6rem;
-    min-height: 110px;
+    padding: 1.25rem 0.5rem;
+    min-height: 98px;
   }
   .brand-logo-text {
-    font-size: clamp(0.95rem, 3.8vw, 1.35rem);
-    letter-spacing: 0.10em;
+    font-size: clamp(0.95rem, 3.8vw, 1.2rem);
+    letter-spacing: 0.08em;
     margin-bottom: 0.25rem;
     line-height: 1.15;
   }
   .brand-badge {
-    font-size: clamp(0.58rem, 2.2vw, 0.7rem);
-    letter-spacing: 0.06em;
+    font-size: clamp(0.56rem, 2.2vw, 0.65rem);
+    letter-spacing: 0.04em;
     line-height: 1.2;
   }
 }
@@ -3125,15 +3278,15 @@ body.dark-mode .sensory-metric-item .metric-desc {
   }
   .brand-card {
     padding: 1.15rem 0.45rem;
-    min-height: 102px;
+    min-height: 94px;
   }
   .brand-logo-text {
-    font-size: clamp(0.85rem, 3.6vw, 1.15rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(0.85rem, 3.6vw, 1.1rem);
+    letter-spacing: 0.06em;
   }
   .brand-badge {
-    font-size: 0.6rem;
-    letter-spacing: 0.04em;
+    font-size: 0.58rem;
+    letter-spacing: 0.03em;
   }
 }
 
@@ -3149,14 +3302,14 @@ body.dark-mode .sensory-metric-item .metric-desc {
   }
   .brand-card {
     padding: 1rem 0.35rem;
-    min-height: 96px;
+    min-height: 88px;
   }
   .brand-logo-text {
     font-size: 0.8rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
   }
   .brand-badge {
-    font-size: 0.54rem;
+    font-size: 0.52rem;
     letter-spacing: 0.02em;
   }
 }
@@ -4646,8 +4799,181 @@ body.dark-mode .transition-hover:hover {
 
 /* --------------------------------------------------------------------------
    23. Comprehensive Master Responsive System
-   Strictly Optimized for 320px, 360px, 375px, 390px, 414px, 430px, Tablet & Desktop
+   Strictly Optimized for 320px, 360px, 375px, 390px, 414px, 430px, Tablet, Laptop & Desktop
    -------------------------------------------------------------------------- */
+
+/* --- Laptop Screens (1200px - 1440px) --- */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .page-hero {
+    padding: 130px 0 55px 0 !important;
+  }
+  .services-section,
+  .products-section-wrap,
+  .testimonials-section,
+  .contact-section,
+  .gallery-section,
+  .process-section,
+  .intro-section,
+  .experience-section {
+    padding: 5rem 0;
+  }
+  .contact-info-card {
+    padding: 2.25rem 1.85rem;
+  }
+  .form-card {
+    padding: 2.5rem 2rem;
+  }
+  .footer-custom,
+  .site-footer {
+    padding: 4.5rem 0 2.25rem 0;
+  }
+}
+
+/* --- Compact Laptop Screens (992px - 1199px) --- */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .page-hero {
+    padding: 120px 0 45px 0 !important;
+  }
+  .page-hero-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  }
+  .services-section,
+  .products-section-wrap,
+  .testimonials-section,
+  .contact-section,
+  .gallery-section,
+  .process-section,
+  .intro-section,
+  .experience-section {
+    padding: 4.5rem 0;
+  }
+  .cta-banner-section {
+    padding: 3.75rem 0;
+  }
+  .section-title {
+    font-size: clamp(2rem, 3.2vw, 2.6rem);
+    margin-bottom: 0.9rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  /* 4-column cards optimization for about.html & home-2.html */
+  .team-card,
+  .creed-card {
+    padding: 1.25rem 0.9rem !important;
+  }
+  .team-card .team-name {
+    font-size: 1.02rem;
+  }
+  .team-card .team-role {
+    font-size: 0.76rem;
+  }
+  .cert-card,
+  .certification-card {
+    padding: 0.85rem 0.4rem !important;
+  }
+  .cert-card .cert-title {
+    font-size: 0.74rem;
+  }
+  /* Sensory Section optimization */
+  .sensory-cards-grid {
+    gap: 1.25rem;
+  }
+  .sensory-card {
+    padding: 1.5rem 1.2rem;
+  }
+  .sensory-card-title {
+    font-size: 1.15rem;
+  }
+  .sensory-card-desc {
+    font-size: 0.88rem;
+  }
+  .sensory-metrics-bar {
+    padding: 1.4rem 1rem;
+  }
+  .sensory-metric-item .metric-num {
+    font-size: 1.65rem;
+  }
+  .sensory-metric-item .metric-desc {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+  /* Contact & Consultation Forms on Compact Laptops */
+  .contact-info-card {
+    padding: 2rem 1.5rem;
+  }
+  .form-card {
+    padding: 2.2rem 1.6rem;
+  }
+  .contact-info-item {
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+  .contact-info-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+  /* Product Authorized Dealer Underbar on Compact Laptops */
+  .product-auth-underbar {
+    padding: 0.75rem 0.9rem;
+    gap: 0.75rem;
+  }
+  .product-auth-icon-wrap {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 1.1rem;
+  }
+  .product-auth-title {
+    font-size: 0.86rem;
+  }
+  .product-auth-subtitle {
+    font-size: 0.75rem;
+  }
+  .product-auth-underbar .badge-status-pill {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.76rem;
+  }
+  /* Cinematic hero header on home-2.html */
+  header[style*="85vh"] {
+    min-height: auto !important;
+    padding-top: 105px !important;
+    padding-bottom: 45px !important;
+  }
+  header[style*="85vh"] h1.display-5 {
+    font-size: clamp(2.1rem, 3.4vw, 2.7rem) !important;
+  }
+  header[style*="85vh"] .lead {
+    font-size: 0.98rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  /* Pricing cards */
+  .pricing-card {
+    padding: 2rem 1.35rem;
+  }
+  .pricing-features li {
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  /* Detail Pages & Case Studies */
+  .product-img-stage,
+  .cinema-hero-image-wrap {
+    max-height: 440px;
+  }
+  .cinema-narrative-card {
+    padding: 2rem 1.5rem;
+  }
+  .cinema-spec-card {
+    padding: 1.5rem 1.2rem;
+  }
+  /* Footer on Compact Laptops */
+  .footer-custom,
+  .site-footer {
+    padding: 4rem 0 2rem 0;
+  }
+}
 
 /* --- Tablet / Medium Devices (< 992px) --- */
 @media (max-width: 991px) {

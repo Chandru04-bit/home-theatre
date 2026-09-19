@@ -1200,8 +1200,59 @@ const initApp = () => {
           if (feedback) feedback.textContent = 'Passwords do not match.';
         } else {
           confirmPwd.setCustomValidity('');
-          if (feedback) feedback.textContent = 'Passwords must match.';
+          if (feedback) feedback.textContent = 'Passwords do not match.';
         }
+      });
+    }
+
+    // Phone Number Input Sanitization & Validation for Create VIP Account Form
+    if (phoneInput) {
+      const sanitizePhoneInput = (val) => {
+        if (!val) return '';
+        const trimmed = val.trim();
+        const hasLeadingPlus = trimmed.startsWith('+');
+        let cleaned = val.replace(/[^0-9\s\-()]/g, '');
+        cleaned = cleaned.replace(/\s+/g, ' ');
+        if (hasLeadingPlus) {
+          cleaned = '+' + cleaned.replace(/^\s*\+*/, '').trim();
+        } else {
+          cleaned = cleaned.replace(/^\s*\+*/, '');
+        }
+        return cleaned;
+      };
+
+      const isPhoneValid = (val) => {
+        const rawDigits = val.replace(/\D/g, '');
+        const phoneFormatRegex = /^\+?[0-9\s\-()]{7,20}$/;
+        return phoneFormatRegex.test(val.trim()) && rawDigits.length >= 7 && rawDigits.length <= 15;
+      };
+
+      phoneInput.addEventListener('input', () => {
+        const orig = phoneInput.value;
+        const sanitized = sanitizePhoneInput(orig);
+        if (orig !== sanitized) {
+          phoneInput.value = sanitized;
+        }
+
+        if (!phoneInput.value.trim()) {
+          phoneInput.setCustomValidity('Please enter a valid contact number.');
+        } else if (!isPhoneValid(phoneInput.value)) {
+          phoneInput.setCustomValidity('Please enter a valid contact number.');
+        } else {
+          phoneInput.setCustomValidity('');
+        }
+      });
+
+      phoneInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const pasteText = (e.clipboardData || window.clipboardData).getData('text') || '';
+        const sanitizedPaste = sanitizePhoneInput(pasteText);
+        const start = phoneInput.selectionStart || 0;
+        const end = phoneInput.selectionEnd || 0;
+        const currentVal = phoneInput.value;
+        const combined = currentVal.substring(0, start) + sanitizedPaste + currentVal.substring(end);
+        phoneInput.value = sanitizePhoneInput(combined);
+        phoneInput.dispatchEvent(new Event('input', { bubbles: true }));
       });
     }
 
@@ -1243,7 +1294,26 @@ const initApp = () => {
         return;
       }
 
-      // 3. Password match validation
+      // 3. Validate Phone Number (Numeric digits & format)
+      const rawDigits = phone.replace(/\D/g, '');
+      const phoneFormatRegex = /^\+?[0-9\s\-()]{7,20}$/;
+      if (!phoneFormatRegex.test(phone) || rawDigits.length < 7 || rawDigits.length > 15) {
+        if (phoneInput) {
+          phoneInput.setCustomValidity('Please enter a valid contact number.');
+        }
+        signupForm.classList.add('was-validated');
+        if (signupAlert) {
+          signupAlert.className = 'alert alert-danger d-flex align-items-center mb-3';
+          signupAlert.innerHTML = '<i class="bi bi-exclamation-circle-fill me-2 fs-5"></i><div>Please enter a valid contact phone number (numbers only).</div>';
+          signupAlert.classList.remove('d-none');
+        }
+        if (phoneInput) phoneInput.focus();
+        return;
+      } else {
+        if (phoneInput) phoneInput.setCustomValidity('');
+      }
+
+      // 4. Password match validation
       if (password !== confirmPassword) {
         if (confirmPwd) confirmPwd.setCustomValidity('Passwords must match.');
         if (feedback) feedback.textContent = 'Passwords do not match.';
@@ -1258,7 +1328,7 @@ const initApp = () => {
         if (confirmPwd) confirmPwd.setCustomValidity('');
       }
 
-      // 4. Validate form checkValidity
+      // 5. Validate form checkValidity
       if (!signupForm.checkValidity()) {
         signupForm.classList.add('was-validated');
         return;
