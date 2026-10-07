@@ -244,6 +244,10 @@
                   <span class="small text-gold text-uppercase fw-semibold mb-1">${escapeHtml(rel.category)}</span>
                   <h3 class="h6 fw-semibold text-dark-primary mb-2">${escapeHtml(rel.name)}</h3>
                   <p class="small text-secondary mb-4 flex-grow-1">${escapeHtml(rel.shortDesc)}</p>
+                  <div class="catalog-price-info">
+                    <span class="catalog-price-label">Price</span>
+                    <span class="catalog-price-value">${escapeHtml(rel.priceTier)}</span>
+                  </div>
                   <a href="service-details.html?service=${rel.id}" class="btn btn-outline-gold btn-sm w-100">
                     Explore Service <i class="bi bi-arrow-right ms-1"></i>
                   </a>

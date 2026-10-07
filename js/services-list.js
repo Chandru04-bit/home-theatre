@@ -60,6 +60,11 @@
                 <a href="service-details.html?service=${service.id}" class="text-dark-primary text-decoration-none hover-gold">${escapeHtml(service.name)}</a>
               </h2>
               <p class="small text-secondary mb-3 flex-grow-1 line-clamp-3">${escapeHtml(service.shortDesc)}</p>
+
+              <div class="catalog-price-info">
+                <span class="catalog-price-label">Price</span>
+                <span class="catalog-price-value">${escapeHtml(service.priceTier)}</span>
+              </div>
               
               <ul class="list-unstyled small text-secondary mb-4">
                 <li class="mb-1"><i class="bi bi-clock me-2 text-gold"></i>Timeline: <strong class="text-dark-primary">${escapeHtml(service.completionTime)}</strong></li>

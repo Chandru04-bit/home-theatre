@@ -210,6 +210,10 @@
             <p class="product-desc">
               ${escapeHtml(rel.shortDesc)}
             </p>
+            <div class="catalog-price-info">
+              <span class="catalog-price-label">Price</span>
+              <span class="catalog-price-value">${escapeHtml(rel.priceInfo)}</span>
+            </div>
             <div class="product-card-footer">
               <span class="small text-secondary">
                 <i class="bi bi-shield-check text-gold me-1"></i> Authorized Dealer
