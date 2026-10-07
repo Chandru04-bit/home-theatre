@@ -496,7 +496,8 @@ const initApp = () => {
 
     // Enquiry form submission
     const enquiryForm = document.getElementById('productEnquiryForm');
-    if (enquiryForm) {
+    const hasProductDetailController = [...document.scripts].some(script => /(?:^|\/)product-detail\.js(?:\?|$)/.test(script.src));
+    if (enquiryForm && !hasProductDetailController) {
       enquiryForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!enquiryForm.checkValidity()) {
