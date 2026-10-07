@@ -992,9 +992,13 @@ button[type="submit"]:active:focus,
   color: var(--color-gold);
 }
 
-/* Hide text in RTL icon button */
-.btn-nav-dir span {
-  display: none !important;
+.btn-nav-dir {
+  width: auto;
+  min-width: 54px;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 /* Sign In Button ([ 👤 SIGN IN ] - Solid Gold Luxury Button) */
@@ -5848,8 +5852,8 @@ body.dark-mode .brand-title {
 
 [data-theme="dark"] .brand-logo-img,
 body.dark-mode .brand-logo-img {
-  background-color: #F7F4EE;
-  border-radius: 4px;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 [data-theme="dark"] .brand-title span,
@@ -7766,6 +7770,13 @@ input[type="password"]::-ms-clear {
   font-size: 1.5rem;
   color: var(--color-gold);
   margin-bottom: 1.25rem;
+}
+
+.cinema-sofa-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
 }
 
 .cinema-spec-label {

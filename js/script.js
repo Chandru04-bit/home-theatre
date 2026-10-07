@@ -6,6 +6,113 @@
 const initApp = () => {
   'use strict';
 
+  // Shared validation for every form on this static site. The same rules must
+  // also be enforced by an API when a backend is added.
+  const validationRules = {
+    name: /^[\p{L}]+(?: [\p{L}]+)*$/u,
+    email: /^[^\s@]+@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/,
+    digits: /^\d+$/
+  };
+  const validationMessage = (field) => {
+    if (field.validity.valueMissing) return 'This field is required.';
+    if (field.type === 'email' && !validationRules.email.test(field.value.trim())) {
+      return 'Enter a valid email address, such as name@example.com.';
+    }
+    if (field.matches('[data-validate-name]') && !validationRules.name.test(field.value.trim())) {
+      return 'Use letters and spaces only.';
+    }
+    if (field.matches('[data-validate-phone]') && !/^\d{10}$/.test(field.value)) {
+      return 'Enter exactly 10 digits.';
+    }
+    if (field.matches('[data-validate-digits]') && field.value && !validationRules.digits.test(field.value)) {
+      return 'Enter numbers only.';
+    }
+    if (field.validity.typeMismatch || field.validity.patternMismatch || field.validity.badInput) {
+      return field.dataset.validationMessage || 'Enter a valid value.';
+    }
+    return '';
+  };
+  const getFeedback = (field) => {
+    const parent = field.parentElement;
+    let feedback = parent && parent.querySelector(':scope > .invalid-feedback');
+    if (!feedback && parent) {
+      feedback = document.createElement('div');
+      feedback.className = 'invalid-feedback';
+      feedback.setAttribute('aria-live', 'polite');
+      field.insertAdjacentElement('afterend', feedback);
+    }
+    if (feedback && !feedback.id) {
+      feedback.id = `${field.id || field.name || 'field'}-validation-message`;
+    }
+    if (feedback && feedback.id) {
+      const describedBy = new Set((field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean));
+      describedBy.add(feedback.id);
+      field.setAttribute('aria-describedby', [...describedBy].join(' '));
+    }
+    return feedback;
+  };
+  const validateField = (field, showMessage = false) => {
+    const message = validationMessage(field);
+    field.setCustomValidity(message);
+    const feedback = getFeedback(field);
+    if (feedback) feedback.textContent = message;
+    if (showMessage && message) field.classList.add('is-invalid');
+    else if (!message || showMessage) field.classList.remove('is-invalid');
+    return !message;
+  };
+
+  document.querySelectorAll('form').forEach((form) => {
+    const fields = [...form.querySelectorAll('input, select, textarea')].filter((field) => field.type !== 'hidden');
+    fields.forEach((field) => {
+      const key = `${field.id} ${field.name}`.toLowerCase();
+      if (/fullname|clientname|commentname|firstname|lastname/.test(key) || key.trim() === 'name') {
+        field.dataset.validateName = 'true';
+        field.autocomplete = field.autocomplete || 'name';
+      }
+      if (/phone|mobile|telephone/.test(key)) {
+        field.dataset.validatePhone = 'true';
+        field.type = 'tel';
+        field.inputMode = 'numeric';
+        field.maxLength = 10;
+        field.pattern = '[0-9]{10}';
+        field.autocomplete = field.autocomplete || 'tel-national';
+        field.dataset.validationMessage = 'Enter exactly 10 digits.';
+      }
+      if (field.type === 'number' || /amount|quantity|age/.test(key)) {
+        field.dataset.validateDigits = 'true';
+        field.inputMode = 'numeric';
+        if (field.type === 'number') {
+          field.step = '1';
+          field.min = '0';
+        }
+        field.dataset.validationMessage = 'Enter numbers only.';
+      }
+      if (field.type === 'email') field.autocomplete = field.autocomplete || 'email';
+
+      field.addEventListener('input', () => {
+        if (field.matches('[data-validate-phone], [data-validate-digits]')) {
+          const digits = field.value.replace(/\D/g, '');
+          if (field.value !== digits) field.value = digits;
+        }
+        validateField(field, field.classList.contains('is-invalid') || form.classList.contains('was-validated'));
+      });
+      field.addEventListener('change', () => validateField(field, form.classList.contains('was-validated')));
+    });
+    form.addEventListener('submit', (event) => {
+      let valid = true;
+      fields.forEach((field) => {
+        if (!validateField(field, true)) valid = false;
+      });
+      if (!valid) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        form.classList.add('was-validated');
+        const firstInvalid = fields.find((field) => !field.validity.valid);
+        if (firstInvalid) firstInvalid.focus();
+      }
+    }, true);
+  });
+
   // ------------------------------------------------------------------------
   // Social Media Configuration Variables (Easy placeholder configuration)
   // ------------------------------------------------------------------------
@@ -560,14 +667,6 @@ const initApp = () => {
       });
     }
 
-    const phoneInput = consultationForm.querySelector('#phoneNumber');
-    if (phoneInput) {
-      // Clear custom error on typing so user is never blocked
-      phoneInput.addEventListener('input', () => {
-        phoneInput.setCustomValidity('');
-      });
-    }
-
     consultationForm.addEventListener('submit', (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -579,11 +678,10 @@ const initApp = () => {
       const service = consultationForm.querySelector('#serviceRequired');
       const preferredDate = consultationForm.querySelector('#preferredDate');
 
-      // Robust phone validation: extracts digits, allows spaces, dashes, +91, 10-15 digits
+      // The shared validator accepts exactly 10 digits with no formatting characters.
       let isPhoneValid = true;
       if (phone) {
-        const rawDigits = phone.value.replace(/\D/g, '');
-        isPhoneValid = rawDigits.length >= 10 && rawDigits.length <= 15;
+        isPhoneValid = /^\d{10}$/.test(phone.value);
         if (!isPhoneValid) {
           phone.setCustomValidity('Please enter a valid 10-digit mobile number.');
         } else {
@@ -879,6 +977,12 @@ const initApp = () => {
   const themeIcon = document.getElementById('themeIcon');
 
   const applyTheme = (theme) => {
+    document.querySelectorAll('.brand-logo-img').forEach((logo) => {
+      const source = logo.getAttribute('src') || '';
+      const logoFile = theme === 'dark' ? 'avera-cinema-logo-dark.png' : 'avera-cinema-logo.png';
+      logo.setAttribute('src', source.replace(/avera-cinema-logo(?:-dark)?\.png$/, logoFile));
+    });
+
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.body.classList.add('dark-mode');
