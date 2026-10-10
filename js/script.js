@@ -1031,7 +1031,17 @@ const initApp = () => {
   const dirLabel = document.getElementById('dirLabel');
 
   const applyDirection = (dir) => {
+    document.documentElement.setAttribute('dir', dir);
     document.documentElement.dir = dir;
+    if (document.body) {
+      document.body.setAttribute('dir', dir);
+      document.body.style.direction = dir;
+      if (dir === 'rtl') {
+        document.body.classList.add('rtl-mode');
+      } else {
+        document.body.classList.remove('rtl-mode');
+      }
+    }
     if (dir === 'rtl') {
       if (dirLabel) dirLabel.textContent = 'RTL';
       if (dirToggleBtn) {

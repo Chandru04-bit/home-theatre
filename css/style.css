@@ -80,9 +80,23 @@ html {
   box-sizing: border-box;
 }
 
+html[dir="rtl"],
+body[dir="rtl"],
+[dir="rtl"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="ltr"],
+body[dir="ltr"],
+[dir="ltr"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
 body {
-  direction: ltr;
-  text-align: left;
+  direction: inherit;
+  text-align: start;
   margin: 0;
   padding: 0;
   background-color: var(--bg-primary);
@@ -927,7 +941,7 @@ button[type="submit"]:active:focus,
   white-space: nowrap;
 }
 
-.navbar-custom .nav-link::after {
+.navbar-custom .nav-link:not(.dropdown-toggle)::after {
   display: none;
 }
 
@@ -1694,7 +1708,7 @@ button[type="submit"]:active:focus,
     transition: all 0.2s ease;
   }
 
-  .navbar-custom .nav-link::after {
+  .navbar-custom .nav-link:not(.dropdown-toggle)::after {
     display: none !important;
   }
 
@@ -2240,6 +2254,25 @@ body.nav-drawer-open {
   }
   .badge-number {
     font-size: 1.45rem;
+  }
+  /* 768px Tablet Starting CTA Buttons (Issue 9) */
+  .hero-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0 !important;
+  }
+  .hero-cta-group .btn {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.82rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
@@ -3562,6 +3595,116 @@ body.dark-mode .sensory-metric-item .metric-desc {
   letter-spacing: 0.1em;
 }
 
+/* Testimonial Profile Pictures (Issue 3) */
+.testimonial-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 4px 14px rgba(181, 138, 67, 0.25);
+  background-color: var(--bg-card);
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.testimonial-avatar-img:hover {
+  transform: scale(1.05);
+}
+
+.border-top .testimonial-avatar-img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Base Pricing Bespoke CTA Button (Issues 4 & 6) */
+.pricing-bespoke-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0.65rem 1rem !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+  box-sizing: border-box !important;
+}
+
+.pricing-bespoke-cta i {
+  flex-shrink: 0;
+  margin-left: 0.35rem;
+}
+
+[dir="rtl"] .pricing-bespoke-cta i {
+  margin-left: 0;
+  margin-right: 0.35rem;
+}
+
+/* Industry Certification Cards Base Styles (Issue 7) */
+.certification-card {
+  height: 100% !important;
+  min-height: 125px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 1rem 0.5rem !important;
+  box-sizing: border-box;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.certification-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.certification-card .cert-icon-wrap {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.certification-card .cert-title {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certification-card .cert-subtitle {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--text-secondary);
+}
+
+/* Home 2 CTA Text Wrapping (Issue 10) */
+.btn-consult-architect,
+a[href*="Commissioning%20Protocol"].btn {
+  white-space: normal !important;
+  text-align: center !important;
+  max-width: 100% !important;
+  line-height: 1.35 !important;
+}
+
+
 .carousel-indicators-custom {
   position: relative;
   margin-top: 2rem;
@@ -4764,7 +4907,7 @@ body.dark-mode .transition-hover:hover {
     transition: color 0.3s ease;
   }
 
-  .navbar-custom .nav-link::after {
+  .navbar-custom .nav-link:not(.dropdown-toggle)::after {
     content: '';
     position: absolute;
     bottom: 4px;
@@ -4777,8 +4920,8 @@ body.dark-mode .transition-hover:hover {
                 left 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .navbar-custom .nav-link:hover::after,
-  .navbar-custom .nav-link.active::after {
+  .navbar-custom .nav-link:not(.dropdown-toggle):hover::after,
+  .navbar-custom .nav-link:not(.dropdown-toggle).active::after {
     width: calc(100% - 1.6rem);
     left: 0.8rem;
   }
@@ -4917,10 +5060,33 @@ body.dark-mode .transition-hover:hover {
   }
   .cert-card,
   .certification-card {
-    padding: 0.85rem 0.4rem !important;
+    padding: 0.85rem 0.35rem !important;
+    min-height: 125px !important;
   }
-  .cert-card .cert-title {
-    font-size: 0.74rem;
+  .cert-card .cert-title,
+  .certification-card .cert-title {
+    font-size: 0.76rem !important;
+    min-height: 2rem !important;
+  }
+  .certification-card .cert-subtitle {
+    font-size: 0.68rem !important;
+  }
+  /* 1024px Blog Category Bar Optimization (Issue 8) */
+  .blog-toolbar {
+    gap: 0.85rem !important;
+  }
+  .blog-search-wrap {
+    flex: 0 1 230px !important;
+    min-width: 190px !important;
+  }
+  .blog-filter-nav {
+    gap: 0.35rem !important;
+    flex-wrap: nowrap !important;
+  }
+  .blog-filter-btn {
+    font-size: 0.74rem !important;
+    padding: 0.38rem 0.65rem !important;
+    letter-spacing: 0.02em !important;
   }
   /* Sensory Section optimization */
   .sensory-cards-grid {
@@ -8413,29 +8579,146 @@ body.dark-mode .product-guarantee-banner {
   position: relative;
 }
 
+.navbar-custom .nav-link.dropdown-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35em;
+}
+
 .navbar-custom .nav-link.dropdown-toggle::after {
-  margin-left: 0.35em;
-  vertical-align: 0.15em;
-  border-top: 0.3em solid var(--color-gold);
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-  transition: transform var(--transition-fast);
+  display: inline-block !important;
+  position: static !important;
+  content: "" !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin-left: 0.35em !important;
+  vertical-align: 0.16em !important;
+  border-top: 0.32em solid var(--color-gold) !important;
+  border-right: 0.28em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.28em solid transparent !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  transform: none;
+  transition: transform var(--transition-fast), border-top-color var(--transition-fast);
 }
 
-.navbar-custom .nav-item.dropdown:hover .nav-link.dropdown-toggle::after {
-  transform: rotate(180deg);
+.navbar-custom .nav-item.dropdown:hover .nav-link.dropdown-toggle::after,
+.navbar-custom .nav-link.dropdown-toggle[aria-expanded="true"]::after,
+.navbar-custom .nav-link.dropdown-toggle.show::after {
+  transform: rotate(180deg) !important;
 }
 
+[data-theme="dark"] .navbar-custom .nav-link.dropdown-toggle::after,
+body.dark-mode .navbar-custom .nav-link.dropdown-toggle::after {
+  border-top-color: var(--color-gold) !important;
+}
+
+/* Base Dropdown Menu Styling */
 .navbar-custom .dropdown-menu {
   background-color: var(--bg-card);
   border: 1px solid var(--border-beige);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-floating);
   padding: 0.6rem 0;
-  min-width: 220px;
-  margin-top: 0.5rem;
-  animation: fadeInDown 0.25s ease forwards;
+  box-sizing: border-box;
+}
+
+/* Desktop & Laptop Responsive Dropdown (min-width: 992px) */
+@media (min-width: 992px) {
+  .navbar-custom .nav-item.dropdown {
+    position: relative !important;
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-custom .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    min-width: 250px !important;
+    margin: 0 !important;
+    padding: 0.6rem 0 !important;
+    transform: none !important;
+    z-index: 1050 !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12) !important;
+    display: none;
+    pointer-events: auto;
+  }
+
+  /* Seamless invisible hover bridge between navbar item and dropdown */
+  .navbar-custom .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+  }
+
+  /* Show dropdown on hover, focus-within, or when .show is active */
+  .navbar-custom .nav-item.dropdown:hover > .dropdown-menu,
+  .navbar-custom .nav-item.dropdown:focus-within > .dropdown-menu,
+  .navbar-custom .nav-item.dropdown > .dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: fadeInDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+/* Mobile & Tablet Drawer Responsive Dropdown (max-width: 991px) */
+@media (max-width: 991px) {
+  .navbar-custom .nav-link.dropdown-toggle {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .navbar-custom .nav-link.dropdown-toggle::after {
+    display: inline-block !important;
+    margin-left: auto !important;
+  }
+
+  .navbar-custom .nav-item.dropdown {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .navbar-custom .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    box-shadow: none !important;
+    margin: 0.35rem 0 0.5rem 0 !important;
+    padding: 0.4rem 0 !important;
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-beige) !important;
+    border-radius: 8px !important;
+    display: none;
+    animation: none !important;
+  }
+
+  .navbar-custom .dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .navbar-custom .dropdown-item {
+    padding: 0.65rem 1.15rem !important;
+    font-size: 0.82rem !important;
+    white-space: normal !important;
+    word-break: break-word;
+  }
 }
 
 @keyframes fadeInDown {
@@ -8479,6 +8762,15 @@ body.dark-mode .navbar-custom .dropdown-menu {
   background-color: #26221D;
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 991px) {
+  [data-theme="dark"] .navbar-custom .dropdown-menu,
+  body.dark-mode .navbar-custom .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+  }
 }
 
 [data-theme="dark"] .navbar-custom .dropdown-item,
@@ -9016,12 +9308,30 @@ body.dark-mode .search-result-item:focus {
 
 /* --- RTL (Right-to-Left) Adjustments for New Components --- */
 [dir="rtl"] .navbar-custom .nav-link.dropdown-toggle::after {
-  margin-left: 0;
-  margin-right: 0.35em;
+  margin-left: 0 !important;
+  margin-right: 0.35em !important;
 }
 
-[dir="rtl"] .navbar-custom .dropdown-menu {
-  text-align: right;
+@media (max-width: 991px) {
+  [dir="rtl"] .navbar-custom .nav-link.dropdown-toggle::after {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}
+
+[dir="rtl"] .navbar-custom .dropdown-menu,
+html[dir="rtl"] .navbar-custom .dropdown-menu,
+body.rtl-mode .navbar-custom .dropdown-menu {
+  text-align: right !important;
+}
+
+@media (min-width: 992px) {
+  [dir="rtl"] .navbar-custom .dropdown-menu,
+  html[dir="rtl"] .navbar-custom .dropdown-menu,
+  body.rtl-mode .navbar-custom .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+  }
 }
 
 [dir="rtl"] .navbar-custom .dropdown-item:hover,
@@ -9138,3 +9448,58 @@ body.dark-mode .search-result-item:focus {
 
 
 
+
+
+/* 360px Mobile Footer & Home 2 CTA (Issues 10 & 11) */
+@media (max-width: 575px) {
+  .btn-consult-architect,
+  a[href*="Commissioning%20Protocol"].btn {
+    width: 100% !important;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .site-footer {
+    padding: 3rem 0 1.5rem 0 !important;
+    text-align: left;
+  }
+  .site-footer .footer-top > div.col-6 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .site-footer .footer-top > div {
+    margin-bottom: 1.5rem;
+  }
+  .site-footer .footer-heading {
+    margin-bottom: 1rem !important;
+    font-size: 0.84rem !important;
+  }
+  .site-footer .footer-links li {
+    margin-bottom: 0.6rem !important;
+  }
+  .site-footer .footer-links a {
+    font-size: 0.88rem !important;
+  }
+  .site-footer .footer-contact-item {
+    font-size: 0.85rem !important;
+    gap: 0.6rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .site-footer .footer-bottom {
+    margin-top: 2.25rem !important;
+    padding-top: 1.5rem !important;
+    flex-direction: column !important;
+    gap: 0.85rem !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  footer .brand-logo-container .brand-logo-img {
+    max-width: 220px !important;
+    height: auto !important;
+  }
+}

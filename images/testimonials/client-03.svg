@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D271D"/>
+      <stop offset="100%" stop-color="#15120E"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2DDAD"/>
+      <stop offset="50%" stop-color="#C6A15B"/>
+      <stop offset="100%" stop-color="#936F2B"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="58" fill="url(#grad3)" stroke="url(#gold3)" stroke-width="3"/>
+  <circle cx="60" cy="60" r="53" fill="none" stroke="url(#gold3)" stroke-width="1" stroke-dasharray="2,3" opacity="0.6"/>
+  <!-- Silhouette / Portrait -->
+  <g fill="url(#gold3)" filter="url(#shadow3)">
+    <!-- Head -->
+    <circle cx="60" cy="46" r="18"/>
+    <!-- Shoulders / Torso -->
+    <path d="M28,98 C28,78 42,70 60,70 C78,70 92,78 92,98 C82,106 72,110 60,110 C48,110 38,106 28,98 Z"/>
+    <!-- Collar -->
+    <polygon points="52,72 60,82 68,72 65,70 60,75 55,70" fill="#2D271D" opacity="0.6"/>
+  </g>
+</svg>
