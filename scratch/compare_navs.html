@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body { background: #FAF8F5; padding: 20px; font-family: 'Inter', sans-serif; }
+    .test-box { background: #FAF8F5; border: 1px solid #ddd; margin-bottom: 30px; padding: 15px; }
+    .nav-option-1 .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-option-1 .brand-icon-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .nav-option-1 .brand-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-box">
+    <h4>Option A: avera-cinema-logo.png (Full Lockup Image)</h4>
+    <nav class="navbar navbar-custom">
+      <div class="container-custom navbar-container">
+        <a class="navbar-brand brand-logo-container" href="#">
+          <img class="brand-logo-img" src="../images/avera-cinema-logo.png" alt="AVÉRA Cinema — Home Theatre &amp; Audio">
+        </a>
+        <span class="text-muted">Nav items here...</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="test-box nav-option-1">
+    <h4>Option B: Icon Image + Brand Name Text (AVÉRA CINEMA)</h4>
+    <nav class="navbar navbar-custom">
+      <div class="container-custom navbar-container">
+        <a class="navbar-brand brand-logo-container" href="#">
+          <img class="brand-logo-img brand-icon-img" src="../images/avera-cinema-icon.png" alt="AVÉRA Cinema Icon">
+          <div class="brand-text-col">
+            <span class="brand-title">AVÉRA <span>CINEMA</span></span>
+            <span class="brand-subtitle">Home Theatre &amp; Audio</span>
+          </div>
+        </a>
+        <span class="text-muted">Nav items here...</span>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>

@@ -9503,3 +9503,146 @@ body.rtl-mode .navbar-custom .dropdown-menu {
     height: auto !important;
   }
 }
+
+/* Shared footer responsive layout: 4 columns on desktop, 2 on tablet, 1 on mobile. */
+.site-footer {
+  overflow-x: clip;
+}
+
+.site-footer .footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  column-gap: clamp(1rem, 2.4vw, 2.5rem);
+  row-gap: 2rem;
+  margin-inline: 0;
+}
+
+.site-footer .footer-top > [class*="col-"] {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  flex: initial;
+  padding-inline: 0;
+  margin: 0;
+}
+
+.site-footer .brand-logo-container,
+.site-footer .brand-logo-img {
+  max-width: 100%;
+}
+
+.site-footer .brand-logo-img {
+  display: block;
+  width: min(260px, 100%);
+  height: auto;
+  max-height: 88px;
+  object-fit: contain;
+}
+
+/* Blend the uploaded white/black logo canvases into the active theme surface. */
+.brand-logo-img {
+  mix-blend-mode: multiply;
+}
+
+html[data-theme="dark"] .brand-logo-img,
+body.dark-mode .brand-logo-img {
+  mix-blend-mode: screen;
+}
+
+.navbar-custom .brand-logo-container {
+  min-width: 0;
+  max-width: min(100%, 260px);
+  flex: 0 1 260px;
+}
+
+.navbar-custom .brand-logo-img {
+  display: block;
+  width: clamp(132px, 17vw, 220px);
+  max-width: 100%;
+  max-height: 64px;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav-drawer-brand {
+  min-width: 0;
+  max-width: calc(100% - 56px);
+}
+
+.nav-drawer-brand .brand-logo-img {
+  width: min(210px, 100%);
+  max-width: 100%;
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+}
+
+.site-footer .footer-desc,
+.site-footer .footer-links,
+.site-footer .footer-contact-item,
+.site-footer .footer-contact-item span,
+.site-footer .footer-contact-item a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.site-footer .footer-contact-item {
+  gap: 0.75rem;
+}
+
+.site-footer .footer-contact-item .bi {
+  flex: 0 0 18px;
+}
+
+.site-footer .footer-bottom {
+  min-width: 0;
+  flex-wrap: wrap;
+  row-gap: 0.75rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-footer .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 5vw, 3.5rem);
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-custom .brand-logo-container {
+    max-width: calc(100% - 56px);
+    flex-basis: auto;
+  }
+
+  .navbar-custom .brand-logo-img {
+    width: clamp(132px, 46vw, 190px);
+    max-height: 58px;
+  }
+
+  .nav-drawer-brand .brand-logo-img {
+    width: min(210px, 100%);
+  }
+
+  .site-footer .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+    row-gap: 1.5rem;
+  }
+
+  .site-footer .footer-top > div {
+    margin-bottom: 0;
+  }
+
+  .site-footer .footer-top > div:first-child {
+    padding-right: 0;
+  }
+
+  .site-footer .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    text-align: center;
+  }
+}

@@ -981,7 +981,7 @@ const initApp = () => {
     document.querySelectorAll('.brand-logo-img').forEach((logo) => {
       const source = logo.getAttribute('src') || '';
       const logoFile = theme === 'dark' ? 'avera-cinema-logo-dark.png' : 'avera-cinema-logo.png';
-      logo.setAttribute('src', source.replace(/avera-cinema-logo(?:-dark)?\.png$/, logoFile));
+      logo.setAttribute('src', source.replace(/avera-cinema-logo(?:-dark)?\.png(?:\?[^#]*)?$/, `${logoFile}?v=20261011`));
     });
 
     if (theme === 'dark') {
