@@ -66,9 +66,21 @@
                 <span class="catalog-price-value">${escapeHtml(service.priceTier)}</span>
               </div>
               
-              <ul class="list-unstyled small text-secondary mb-4">
-                <li class="mb-1"><i class="bi bi-clock me-2 text-gold"></i>Timeline: <strong class="text-dark-primary">${escapeHtml(service.completionTime)}</strong></li>
-                <li><i class="bi bi-shield-check me-2 text-gold"></i>Warranty: <strong class="text-dark-primary">${escapeHtml(service.warranty)}</strong></li>
+              <ul class="service-catalog-meta list-unstyled small text-secondary mb-4">
+                <li class="service-catalog-meta-item mb-1">
+                  <i class="bi bi-clock text-gold" aria-hidden="true"></i>
+                  <span class="service-catalog-meta-copy">
+                    <span class="service-catalog-meta-label">Timeline:</span>
+                    <strong class="text-dark-primary">${escapeHtml(service.completionTime)}</strong>
+                  </span>
+                </li>
+                <li class="service-catalog-meta-item">
+                  <i class="bi bi-shield-check text-gold" aria-hidden="true"></i>
+                  <span class="service-catalog-meta-copy">
+                    <span class="service-catalog-meta-label">Warranty:</span>
+                    <strong class="text-dark-primary">${escapeHtml(service.warranty)}</strong>
+                  </span>
+                </li>
               </ul>
 
               <div class="pt-3 border-top border-beige d-flex gap-2">
